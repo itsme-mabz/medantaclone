@@ -1,0 +1,1993 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - Medanta Clone{% endblock %}
+
+{% block meta_description %}Get in touch with Medanta Clone - We're here to help{% endblock %}
+
+{% block extra_css %}
+<!-- Add contact page specific CSS here -->
+<!-- <link rel="stylesheet" href="{% static 'base/css/contact.css' %}"> -->
+{% endblock %}
+
+{% block content %}
+
+
+
+<body>
+
+
+  <style>
+    .sticky-btn-fixed{padding: 12px; top: 35%;}
+    .sticky-btn-fixed a{text-align: center;}
+    .sticky-btn-fixed a span{color: #fff; font-size: 12px; font-weight: 600; display: block; text-align: center;}
+</style>
+
+  {{header}}
+
+
+  <div class="modal" id="Marmosetloadmodal">
+    <div class="close close-model-layer" data-close="modal"></div>
+    <div class="modal__dialog">
+      <div wire:id="KTqUwrMtwh5fGIGHHYJZ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;KTqUwrMtwh5fGIGHHYJZ&quot;,&quot;name&quot;:&quot;request-callbacks&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;healthcheckup\/gurugram-hospital&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;f29f2614&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;type&quot;:&quot;home-navbar&quot;,&quot;token&quot;:&quot;&quot;,&quot;captcha&quot;:0,&quot;recaptcha&quot;:null,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/healthcheckup\/gurugram-hospital&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;getSubSource&quot;:&quot;Website - gurugram-hospital&quot;,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;ba4e1cb932aa9bfd39ecb4c51bab3372d372e669e06df755855db0e19876fe77&quot;}}">
+    <a class="close close-modal" data-close="modal" id="closeModal"></a>
+    <div class="modal__content">
+    <div class="modal-body">
+        <h2 class="reacllHeading">Request Call Back</h2>
+        <div class="btn-modal text-right">
+            <form wire:submit.prevent="submit">
+                <div >
+                                    </div>
+                <label for="fname">Name *</label>
+                <input type="text" id="fname" name="fname" value="" wire:model.lazy="name" placeholder="Enter Your Name">
+                
+                <label for="lname">Mobile Number *</label>
+                <input type="number" id="lname" name="lname" value="" wire:model.lazy="mobile" placeholder="Enter Your Mobile Number">
+                
+                <label for="lname">Email</label>
+                <input type="text" id="lname" name="lname" value="" wire:model.lazy="email" placeholder="Enter Your Email">
+                
+                <input type="hidden" name="type" wire:model="type" value="home-navbar">
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                <br> <br>
+                <button type="submit" class="submitpopupbt" wire:click="loading">Submit</button>
+                <div class="form-loader loading" wire:loading wire:target="loading">
+                    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                        <g transform="rotate(0 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(30 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(60 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(90 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(120 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(150 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(180 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(210 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(240 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(270 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(300 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g><g transform="rotate(330 50 50)">
+                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+                            </rect>
+                        </g>
+                    </svg>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        window.addEventListener('close-modal', function(event) {
+            const delay = event.detail.delay;
+            setTimeout(function() {
+                var $closeModal = document.querySelector('#closeModal');
+                $closeModal.click();
+            }, 5000);
+        });
+    </script>
+    
+        <script type="text/javascript">
+             window.addEventListener('postUpdated', event => {
+                var $closeModal = document.querySelector('#closeModal');
+                $closeModal.click();
+            })
+            var onCallback = function (){
+                // alert('ue');
+                console.log('gcaptch')
+                console.log(grecaptcha.getResponse());
+                window.livewire.find('KTqUwrMtwh5fGIGHHYJZ').set('recaptcha',grecaptcha.getResponse());
+            }
+            window.addEventListener('reset-recaptcha', event => {
+                grecaptcha.reset();
+            })
+        </script>
+    
+</div>
+
+<!-- Livewire Component wire-end:KTqUwrMtwh5fGIGHHYJZ -->    </div>
+  </div>
+
+  <!-- Upload Resume Model -->
+  <div class="modal" id="sendResumModal">
+    <div class="close close-model-layer" data-close="modal"></div>
+    <div class="modal__dialog">
+      <a class="close close-modal" data-close="modal"></a>
+      <div class="modal__content">
+        <div class="modal-body">
+          <div class="frm-holder">
+            <div wire:id="TcFCFrWv5SPuZMowl942" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;TcFCFrWv5SPuZMowl942&quot;,&quot;name&quot;:&quot;jop-application-list&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;healthcheckup\/gurugram-hospital&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;62240f24&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;resume&quot;:null,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/healthcheckup\/gurugram-hospital&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;afa8fcc0a33704d801c4ff9526afddd9e7930424b5c142f63c83c812bf5dc7cd&quot;}}">
+            <form wire:submit.prevent="save()">
+
+        <div class="field">
+            <label>Name *</label>
+            <input type="text" class="inputbox" wire:model.defer="name" placeholder="Enter Your Name" onkeydown="return /[a-zA-Z ]/i.test(event.key)">
+            <br>
+        </div>
+        <div class="field">
+            <label>Mobile Number *</label>
+            <input type="number" class="inputbox"  wire:model.defer="mobile" placeholder="Enter Your Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+            <br>
+        </div>
+        <div class="field">
+            <label>Email *</label>
+            <input type="email" class="inputbox"  wire:model.defer="email" placeholder="Enter Your Email">
+            <br>
+        </div>
+
+        <div class="field mb-20">
+            <label>Resume (accepted only pdf, docx) *</label>
+            <div class="upload-file" wire:ignore>
+                <input type="file" class="inputbox" id="resume" name="resume" wire:model.defer="resume"/>
+            </div>
+            <br>
+        </div>
+        <button type="submit" class="theme-button">Submit</button>
+        <div class="form-loader loading" wire:loading wire:target="save">
+            <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <g transform="rotate(0 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(30 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(60 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(90 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(120 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(150 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(180 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(210 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(240 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(270 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(300 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g><g transform="rotate(330 50 50)">
+                    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+                    </rect>
+                </g>
+            </svg>
+        </div>
+    </form>
+     <script>
+        window.addEventListener('resetFileInput', event => {
+            document.getElementById('resume').value = null;
+        });
+    </script>
+</div>
+
+<!-- Livewire Component wire-end:TcFCFrWv5SPuZMowl942 -->          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="sticky-links">
+        <div class="container">
+            <ul>
+                <li><a href="#overview-section">Overview</a></li>
+                <li><a href="#packages">Popular Packages</a></li>
+                <li><a href="#healthcheckup-section">Choosing Dr Saurav for Preventive Health Checks</a></li>
+                <li><a href="#faq-section">FAQ's</a></li>
+                <li><a href="#wellness-section">Wellness Blogs</a></li>
+            </ul>
+            <div wire:id="93ymdy0ApD8JcXN39mfw" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;93ymdy0ApD8JcXN39mfw&quot;,&quot;name&quot;:&quot;auth-login&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;healthcheckup\/gurugram-hospital&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;loggedInUser&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l3163765719-1&quot;:{&quot;id&quot;:&quot;f1A6hBB0MO8VZGnEs3pq&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;e75881a7&quot;,&quot;data&quot;:{&quot;mobile_no&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;queryParams&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;1303f642893922d68bf3c81ed1da72f7b69bd072dbb1f065aef4beef54c9b51f&quot;}}">
+
+
+
+</div>
+
+<!-- Livewire Component wire-end:93ymdy0ApD8JcXN39mfw -->        </div>
+    </div>
+    <section class="innerpage-banner form-right service-banner">
+        <div class="home-banner-slider">
+                            <div class="slider">
+		            <div class="innerpage-banner-area slider-height">
+                                                <picture class="img-wrap">
+                            <source media="(min-width: 768px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/zmgc9wvfyRiyY9G0098ttQ10pu3F6j-metaZGVza3RvcF9vbmUucG5n-.png"
+                                width="1920" height="500" alt="health-checkup">
+                            <source media="(min-width: 320px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/YZZg5knLCgpOyYDMFCqbSSLIkP0QnX-metabW9iaWxlX29uZS5qcGc=-.jpg"
+                                width="480" height="320" alt="health-checkup">
+                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/zmgc9wvfyRiyY9G0098ttQ10pu3F6j-metaZGVza3RvcF9vbmUucG5n-.png"
+                                width="1920" height="500" alt="health-checkup">
+			            </picture>
+                                                <div class="banner-caption text-center">
+                            <h1 class="banner-title clr-white"></h1>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider">
+		            <div class="innerpage-banner-area slider-height">
+                                                <picture class="img-wrap">
+                            <source media="(min-width: 768px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/8S0p1U6uuWWMd9UyYivNhhhC6TUlU2-metaZGVza3RvcF90d28uanBn-.jpg"
+                                width="1920" height="500" alt="Health Checkup">
+                            <source media="(min-width: 320px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/2PhZ9vRqpKxvC6tBiyuyIgwQ1hXlt9-metabW9iaWxlX3R3by5qcGc=-.jpg"
+                                width="480" height="320" alt="Health Checkup">
+                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/8S0p1U6uuWWMd9UyYivNhhhC6TUlU2-metaZGVza3RvcF90d28uanBn-.jpg"
+                                width="1920" height="500" alt="Health Checkup">
+			            </picture>
+                                                <div class="banner-caption text-center">
+                            <h1 class="banner-title clr-white"></h1>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider">
+		            <div class="innerpage-banner-area slider-height">
+                                                <picture class="img-wrap">
+                            <source media="(min-width: 768px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/fZuC4GP5PH0v63ywYNKYhjal3qXm8t-metaZGVza3RvcF90aHJlZS5wbmc=-.png"
+                                width="1920" height="500" alt="health-checkup">
+                            <source media="(min-width: 320px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/9A2NYafXfJSaVycMyxtkfBc8959Nux-metaZGVza3RvcF90aHJlZS5qcGc=-.jpg"
+                                width="480" height="320" alt="health-checkup">
+                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/fZuC4GP5PH0v63ywYNKYhjal3qXm8t-metaZGVza3RvcF90aHJlZS5wbmc=-.png"
+                                width="1920" height="500" alt="health-checkup">
+			            </picture>
+                                                <div class="banner-caption text-center">
+                            <h1 class="banner-title clr-white"></h1>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider">
+		            <div class="innerpage-banner-area slider-height">
+                                                    <a href="/ehc/diwali-campaign/L1gz" target="_blank">
+                                                <picture class="img-wrap">
+                            <source media="(min-width: 768px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/n5Txq37JO6qBAbF95aafazSH3q1Fqw-metaZGVza3RvcF9mb3VyLmpwZw==-.jpg"
+                                width="1920" height="500" alt="Health Checkup">
+                            <source media="(min-width: 320px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/YDkpP7BZDNtAdkZEetJQpmeddSedLC-metabW9iaWxlX2ZvdXIuanBn-.jpg"
+                                width="480" height="320" alt="Health Checkup">
+                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/n5Txq37JO6qBAbF95aafazSH3q1Fqw-metaZGVza3RvcF9mb3VyLmpwZw==-.jpg"
+                                width="1920" height="500" alt="Health Checkup">
+			            </picture>
+                                                    </a>
+                                                <div class="banner-caption text-center">
+                            <h1 class="banner-title clr-white"></h1>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider">
+		            <div class="innerpage-banner-area slider-height">
+                                                <picture class="img-wrap">
+                            <source media="(min-width: 768px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/btKPXTUHiRBACvRDtW9YxDeWqvOEfR-metaZGVza181LmpwZw==-.jpg"
+                                width="1920" height="500" alt="health-checkup">
+                            <source media="(min-width: 320px)"
+                                srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/AYc5o6eVHlSRk1QMcJNFFkLLeltaMo-metabW9iaWxlXzUuanBn-.jpg"
+                                width="480" height="320" alt="health-checkup">
+                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/September2025/btKPXTUHiRBACvRDtW9YxDeWqvOEfR-metaZGVza181LmpwZw==-.jpg"
+                                width="1920" height="500" alt="health-checkup">
+			            </picture>
+                                                <div class="banner-caption text-center">
+                            <h1 class="banner-title clr-white"></h1>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+        
+
+<!-- Livewire Component wire-end:1WJcrTfzmAiDk2zBI5ZQ -->    </section>
+
+    <section class="py-50 content-section section-lightbg" id="packages">
+        <div class="container">
+            <div class="heading mb-40 text-center wow fadeInUp">Popular Packages</div>
+            <div wire:id="4l2N8mKzHZQBMPePHMh2" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;4l2N8mKzHZQBMPePHMh2&quot;,&quot;name&quot;:&quot;health-care-packages&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;healthcheckup\/gurugram-hospital&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;84673268&quot;,&quot;data&quot;:{&quot;carePackages&quot;:[],&quot;totalData&quot;:[],&quot;page&quot;:1,&quot;perPageItems&quot;:24,&quot;loadMoreHide&quot;:true,&quot;selectedLocationId&quot;:1,&quot;selectedLocation&quot;:&quot;Gurugram \u2013 Dr Saurav Hospital&quot;,&quot;gender&quot;:&quot;all&quot;,&quot;category&quot;:&quot;all&quot;,&quot;allCategory&quot;:{&quot;0&quot;:&quot;Holistic Wellbeing&quot;,&quot;3&quot;:&quot;Follow up Health Check&quot;,&quot;4&quot;:&quot;Organ specific health check&quot;,&quot;5&quot;:&quot;Disease specific health check&quot;,&quot;157&quot;:&quot;Follow-up Health Check&quot;},&quot;locations&quot;:[],&quot;queryParams&quot;:null,&quot;quickLinksData&quot;:[],&quot;show&quot;:false,&quot;getKey&quot;:&quot;gurugram-hospital&quot;,&quot;getGen&quot;:null,&quot;getCat&quot;:&quot;&quot;,&quot;selectedLocationSlug&quot;:null,&quot;cartCount&quot;:null,&quot;total&quot;:null,&quot;getCartItem&quot;:null,&quot;hospitalMessage&quot;:{&quot;3&quot;:&quot;&quot;,&quot;4&quot;:&quot;&quot;,&quot;5&quot;:&quot;&quot;,&quot;6&quot;:&quot;&quot;,&quot;7&quot;:&quot;&quot;,&quot;8&quot;:&quot;&quot;,&quot;9&quot;:&quot;&quot;,&quot;10&quot;:&quot;&quot;,&quot;11&quot;:&quot;&quot;,&quot;12&quot;:&quot;&quot;,&quot;13&quot;:&quot;&quot;,&quot;14&quot;:&quot;&quot;,&quot;80&quot;:&quot;&quot;,&quot;97&quot;:&quot;&quot;,&quot;100&quot;:&quot;&quot;,&quot;102&quot;:&quot;&quot;,&quot;107&quot;:&quot;&quot;,&quot;117&quot;:&quot;&quot;,&quot;122&quot;:&quot;&quot;,&quot;154&quot;:&quot;&quot;,&quot;155&quot;:&quot;&quot;,&quot;156&quot;:&quot;&quot;,&quot;157&quot;:&quot;&quot;,&quot;159&quot;:&quot;&quot;},&quot;cartMessage&quot;:{&quot;3&quot;:&quot;&quot;,&quot;4&quot;:&quot;&quot;,&quot;5&quot;:&quot;&quot;,&quot;6&quot;:&quot;&quot;,&quot;7&quot;:&quot;&quot;,&quot;8&quot;:&quot;&quot;,&quot;9&quot;:&quot;&quot;,&quot;10&quot;:&quot;&quot;,&quot;11&quot;:&quot;&quot;,&quot;12&quot;:&quot;&quot;,&quot;13&quot;:&quot;&quot;,&quot;14&quot;:&quot;&quot;,&quot;80&quot;:&quot;&quot;,&quot;97&quot;:&quot;&quot;,&quot;100&quot;:&quot;&quot;,&quot;102&quot;:&quot;&quot;,&quot;107&quot;:&quot;&quot;,&quot;117&quot;:&quot;&quot;,&quot;122&quot;:&quot;&quot;,&quot;154&quot;:&quot;&quot;,&quot;155&quot;:&quot;&quot;,&quot;156&quot;:&quot;&quot;,&quot;157&quot;:&quot;&quot;,&quot;159&quot;:&quot;&quot;},&quot;cartsuccessmessage&quot;:null,&quot;cartfailmessage&quot;:null},&quot;dataMeta&quot;:{&quot;modelCollections&quot;:{&quot;carePackages&quot;:{&quot;class&quot;:&quot;App\\Models\\HealthCarePackage&quot;,&quot;id&quot;:[14,13,12,11,154,9,10,80,8,155,159,6,3,157,5,117,100,122,4,7,156,102,107,97],&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null},&quot;totalData&quot;:{&quot;class&quot;:&quot;App\\Models\\HealthCarePackage&quot;,&quot;id&quot;:[14,13,12,11,154,9,10,80,8,155,159,6,3,157,5,117,100,122,4,7,156,102,107,97,2,99,101,166,1,98],&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null},&quot;locations&quot;:{&quot;class&quot;:&quot;App\\Models\\Hospital&quot;,&quot;id&quot;:[1,8,7,11,9,4,2,12,3,13],&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null},&quot;quickLinksData&quot;:{&quot;class&quot;:null,&quot;id&quot;:[],&quot;relations&quot;:[],&quot;connection&quot;:null,&quot;collectionClass&quot;:null}},&quot;collections&quot;:[&quot;allCategory&quot;]},&quot;checksum&quot;:&quot;52a7f1340c567cd9bb0be691e12fc988cd1842d3c99d26de553f6f46402e1f85&quot;}}">
+    <style>
+        .finddoc-frm.popular-package-filter .input-wrap {
+                width: 33.33%;
+            }
+            .finddoc-frm.popular-package-filter{width: 900px;}
+            .title-tag{position: absolute;
+                right: 10px;
+                top: 10px;
+                font-size: 15px;
+                padding: 5px 15px;
+                color: #fff;
+                background: #F04E30;
+                z-index: 123;
+                border-radius: 22px;
+                font-weight: 500;}
+            @media screen and (max-width:767px){
+            .finddoc-frm.popular-package-filter {
+                flex-wrap: wrap;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .finddoc-frm.popular-package-filter .input-wrap {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .finddoc-frm.popular-package-filter .input-wrap.submit-button-holder {
+                padding-right: 55px;
+                position: relative;
+            }
+        }
+
+        .post-card .heading-sm.package-price {
+            color: var(--primary);  line-height: 0;
+        }
+    </style>
+    <div class="finddoc-frm popular-package-filter">
+        <div class="input-wrap">
+            <div class="selectfield-style location-field round-shape">
+                <div class="default-item">
+                    <span>Gurugram – Dr Saurav Hospital</span>
+                </div>
+                <div class="option-list-wrap">
+                    <ul class="option-list">
+                                                    
+                            <li wire:click="changeLocation('Gurugram – Dr Saurav Hospital')">
+                                Gurugram – Dr Saurav Hospital
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Gurugram – Dr Saurav Mediclinic, Cybercity')">
+                                Gurugram – Dr Saurav Mediclinic, Cybercity
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Gurugram – Dr Saurav Mediclinic, Subhash Chowk')">
+                                Gurugram – Dr Saurav Mediclinic, Subhash Chowk
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Gurugram – Dr Saurav Mediclinic, Golf Course Road')">
+                                Gurugram – Dr Saurav Mediclinic, Golf Course Road
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Delhi – Dr Saurav Mediclinic, Defence Colony')">
+                                Delhi – Dr Saurav Mediclinic, Defence Colony
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Indore – Dr Saurav Hospital')">
+                                Indore – Dr Saurav Hospital
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Lucknow – Dr Saurav Hospital')">
+                                Lucknow – Dr Saurav Hospital
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Noida – Dr Saurav Hospital')">
+                                Noida – Dr Saurav Hospital
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Patna – Dr Saurav Hospital')">
+                                Patna – Dr Saurav Hospital
+                            </li>
+                                                    
+                            <li wire:click="changeLocation('Ranchi – Dr Saurav Mediclinic')">
+                                Ranchi – Dr Saurav Mediclinic
+                            </li>
+                                            </ul>
+                </div>
+                            </div>
+        </div>
+        <div class="input-wrap">
+            <div class="selectfield-style round-shape">
+                <div class="default-item">
+                    <span>Gender</span>
+                </div>
+                <div class="option-list-wrap">
+                    <ul class="option-list">
+                        <!-- <li wire:click="$set('gender','all')">
+                            Select
+                        </li> -->
+                        <!-- <li wire:click="$set('gender', 'all')">
+                            Gender
+                        </li> -->
+                        <li wire:click="$set('gender', 'male')">
+                            Male
+                        </li>
+                        <li wire:click="$set('gender', 'female')">
+                            Female
+                        </li>
+                    </ul>
+                </div>
+                            </div>
+        </div>
+        <div class="input-wrap submit-button-holder">
+            <div class="selectfield-style round-shape">
+                <div class="default-item">
+                    <span>All Categories</span>
+                </div>
+                <div class="option-list-wrap">
+                    <ul class="option-list">
+                        
+                                                    <li wire:click="$set('category','Holistic Wellbeing')">
+                                Holistic Wellbeing
+                            </li>
+                                                    <li wire:click="$set('category','Follow up Health Check')">
+                                Follow up Health Check
+                            </li>
+                                                    <li wire:click="$set('category','Organ specific health check')">
+                                Organ specific health check
+                            </li>
+                                                    <li wire:click="$set('category','Disease specific health check')">
+                                Disease specific health check
+                            </li>
+                                                    <li wire:click="$set('category','Follow-up Health Check')">
+                                Follow-up Health Check
+                            </li>
+                                            </ul>
+                </div>
+                            </div>
+            <button class="search-doc-button" type="button" wire:click="filterPackage()">Go</button>
+        </div>
+    </div>
+
+    <div class="download-slider space-row slick-arrow-style-1 slider-tb-shadow eqslides-height wow fadeInUp"
+        data-wow-delay=".4s"  style="display: none" >
+            </div>
+
+        
+    <div class="packages-list-container mb-40">
+                                    
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/MiGzBUybvrFDuhs3NhkMQFlYcbgxXn-metaMTcucG5n-.png" alt="Dr Saurav Years To Life(Female)" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Years to Life(Female)</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 28000</div>
+
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(14)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/qgHGdyXFbRNZi8sjw1QFCSeigMsqab-metaMTYucG5n-.png" alt="Dr Saurav Years To Life(Male)" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Years to Life(Male)</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 28000</div>
+                       
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(13)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/August2024/hrnjwU5XA8rYa2pfR7RYB1FwoSuGZV-metaMTMucG5n-.png" alt="Whole Body Check Female" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Whole Body Check Female</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 25000</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(12)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/August2024/j3PHdnDFzVCr2Sx7eZE4jzEsZ0Zelg-metaMTIucG5n-.png" alt="Whole Body Check Male" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Whole Body Check Male</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 25000</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(11)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/April2025/kAF6zpPbXSpZYAQ4uAn8J5CbMUO56W-metac3F1YXJlIFByb21vIENvZGVzLSBQcmUgVHJhdmVsIGhlYWx0aCBjaGVjay1fcG9zdDEtMDEgKDIpLmpwZw==-.jpg" alt="nasal-allergy" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Pre- Travel health Check Advance &gt;50 years</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 20999</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(154)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/August2024/qDMjhFRRgE4gtOCPqmfMuoIoJ3ixFN-metaYi5qcGc=-.jpg" alt="Dr Saurav Executive Whole Body Check Men" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Executive Whole Body Check Men</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 19000</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(9)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/August2024/LhAIYudjZNIVZ1SQ3OAE4o1hOBaKJJ-metaYS5qcGc=-.jpg" alt="Dr Saurav Executive Whole Body Women" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Executive Whole Body Women</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 19000</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(10)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/Tj62Nx2wJmidUK1EE1xtHpvtyPPk6W-metaaHlwZXJ0ZW5zaW9uLnBuZw==-.png" alt="Dr Saurav Hypertension Screening Package - Advance" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Hypertension Screening Package - Advance</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 15200</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(80)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/cOPewbdeeKVmEhzNsFK5L82CqwFjzN-metaMTEucG5n-.png" alt="Dr Saurav Diabetes Check -Advance" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Diabetes Check -Advance</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 12500</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(8)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/April2025/yVpFENwqQ80NOFURPJNOo1OZ43T5Gp-metac3F1YXJlIFByb21vIENvZGVzLSBQcmUgVHJhdmVsIGhlYWx0aCBjaGVjay1fcG9zdDEtMDIuanBn-.jpg" alt="Pre- Travel health Check Advance &lt;50 years" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Pre- Travel health Check Advance &lt;50 years</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 9999</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(155)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/June2025/40aVo5kYCmSuTNiacPrtvre3XzaEMJ-metac2h1dHRlcnN0b2NrXzIzMjY3NDkzNTMuanBn-.jpg" alt="Cardio predict health check" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Cardio Predict Package</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 9300</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(159)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/ToY529ULyQQMdyxFbK7Dw7Ga9izaan-metaOC5wbmc=-.png" alt="Dr Saurav Hypertension Screening Package - Basic" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Hypertension Screening Package - Basic</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 9000</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(6)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/Abi46bbd8yOqyZk8NYtUIKpx94Mz0g-metaNC5wbmc=-.png" alt="Comprehensive Health Check" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Comprehensive Health check</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 8600</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(3)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/May2025/4bsHADa6yCFQUJ7MqAJ1pAUJr7gcEz-metaVHJ1ZWZpdC1wYWNrYWdlLWFkdmFuY2UuanBn-.jpg" alt="True Fit Check-Advance" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">True Fit Check-Advance</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 8200</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(157)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/4faNEAHO3cKemQaFfsIyDWYQmMVAXb-metaNi5wbmc=-.png" alt="Healthy Heart" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Healthy Heart</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 7550</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(5)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/August2024/xdzdivh4xQ0Ajh38S4nnONCHZBbwlT-metaNy5wbmc=-.png" alt="Lung Health Check " width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Lung Health Check </div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 7500</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(117)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/NL6bTtRuTLD5sMJOBxsHYR9qTRusM1-metaMzkucG5n-.png" alt="Preconception Health Check Package" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Preconception Health Check Package</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5899</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(100)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/October2024/f4Faz1dVxY9inA2e68gaAOVw8ctwym-metaOTQucG5n-.png" alt="Anemia Screening package" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Anemia Screening Package</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5600</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(122)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/vIN7YSqNPT9vJoZC3EBPs5fdPPaVZi-metaNS5wbmc=-.png" alt="Dr Saurav Post Ptca/Cabg/Valve Surgery Follow Up" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Post PTCA/CABG/Valve Surgery Follow up</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5500</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(4)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/HqEVB13GFai6PXfft8VgrdB7fkk70j-metaMTAucG5n-.png" alt="Dr Saurav Diabetes Check -Basic" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Dr Saurav Diabetes Check -basic</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5500</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(7)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/May2025/XgzuKt6dkWz86o171bXYkXDG31oqvJ-metaVHJ1ZWZpdC1wYWNrYWdlLWJhc2ljLmpwZw==-.jpg" alt="True Fit Check-Basic" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">True Fit Check-Basic</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5400</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(156)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/July2024/kXHLq1G6NV7GgWOVjilzz9W7gvnZ2h-metaMzUucG5n-.png" alt="Women Hormone Health 40 Years+" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Women Hormone Health 40 years+</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5390</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(102)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/December2024/nQISbWGORAIylU9R2QdSDnfGYAmZ0t-metaMS5qcGc=-.jpg" alt="fertility health check-advance" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Fertility Health Check-Advance</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5299</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(107)">
+                                                                    </div> -->
+                </div>
+                            
+                <div class="post-card">
+                     
+                    <div class="thumb thumb-ratio thumb-ratio1">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/health_care_packages/December2024/Upw7UfuYUjeg417hm5CXvNPlZiJNMw-metaMi5qcGc=-.jpg" alt="Fertility Health Check" width="514" height="400">
+                    </div>
+                    <div class="card-desk style1">
+                        <div class="heading-sm card-title mb-10 font600">Fertility Health Check-Basic</div>
+                        <div class="card-footer-meta">
+                        <div class="heading-sm package-price mb-20 font600">₹ 5099</div>
+                        </div>
+                    </div>
+                    <!-- <div class="error errmsg"></div>
+                    <div class="error errmsg"></div> -->
+                    <!-- <div wire:poll="cartuiaddedremoved(97)">
+                                                                    </div> -->
+                </div>
+                        </div>
+                        <div class="text-center loadmore-wrap">
+            </div>
+            
+    <script>
+
+        window.addEventListener('refresh-slider-js', event => {
+            $('.download-slider').slick({
+                speed: 300,
+                slidesToShow: 4,
+                arrows: true,
+                slidesToScroll: 1,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows:false
+                        }
+                    }
+                ]
+            });
+
+
+        });
+
+    </script>
+</div>
+
+<!-- Livewire Component wire-end:4l2N8mKzHZQBMPePHMh2 -->
+        </div>
+    </section>
+
+    <section class="py-50 content-section section-lightbg" id="overview-section">
+        <div class="container">
+            <div class="col-wrap dflex flexwrap">
+                <div class="col col5">
+                    <div class="heading wow fadeInUp">About Dr Saurav’s Preventive Health Program</div>
+                </div>
+                <div class="col col7">
+                    <div class="para-wrap mb-10 content-holder wow fadeInUp" data-wow-delay=".3s">
+                        <div class="more-content show">
+                            <div class="mb-10">
+                                <p>At Dr Saurav, we believe that good health begins with prevention. Our Preventive Health Program is designed to help you take charge of your wellbeing through early detection, timely intervention, and ho.....</p>
+                            </div>
+                                                                                        <a href="javascript:void(0)" class="anchor-button read-more">Read More <span></span></a>
+                                                    </div>
+                        <div class="less-content">
+                            <div class="mb-10">
+                                <p>At Dr Saurav, we believe that good health begins with prevention. Our Preventive Health Program is designed to help you take charge of your wellbeing through early detection, timely intervention, and holistic care. We have reimagined the traditional health check from being a routine data-gathering exercise to a 360° comprehensive evaluation that combines medical expertise, advanced diagnostics, and a holistic focus on your wellbeing, ensuring you get a comprehensive roadmap for a healthier, longer life.</p>
+                            </div>
+                            <a href="javascript:void(0)" class="anchor-button read-less">Read Less <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-50 content-section" id="healthcheckup-section">
+        <div class="container">
+            <div class="section-head text-center wow fadeInUp">
+                <div class="heading mb-30 text-center">Choosing Dr Saurav for Preventive Health Checks</div>
+                <!-- <p class="para-wrap main-para wow fadeInUp">At Dr Saurav, we believe that good health begins with prevention. Our Preventive Health Program is designed to help you take charge of your wellbeing through early detection, timely intervention, and holistic care. We have reimagined the traditional health check from being a routine data-gathering exercise to a <strong>360° comprehensive evaluation</strong> that combines medical expertise, advanced diagnostics, and a holistic focus on your wellbeing, ensuring you get a <strong>comprehensive roadmap for a healthier, longer life.</strong></p>  -->
+                <div class="location-filter checkup-tabs-btn text-center mb-20">
+                    <button class="theme-button" type="button" id="healthcheckup-tab1">Key Benefits</button>
+                    <button class="theme-button button-outline" type="button" id="healthcheckup-tab2">Expert Insights</button>
+                    <button class="theme-button button-outline" type="button" id="healthcheckup-tab3">Health Check Journey</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-need-health-checkup-tabs">
+            <div class="checkup-tabs-content active" id="healthcheckup-tab1">
+                <div class="para-wrap main-para wow fadeInUp">
+                    At Dr Saurav, we understand that in today’s fast-paced world, your health deserves top priority. That’s why we offer customized health checks designed around your unique needs, conducted by our team of highly qualified and experienced medical professionals.
+                                    </div>
+                <div class="container-slider">
+                    <div id="sub-specialisations-slider"
+                        class="space-row1 slick-arrow-style-2 slider-tb-shadow eqslides-height wow fadeInUp"
+                        data-wow-delay=".5s">
+                                                                        <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/TwUCGu1H6Ztv1D7Nip2QZyi1G1RbCu-metaZGVkaWNhdGVkLnBuZw==-.png"
+                                        width="100" height="100" alt="Dedicated preventive health zone">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Dedicated preventive health zone
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/iX3vWiPtY9Tor0yjDKi0U6rmSBoBxX-metaZmxlLnBuZw==-.png"
+                                        width="100" height="100" alt="Flexible package customisation">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Flexible package customisation
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/ifwdBORDJiJ4BqkYfgBJQte5IENRyL-metaaGVhbHRoLWNoZWNrdXAucG5n-.png"
+                                        width="100" height="100" alt="Convenient slots">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Convenient slots
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/hYWHMf9C3wgA592BGmCtSFSXh9Bw1k-metaRnJlZS5wbmc=-.png"
+                                        width="100" height="100" alt="Free home sample collection">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Free home sample collection
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/VGlC9FsQCE1arNJQb4jXen8fPGRd8T-metaQ29tcGxpbWVudGFyeSBudXRyaXRpb3VzIG1lYWwucG5n-.png"
+                                        width="100" height="100" alt="Complimentary nutritious meal">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Complimentary nutritious meal
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/UKFEEJJyknw9BqezA1LQ16OnrKzHPB-metaUHJlIHNjcmVlbmluZyBndWlkYW5jZS5wbmc=-.png"
+                                        width="100" height="100" alt="Pre screening guidance">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Pre screening guidance
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/3AMekr3AsjqmSXzf1Is6Wu2UU7dQCt-metaU3BlY2lhbGlzdCBkb2N0b3IgY29uc3VsdGF0aW9ucy5wbmc=-.png"
+                                        width="100" height="100" alt="Specialist doctor consultations">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Specialist doctor consultations
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/4kmMyhmNd6zamYhjtTnhw2hNLD3Jac-metaQWR2YW5jZWQgZGlhZ25vc3RpYyB0ZXN0cy5zdmc=-.svg"
+                                        width="100" height="100" alt="Advanced diagnostic tests">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Advanced diagnostic tests
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/KTqLTsUAyDoD3fyhyG3GgtHHJh7VvO-metaTm8gZmFzdGluZyByZXF1aXJlZC5wbmc=-.png"
+                                        width="100" height="100" alt="No fasting required">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">No fasting required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/September2025/AqGXmaPCKvySVrBeUxCHw59zbmfCgG-metaUGVyc29uYWxpc2VkIGNhcmUgcGF0aHdheS5wbmc=-.png"
+                                        width="100" height="100" alt="Personalised care pathway">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Personalised care pathway
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/November2025/L1WoKPKACYlXw5lTm4IXwBXsb3aYaH-metac2VhbS5wbmc=-.png"
+                                        width="100" height="100" alt="Adult vaccination review">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Adult vaccination review
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="white-dots-card eqheight">
+                                <div class="icon">
+                                    <img loading="lazy" src="https://medanta.s3.ap-south-1.amazonaws.com/speciality-contents/November2025/u6wWlLQ34wZMBy8WSqd3rPv1rcFI7G-metaYWR1bHQucG5n-.png"
+                                        width="100" height="100" alt="Seamless post check facilitation">
+                                </div>
+                                <div class="card-caption text-center">
+                                    <div class="title font700">Seamless post check facilitation
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                                    </div>
+                </div>
+            </div>
+            <div class="checkup-tabs-content" id="healthcheckup-tab2">
+                <div class="para-wrap main-para">
+                    <p>Gain insights from Dr Saurav’s distinguished clinical experts, leveraging decades of experience to guide your preventive health journey with precision and care.</p>
+                    <p><strong>Hear it from the experts:</strong></p>
+                </div>
+                <div class="container-slider">
+                    <div id="videos-slider" class="space-row1 slick-arrow-style-2 slider-tb-shadow">
+                                                                        <div class="slide-item">
+                            <div class="video-card">
+                                <div class="video-thumb">
+                                    <div class="thumb-ratio thumb-ratio1">
+                                       
+                                                                                    <img loading="lazy" src="http://img.youtube.com/vi/oYfU37Qnxlg/hqdefault.jpg" width="514" height="400"  alt="Preventive checks for women’s health and wellness" style="object-fit:fill;">
+                                         
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=oYfU37Qnxlg" class="play-video">
+                                        <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                            alt="" width="48" height="48">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="video-card">
+                                <div class="video-thumb">
+                                    <div class="thumb-ratio thumb-ratio1">
+                                       
+                                                                                    <img loading="lazy" src="http://img.youtube.com/vi/HRNCVRcxyZU/hqdefault.jpg" width="514" height="400"  alt="Hearty lifestyle habits for healthy heart" style="object-fit:fill;">
+                                         
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=HRNCVRcxyZU" class="play-video">
+                                        <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                            alt="" width="48" height="48">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="video-card">
+                                <div class="video-thumb">
+                                    <div class="thumb-ratio thumb-ratio1">
+                                       
+                                                                                    <img loading="lazy" src="http://img.youtube.com/vi/RvfPKS_huiw/hqdefault.jpg" width="514" height="400"  alt="Stress Management Techniques for overall well-being" style="object-fit:fill;">
+                                         
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=RvfPKS_huiw" class="play-video">
+                                        <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                            alt="" width="48" height="48">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="video-card">
+                                <div class="video-thumb">
+                                    <div class="thumb-ratio thumb-ratio1">
+                                       
+                                                                                    <img loading="lazy" src="http://img.youtube.com/vi/oqdDhTtd4bQ/hqdefault.jpg" width="514" height="400"  alt="Preventive checks for women’s health and wellness" style="object-fit:fill;">
+                                         
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=oqdDhTtd4bQ" class="play-video">
+                                        <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                            alt="" width="48" height="48">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="slide-item">
+                            <div class="video-card">
+                                <div class="video-thumb">
+                                    <div class="thumb-ratio thumb-ratio1">
+                                       
+                                                                                    <img loading="lazy" src="http://img.youtube.com/vi/XBpYXW428F4/hqdefault.jpg" width="514" height="400"  alt="Video Thumbnail Alt (514*400)" style="object-fit:fill;">
+                                         
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=XBpYXW428F4" class="play-video">
+                                        <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                            alt="" width="48" height="48">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                                    </div>
+                </div>
+            </div>
+            <div class="checkup-tabs-content" id="healthcheckup-tab3">
+                <div class="para-wrap main-para">
+                    <p>Once you book a Health Checkup with us, our team ensures you get a hassle-free experience right from the moment you enter our facility so the entire process can be completed in the least possible time.&nbsp;</p>
+                    <p><strong></strong></p>
+                </div>
+                <div class="container">
+                    <div class="col-wrap dflex flexwrap wow fadeInUp">
+                        <div class="col col4">
+                            <div class="custom-tabs tab-style1">
+                                <ul>
+                                                                                                                        <li>
+                                                <a class="custom-tab medantaxxsheading font700 clr-dark active" href="#tab1">Experience a Wellness Journey<span class="icon"><svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                            <path d="M1.64062 1.77973L5.36063 5.49973L1.64062 9.21973" stroke="#454545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a class="custom-tab medantaxxsheading font700 clr-dark " href="#tab2">Steps of your journey<span class="icon"><svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                            <path d="M1.64062 1.77973L5.36063 5.49973L1.64062 9.21973" stroke="#454545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a class="custom-tab medantaxxsheading font700 clr-dark " href="#tab3">Continuum of Care<span class="icon"><svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                            <path d="M1.64062 1.77973L5.36063 5.49973L1.64062 9.21973" stroke="#454545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                        </div>
+                        <div class="col col8">
+                            <div class="custom-tab-content">
+                                                                                                        <div class="custom-tab-panel active" id="tab1">
+                                        <a href="#tab1" class="custom-tab tab-style1 medantaxxsheading font700 clr-dark active">
+                                            Experience a Wellness Journey
+                                            <!-- approach/February2024/4zLkVlOvWLTfjyD6nd71gixOqOqwPO-metaRUhDLmpwZw==-.jpg -->
+                                            <span class="icon"><svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                    <path d="M1.64062 1.77973L5.36063 5.49973L1.64062 9.21973" stroke="#454545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <div class="content alt">
+                                            <div class="col-wrap dflex flexwrap">
+                                                <div class="col col5">
+                                                    <!-- <ul> -->
+                                                                                                                                                                                    <!-- <li> -->
+                                                                    <div class="para-wrap font600">
+                                                                        <p><p>From Check-Up to Follow-Up, We’ve Got You Covered.</p><p class="MsoNormal">From the moment you step into the Dr Saurav ecosystem, our expert team of doctors and professionals is with you at every step. Our thoughtfully designed wellness program guides you through vital assessments, thorough health checkups, advanced diagnostics, and any necessary care—making your journey toward better health smooth, supportive, and truly personalized.</p></p>
+                                                                    </div>
+                                                                <!-- </li> -->
+                                                                                                                                                                        <!-- </ul> -->
+                                                </div>
+                                                <div class="col col7">
+                                                    <div class="img-wrap square-image">
+                                                                                                        <div class="video-wrap nooverlay">
+                                                        <div class="video">
+                                                            <div class="video-thumb default">
+                                                                <img loading="lazy"  src="https://medanta.s3.ap-south-1.amazonaws.com/approach/October2025/014VKhZhnmRHGJWYfBwHENY80lLSeN-metadmlkZW9faW1hZ2UuanBn-.jpg"  alt="Experience a Wellness Journey" width="514" height="400">
+                                                                <a href="https://www.youtube.com/watch?v=IwNMMRm0Sb8" class="play-video">
+                                                                    <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png" alt="play" width="48" height="48">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="custom-tab-panel " id="tab2">
+                                        <a href="#tab2" class="custom-tab tab-style1 medantaxxsheading font700 clr-dark ">
+                                            Steps of your journey
+                                            <!-- approach/February2024/2VjK3hf0GfihiIE0EtCkFrbuo8u0QC-metaRUhDLmpwZw==-.jpg -->
+                                            <span class="icon"><svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                    <path d="M1.64062 1.77973L5.36063 5.49973L1.64062 9.21973" stroke="#454545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <div class="content alt">
+                                            <div class="col-wrap dflex flexwrap">
+                                                <div class="col col5">
+                                                    <!-- <ul> -->
+                                                                                                                                                                                    <!-- <li> -->
+                                                                    <div class="para-wrap font600">
+                                                                        <p><p><strong>Your Preventive Health Journey – Simple &amp; Personalised</strong></p><ul><li><p><strong>Book &amp; Register</strong> – Quick online/phone booking, seamless check-in</p></li><li><p><strong>Pre-Assessment</strong> – Medical history, lifestyle review, vitals</p></li><li><p><strong>Screening &amp; Tests</strong> – Advanced labs, imaging, diagnostics</p></li><li><p><strong>Specialist Consults</strong> – Expert guidance across key specialities</p></li><li><p><strong>Report &amp; Insights</strong> – Clear explanation of results, risk factors</p></li><li><p><strong>Personalised Health Plan</strong> – Tailored lifestyle, diet &amp; fitness roadmap</p></li></ul></p>
+                                                                    </div>
+                                                                <!-- </li> -->
+                                                                                                                                                                        <!-- </ul> -->
+                                                </div>
+                                                <div class="col col7">
+                                                    <div class="img-wrap square-image">
+                                                                                                        <div class="video-wrap nooverlay">
+                                                        <div class="video">
+                                                            <div class="video-thumb default">
+                                                                <img loading="lazy"  src="https://medanta.s3.ap-south-1.amazonaws.com/approach/October2025/N56IPgDGJUGramtaO6KEm5LB1MFyzN-metadmlkZW9faW1hZ2UuanBn-.jpg"  alt="Steps of your journey" width="514" height="400">
+                                                                <a href="https://www.youtube.com/watch?v=IwNMMRm0Sb8" class="play-video">
+                                                                    <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png" alt="play" width="48" height="48">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="custom-tab-panel " id="tab3">
+                                        <a href="#tab3" class="custom-tab tab-style1 medantaxxsheading font700 clr-dark ">
+                                            Continuum of Care
+                                            <!--  -->
+                                            <span class="icon"><svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                    <path d="M1.64062 1.77973L5.36063 5.49973L1.64062 9.21973" stroke="#454545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <div class="content alt">
+                                            <div class="col-wrap dflex flexwrap">
+                                                <div class="col col5">
+                                                    <!-- <ul> -->
+                                                                                                                                                                                    <!-- <li> -->
+                                                                    <div class="para-wrap font600">
+                                                                        <p><p><strong>At Dr Saurav, your preventive health journey doesn’t end with a checkup—it begins there.</strong><br>We ensure ongoing support to keep you proactive, informed, and healthy.</p><ol><li><p><strong>Follow-Up &amp; Monitoring</strong><br>• Regular check-ins to track progress<br>• Timely reminders for re-tests and milestones</p></li><li><p><strong>Long-Term Wellness Support</strong><br>• Access to preventive programs and expert guidance<br>• Continuous engagement to manage and reduce risks</p></li></ol></p>
+                                                                    </div>
+                                                                <!-- </li> -->
+                                                                                                                                                                        <!-- </ul> -->
+                                                </div>
+                                                <div class="col col7">
+                                                    <div class="img-wrap square-image">
+                                                                                                        <div class="video-wrap nooverlay">
+                                                        <div class="video">
+                                                            <div class="video-thumb default">
+                                                                <img loading="lazy"  src="https://medanta.s3.ap-south-1.amazonaws.com/approach/February2024/WAN0EgLQIMToZBI2DJyGHs4QIm0uwj-metaRUhDLmpwZw==-.jpg"  alt="Continuum of Care" width="514" height="400">
+                                                                <a href="https://www.youtube.com/watch?v=IwNMMRm0Sb8" class="play-video">
+                                                                    <img loading="lazy" src="https://www.medanta.org/assets/images/icons/play-icon.png" alt="play" width="48" height="48">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <section class="py-50 content-section" id="faq-section">
+            <div wire:id="bmnj9PEk39X8Ypl4xlyf" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;bmnj9PEk39X8Ypl4xlyf&quot;,&quot;name&quot;:&quot;faqs&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;healthcheckup\/gurugram-hospital&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;fec57e25&quot;,&quot;data&quot;:{&quot;show&quot;:false,&quot;faqs&quot;:[],&quot;type&quot;:&quot;health-checkup&quot;},&quot;dataMeta&quot;:{&quot;modelCollections&quot;:{&quot;faqs&quot;:{&quot;class&quot;:&quot;App\\Models\\Faq&quot;,&quot;id&quot;:[13,14,15,16,17,72],&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;1360125eceecbac4ef1b0364a427071d75d2caec9e5e802d5e4a55d6b7420c10&quot;}}" class="container">
+            <div class="heading text-center mb-40 wow fadeInUp">FAQ’s</div>
+        <div class="col-wrap space-lg dflex flexwrap wow fadeInUp" data-wow-delay=".3s">
+        <div class="col col6">
+                                                            <div class="faq-wrap ">
+                        <div class="faq-title"> What are the things to do before a health check-up?<div class="icon"><span class="icon-default"><svg
+                                        width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M0.999999 13L7 7L1 1" stroke="#454545" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span><span class="icon-expanded"><svg width="14" height="8" viewBox="0 0 14 8"
+                                        fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M1 0.999999L7 7L13 1" stroke="#58595B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>Make sure you have not eaten anything for 10-12 hours prior to your check-up. Get sufficient rest before the health check. Avoid fatty meals, alcohol and smoking 24 hours prior to your health check. Please refer to the section on detailed guidelines under package details.</p>
+                        </div>
+                    </div>
+                                                                                                                <div class="faq-wrap ">
+                        <div class="faq-title"> Who requires a health check-up?<div class="icon"><span class="icon-default"><svg
+                                        width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M0.999999 13L7 7L1 1" stroke="#454545" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span><span class="icon-expanded"><svg width="14" height="8" viewBox="0 0 14 8"
+                                        fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M1 0.999999L7 7L13 1" stroke="#58595B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>Everyone needs a health check-up, no matter how healthy an individual is. The most common causes of premature death in the world are due to heart, lung, bowel, kidney disease and cancer. Early detection is an important form of disease prevention. Getting a check-up periodically is a good step to staying healthy always. It is recommended to have a health check-up at an early age for those with a family history of diabetes, high blood pressure, cholesterol or heart disease and also for individuals who have a smoking habit or with any of the health risk behaviours.</p>
+                        </div>
+                    </div>
+                                                                                                                <div class="faq-wrap ">
+                        <div class="faq-title"> What is the health check-up about?<div class="icon"><span class="icon-default"><svg
+                                        width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M0.999999 13L7 7L1 1" stroke="#454545" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span><span class="icon-expanded"><svg width="14" height="8" viewBox="0 0 14 8"
+                                        fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M1 0.999999L7 7L13 1" stroke="#58595B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>A health check-up allows you to “know your numbers”. Your blood pressure, cholesterol, blood sugar and body mass index are important markers of your overall health that indicate a healthier life. The Key Health Indicators are checked and any deviations will be observed carefully by our physicians and necessary advice would be provided to improve these.</p>
+                        </div>
+                    </div>
+                                                                                    </div>
+        <div class="col col6">
+                                                                            <div class="faq-wrap ">
+                        <div class="faq-title"> How frequently is a health check-up required?<div class="icon"><span class="icon-default"><svg
+                                        width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M0.999999 13L7 7L1 1" stroke="#454545" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span><span class="icon-expanded"><svg width="14" height="8" viewBox="0 0 14 8"
+                                        fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M1 0.999999L7 7L13 1" stroke="#58595B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>The interval is specific to an individual depending on their health status. The general classification would be that beyond the age of 40 an individual must undergo bi-annual health check-ups and below the age of 40, they must undergo annual check-ups.&nbsp;</p>
+                        </div>
+                    </div>
+                                                                                                                <div class="faq-wrap ">
+                        <div class="faq-title"> How is the health check-up conducted?<div class="icon"><span class="icon-default"><svg
+                                        width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M0.999999 13L7 7L1 1" stroke="#454545" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span><span class="icon-expanded"><svg width="14" height="8" viewBox="0 0 14 8"
+                                        fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M1 0.999999L7 7L13 1" stroke="#58595B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>We carry all the assessments in a peaceful and welcoming atmosphere at our dedicated space for health check-ups. A health check team will help you through the stages of the health check-up so that you can navigate easily through the check-up.<br>&nbsp;You will be initially subjected to the definitive investigations depending upon the package you select. Later, when the results are examined by a qualified doctor, suitable medical advice is given &amp; necessary steps to improve your health can be taken. Reports are reviewed by the doctor and you would be requested to come for your post health check consultations after 2 days. If there are any specified tests that require more time, you will be notified.</p>
+                        </div>
+                    </div>
+                                                                                                                <div class="faq-wrap ">
+                        <div class="faq-title"> Why do I need a health check-up?<div class="icon"><span class="icon-default"><svg
+                                        width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M0.999999 13L7 7L1 1" stroke="#454545" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span><span class="icon-expanded"><svg width="14" height="8" viewBox="0 0 14 8"
+                                        fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M1 0.999999L7 7L13 1" stroke="#58595B" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span></div>
+                        </div>
+                        <div class="faq-content">
+                            <p>Regular medical check-ups are important to verify that you are in a normal state of health and to detect any medical issues before they crop up. They are also important in treating diseases/disorders in their early stages greatly improving chances of complete cure. This leads to a happier, healthier and longer life. They are a form of Preventive Health Initiatives or preventive health check-ups.</p>
+                        </div>
+                    </div>
+                                                        </div>
+    </div>
+                    
+            <script type="application/ld+json">
+                {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What are the things to do before a health check-up?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Make sure you have not eaten anything for 10-12 hours prior to your check-up. Get sufficient rest before the health check. Avoid fatty meals, alcohol and smoking 24 hours prior to your health check. Please refer to the section on detailed guidelines under package details."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How frequently is a health check-up required?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The interval is specific to an individual depending on their health status. The general classification would be that beyond the age of 40 an individual must undergo bi-annual health check-ups and below the age of 40, they must undergo annual check-ups. "
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Who requires a health check-up?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Everyone needs a health check-up, no matter how healthy an individual is. The most common causes of premature death in the world are due to heart, lung, bowel, kidney disease and cancer. Early detection is an important form of disease prevention. Getting a check-up periodically is a good step to staying healthy always. It is recommended to have a health check-up at an early age for those with a family history of diabetes, high blood pressure, cholesterol or heart disease and also for individuals who have a smoking habit or with any of the health risk behaviours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is the health check-up conducted?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We carry all the assessments in a peaceful and welcoming atmosphere at our dedicated space for health check-ups. A health check team will help you through the stages of the health check-up so that you can navigate easily through the check-up. You will be initially subjected to the definitive investigations depending upon the package you select. Later, when the results are examined by a qualified doctor, suitable medical advice is given & necessary steps to improve your health can be taken. Reports are reviewed by the doctor and you would be requested to come for your post health check consultations after 2 days. If there are any specified tests that require more time, you will be notified."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the health check-up about?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A health check-up allows you to “know your numbers”. Your blood pressure, cholesterol, blood sugar and body mass index are important markers of your overall health that indicate a healthier life. The Key Health Indicators are checked and any deviations will be observed carefully by our physicians and necessary advice would be provided to improve these."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why do I need a health check-up?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Regular medical check-ups are important to verify that you are in a normal state of health and to detect any medical issues before they crop up. They are also important in treating diseases/disorders in their early stages greatly improving chances of complete cure. This leads to a happier, healthier and longer life. They are a form of Preventive Health Initiatives or preventive health check-ups."
+            }
+        }
+    ]
+}
+            </script>
+        
+
+</div>
+
+<!-- Livewire Component wire-end:bmnj9PEk39X8Ypl4xlyf -->        </section>
+    
+          
+        <div wire:id="y1WJmM3pEGPN5rsN32vq" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;y1WJmM3pEGPN5rsN32vq&quot;,&quot;name&quot;:&quot;login&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;healthcheckup\/gurugram-hospital&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;getDob&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;d937c7df&quot;,&quot;data&quot;:{&quot;mobile_no&quot;:null,&quot;otp&quot;:null,&quot;getUserId&quot;:null,&quot;otp1&quot;:null,&quot;otp2&quot;:null,&quot;otp3&quot;:null,&quot;otp4&quot;:null,&quot;otp5&quot;:null,&quot;otp6&quot;:null,&quot;show&quot;:false,&quot;verify_otp&quot;:null,&quot;genders&quot;:[&quot;Male&quot;,&quot;Female&quot;,&quot;Other&quot;],&quot;temp_user&quot;:null,&quot;temp_mobile_no&quot;:null,&quot;relationships&quot;:[&quot;Brother&quot;,&quot;Sister&quot;,&quot;Mother&quot;,&quot;Father&quot;,&quot;Spouse&quot;,&quot;Daughter&quot;,&quot;Son&quot;,&quot;Uncle&quot;,&quot;Aunt&quot;,&quot;Others&quot;],&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;full_name&quot;:null,&quot;dob&quot;:null,&quot;relationship&quot;:null,&quot;gender&quot;:null,&quot;age&quot;:null,&quot;email&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;629a2617ff2c083f49af233eb7d4144793d66a1d89d3ba23c8b2b73d7238214b&quot;}}">
+    <style>
+        .login-otp-alert{
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+        .ui-datepicker-today .ui-state-highlight {
+            border: 1px solid #c5c5c5;
+            background: #f6f6f6;
+        }
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+            border: none;
+            background-color: var(--primary);
+        }
+.phone-prefix .prefix-txt{font-size: 12px;}
+    </style>
+            <div wire:ignore.self class="modal auth-modal" id="signInModal">
+            <div class="close close-model-layer" data-close="modal"></div>
+            <div class="modal__dialog">
+                <a class="close close-modal" data-close="modal" id="loginCloseModal"></a>
+                <div class="modal__content">
+                    <div class="modal-body">
+                        <div class="heading-group">
+                            <div class="heading heading-md font700 mb-10">Sign In</div>
+                            <div class="para-wrap">
+                                <p>to Health Checkup</p>
+                            </div>
+                        </div>
+                        <div class="frm-holder">
+                            <form>
+                                <div class="field">
+                                <div class="phone-prefix">
+                                        <span class="prefix-txt">+91</span>
+                                        <input type="text" class="inputbox" wire:model.lazy="mobile_no" placeholder="Phone Number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+                                    </div>
+                                                                    </div>
+                                <button wire:click="generate" type="button" class="theme-button" id="sendOtp">Get OTP</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div wire:ignore.self class="modal-bgimage">
+                        <img src="https://www.medanta.org/assets/images/blog-thumb-1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <!-- <button type="button" hidden="hidden" class="edit-member-detail" data-toggle="modal" data-target="#addMemberModal">Edit Member Detail</button> -->
+            <script>
+            window.addEventListener('closeModalUI', event => {
+                var $closeModal = document.querySelector('#loginCloseModal');
+                $closeModal.click();
+                window.location.reload();
+            })
+            window.addEventListener('getMember', event => {
+                document.querySelector('.edit-member-detail').click();
+            })
+            window.addEventListener('getMemberList', event => {
+                // Add class to element by ID
+                $("#signInModal").addClass("style1");
+                // Remove class from element by ID
+                $("#signInModal").removeClass("auth-modal");
+                var today = new Date();
+                var eighteenYearsAgo = new Date();
+                eighteenYearsAgo.setFullYear(today.getFullYear() - 18);
+                $('.dob').datepicker({
+                    dateFormat: "yy-mm-dd",
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '1900:' + eighteenYearsAgo.getFullYear(),
+                    maxDate: eighteenYearsAgo,
+                    onSelect: function(dateText) {
+                        Livewire.emit('getDob', dateText);
+                        console.log("Selected date: " + dateText + "; input's current value: " + this.value);
+                    }
+                });
+            });
+            window.addEventListener('closeMemberModalUI', event => {
+                var $closeModal = document.getElementById('loginMemberCloseModal');
+                $closeModal.click();
+                window.location.reload();
+            })
+        </script>
+
+</div>
+
+<!-- Livewire Component wire-end:y1WJmM3pEGPN5rsN32vq -->
+    
+    
+
+
+ {{footer}}
+
+  <div class="mobile-sticky-links">
+    <ul>
+      <li>
+        <a class="toggle-menu" href="#">
+          <div class="icon open-icon">
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="https://www.w3.org/2000/svg">
+              <path d="M1 7H19" stroke="#F04E30" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1H19" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 13H19" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="icon close-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="https://www.w3.org/2000/svg">
+              <path
+                d="M20.9615 2.86865L20.9614 2.86858L20.9531 2.87687L13.2675 10.5892L12.8105 11.0479L13.2674 11.5067L20.9416 19.2127C21.1616 19.4534 21.2816 19.7701 21.2758 20.0977C21.27 20.4286 21.1363 20.7439 20.9036 20.9773C20.671 21.2107 20.3576 21.344 20.0295 21.3498C19.7049 21.3555 19.3902 21.236 19.1505 21.0156L11.4713 13.3097L11.0111 12.8479L10.5507 13.3095L2.86624 21.0129C2.62651 21.2334 2.31181 21.353 1.98711 21.3472C1.65903 21.3414 1.3456 21.2081 1.11297 20.9748C0.880274 20.7413 0.74663 20.426 0.74081 20.0951C0.73505 19.7676 0.854928 19.4509 1.07487 19.2103L8.75412 11.5069L9.21135 11.0482L8.75435 10.5893L1.07129 2.87446L1.06309 2.86622L1.05459 2.85828C0.929846 2.74168 0.829673 2.60095 0.760152 2.44443C0.690629 2.28791 0.653214 2.11886 0.650198 1.9474C0.647182 1.77593 0.678629 1.60566 0.742613 1.44675C0.806593 1.28785 0.901769 1.14365 1.02236 1.02268C1.14294 0.901719 1.28646 0.806474 1.4443 0.742521C1.60213 0.678569 1.77112 0.647188 1.94119 0.650198C2.11127 0.653208 2.27906 0.69055 2.43457 0.760057C2.59008 0.829565 2.73018 0.929844 2.84645 1.05502L2.85426 1.06342L2.86235 1.07154L10.5505 8.78386L11.0108 9.24557L11.4711 8.78394L19.1619 1.07162L19.1619 1.07169L19.1696 1.0637C19.2868 0.94208 19.4269 0.845209 19.5816 0.778636C19.7363 0.712065 19.9026 0.677094 20.0708 0.675708C20.2389 0.674322 20.4058 0.706548 20.5615 0.770556C20.7173 0.834568 20.8589 0.929111 20.9781 1.04877C21.0972 1.16843 21.1916 1.31082 21.2555 1.46768C21.3194 1.62454 21.3515 1.79267 21.3499 1.96223C21.3484 2.13179 21.3132 2.29929 21.2465 2.45494C21.1797 2.61059 21.0828 2.75121 20.9615 2.86865Z"
+                fill="#F04E30" stroke="white" stroke-width="1.3" />
+            </svg>
+          </div>
+          Menu
+        </a>
+      </li>
+      <li>
+        <a href="/doctor-listing">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="https://www.w3.org/2000/svg">
+              <path
+                d="M3.83862 11.6841C6.07056 13.8948 8.80637 15.307 8.80637 15.307C8.80637 15.307 16.6128 11.2796 16.6128 6.17702C16.6128 3.72154 14.7322 1.70605 12.408 1.70605"
+                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.20484 1.70972C2.88065 1.70972 1 3.7252 1 6.18068C1 7.50068 1.52161 8.74617 2.29516 9.87101"
+                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M6.32257 3.12903C6.91049 3.12903 7.38709 2.65243 7.38709 2.06452C7.38709 1.4766 6.91049 1 6.32257 1C5.73466 1 5.25806 1.4766 5.25806 2.06452C5.25806 2.65243 5.73466 3.12903 6.32257 3.12903Z"
+                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M11.2903 3.12903C11.8783 3.12903 12.3549 2.65243 12.3549 2.06452C12.3549 1.4766 11.8783 1 11.2903 1C10.7024 1 10.2258 1.4766 10.2258 2.06452C10.2258 2.65243 10.7024 3.12903 11.2903 3.12903Z"
+                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M19.8064 16.9677V17.5C19.8064 20.5232 17.3296 23 14.3064 23C11.2832 23 8.8064 20.5232 8.8064 17.5V15.5483"
+                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M18.387 18.05C17.3367 17.5284 16.6128 16.4461 16.6128 15.1935C16.6128 13.43 18.0428 12 19.8063 12C21.5699 12 22.9999 13.43 22.9999 15.1935C22.9999 16.4461 22.276 17.5284 21.2257 18.05"
+                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M19.8066 16.613C20.5904 16.613 21.2259 15.9775 21.2259 15.1936C21.2259 14.4098 20.5904 13.7743 19.8066 13.7743C19.0227 13.7743 18.3872 14.4098 18.3872 15.1936C18.3872 15.9775 19.0227 16.613 19.8066 16.613Z"
+                fill="#F04E30" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 9.87098H4.19355L5.25806 8.09679L7.03226 11.6452L9.16129 5.61292L10.9355 9.87098H12.7097"
+                stroke="#58595B" stroke-linecap="square" stroke-linejoin="round" />
+            </svg>
+          </div>
+          Doctors
+        </a>
+      </li>
+      <li>
+        <a href="https://www.medantaeclinic.org/">
+          <div class="icon"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+              xmlns="https://www.w3.org/2000/svg">
+              <path
+                d="M17.7283 12.0005C16.3305 12.0005 14.9898 12.58 14.0013 13.6114C13.0129 14.6429 12.4575 16.0419 12.4575 17.5005C12.4575 18.9591 13.0129 20.358 14.0013 21.3895C14.9898 22.4209 16.3305 23.0004 17.7283 23.0004C19.1262 23.0004 20.4669 22.4209 21.4554 21.3895C22.4438 20.358 22.9992 18.9591 22.9992 17.5005C22.9992 16.0419 22.4438 14.6429 21.4554 13.6114C20.4669 12.58 19.1262 12.0005 17.7283 12.0005ZM17.7283 22.0004C16.5845 22.0004 15.4877 21.5264 14.6789 20.6825C13.8701 19.8386 13.4159 18.694 13.4159 17.5005C13.4159 16.3069 13.8701 15.1624 14.6789 14.3184C15.4876 13.4745 16.5845 13.0005 17.7283 13.0005C18.8722 13.0005 19.969 13.4745 20.7778 14.3184C21.5866 15.1623 22.0408 16.3069 22.0408 17.5005C22.0408 18.694 21.5866 19.8385 20.7778 20.6825C19.9691 21.5264 18.8722 22.0004 17.7283 22.0004Z"
+                fill="#58595B" />
+              <path
+                d="M19.2531 15.7596L16.9292 18.1795L16.2055 17.4244V17.4246C16.1157 17.3299 15.9931 17.2767 15.8654 17.2767C15.7376 17.2767 15.6152 17.3299 15.5251 17.4246C15.3393 17.6195 15.3393 17.9345 15.5251 18.1297L16.5937 19.2396C16.7805 19.4334 17.0824 19.4334 17.2693 19.2396L19.9335 16.4646C20.1201 16.2685 20.119 15.9517 19.9311 15.757C19.7432 15.5625 19.4397 15.5635 19.2532 15.7596L19.2531 15.7596Z"
+                fill="#58595B" />
+              <path
+                d="M11.1789 20H1.91665C1.66246 20 1.41874 19.8948 1.23906 19.7071C1.05918 19.5196 0.958295 19.2653 0.958295 19V8.00007H14.8541C15.1188 8.00007 15.3333 7.77624 15.3333 7.50007C15.3333 7.2239 15.1188 7.00007 14.8541 7.00007H0.958295V4.00009C0.958295 3.73486 1.05918 3.48054 1.23906 3.29304C1.41874 3.10535 1.66244 3.00007 1.91665 3.00007H4.0729V3.50007C4.0729 3.89792 4.22432 4.27937 4.49385 4.56082C4.76357 4.84206 5.12913 5.00007 5.5104 5.00007H5.98957C6.37084 5.00007 6.7364 4.84206 7.00612 4.56082C7.27565 4.27937 7.42708 3.89792 7.42708 3.50007V3.00007H13.6562V3.50007C13.6562 3.89792 13.8077 4.27937 14.0772 4.56082C14.3469 4.84206 14.7125 5.00007 15.0938 5.00007H15.5729C15.9542 5.00007 16.3197 4.84206 16.5895 4.56082C16.859 4.27937 17.0104 3.89792 17.0104 3.50007V3.00007H19.1667C19.4209 3.00007 19.6646 3.10535 19.8443 3.29304C20.0241 3.48054 20.125 3.73484 20.125 4.00009V7.00007H17.9783C17.7136 7.00007 17.4991 7.2239 17.4991 7.50007C17.4991 7.77624 17.7136 8.00007 17.9783 8.00007H20.125V10.97C20.125 11.2461 20.3395 11.4699 20.6042 11.4699C20.8689 11.4699 21.0834 11.2461 21.0834 10.97V3.99999C21.0834 3.46954 20.8814 2.96094 20.522 2.58575C20.1625 2.21075 19.675 2 19.1667 2H17.0104V1.5C17.0104 1.10215 16.859 0.720706 16.5895 0.439258C16.3198 0.158009 15.9542 0 15.5729 0H15.0938C14.7125 0 14.3469 0.158009 14.0772 0.439258C13.8077 0.720701 13.6563 1.10215 13.6563 1.5V2H7.4271V1.5C7.4271 1.10215 7.27567 0.720706 7.00614 0.439258C6.73642 0.158009 6.37086 0 5.98959 0H5.51042C5.12915 0 4.76359 0.158009 4.49387 0.439258C4.22434 0.720701 4.07291 1.10215 4.07291 1.5V2H1.91667C1.40832 2 0.92091 2.21074 0.561344 2.58575C0.201969 2.96094 0 3.46954 0 3.99999V18.9999C0 19.5304 0.201959 20.039 0.561344 20.4142C0.920905 20.7892 1.40832 20.9999 1.91667 20.9999H11.179C11.4436 20.9999 11.6581 20.7761 11.6581 20.4999C11.6581 20.2237 11.4436 20 11.1789 20ZM14.6145 1.50012C14.6145 1.22395 14.829 1.00012 15.0937 1.00012H15.5728C15.6999 1.00012 15.8218 1.05286 15.9116 1.14661C16.0015 1.24036 16.052 1.36751 16.052 1.50012V3.50011C16.052 3.63273 16.0015 3.75988 15.9116 3.85362C15.8218 3.94737 15.6999 4.00011 15.5728 4.00011H15.0937C14.829 4.00011 14.6145 3.77628 14.6145 3.50011V1.50012ZM5.03118 1.50012C5.03118 1.22395 5.24568 1.00012 5.51035 1.00012H5.98951C6.1166 1.00012 6.23845 1.05286 6.3283 1.14661C6.41814 1.24036 6.46868 1.36751 6.46868 1.50012V3.50011C6.46868 3.63273 6.41814 3.75988 6.3283 3.85362C6.23845 3.94737 6.1166 4.00011 5.98951 4.00011H5.51035C5.24568 4.00011 5.03118 3.77628 5.03118 3.50011V1.50012Z"
+                fill="#58595B" />
+              <path
+                d="M11.4992 11.0007C11.4992 11.5531 11.0702 12.0007 10.5409 12.0007C10.0115 12.0007 9.58252 11.5531 9.58252 11.0007C9.58252 10.4484 10.0115 10.0007 10.5409 10.0007C11.0702 10.0007 11.4992 10.4484 11.4992 11.0007Z"
+                fill="#F04E30" />
+              <path
+                d="M5.75187 11.0007C5.75187 11.5531 5.32287 12.0007 4.79354 12.0007C4.26421 12.0007 3.83521 11.5531 3.83521 11.0007C3.83521 10.4484 4.26421 10.0007 4.79354 10.0007C5.32287 10.0007 5.75187 10.4484 5.75187 11.0007Z"
+                fill="#F04E30" />
+              <path
+                d="M5.75187 16.4995C5.75187 17.0519 5.32287 17.4995 4.79354 17.4995C4.26421 17.4995 3.83521 17.0518 3.83521 16.4995C3.83521 15.9472 4.26421 15.4995 4.79354 15.4995C5.32287 15.4995 5.75187 15.9472 5.75187 16.4995Z"
+                fill="#F04E30" />
+            </svg>
+
+          </div>
+          Book Apt.
+        </a>
+      </li>
+                    <li class="chat isdisabled">
+          <a href="javascript:void(0)" onclick="chatHandler()">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
+              <path d="M18.8333 13.2222C18.8333 13.7625 18.6187 14.2806 18.2367 14.6626C17.8547 15.0446 17.3366 15.2593 16.7963 15.2593H4.57407L0.5 19.3333V3.03704C0.5 2.49678 0.714616 1.97865 1.09663 1.59663C1.47865 1.21462 1.99678 1 2.53704 1H16.7963C17.3366 1 17.8547 1.21462 18.2367 1.59663C18.6187 1.97865 18.8333 2.49678 18.8333 3.03704V13.2222Z" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>    </div>
+            Chat
+          </a>
+        </li>
+        <li>
+            <a data-toggle="modal" data-target="#Marmosetloadmodal" href="javascript:void(0);">
+              <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               xmlns="https://www.w3.org/2000/svg">
+               <path
+               d="M21.9468 17.7355V20.8892C21.948 21.182 21.8879 21.4717 21.7704 21.74C21.6529 22.0082 21.4805 22.249 21.2644 22.4469C21.0482 22.6449 20.793 22.7956 20.5152 22.8893C20.2373 22.9831 19.9429 23.018 19.6507 22.9916C16.4098 22.6401 13.2966 21.5348 10.5613 19.7644C8.01656 18.1504 5.85903 15.997 4.24197 13.4571C2.46198 10.7147 1.35426 7.59233 1.00855 4.34302C0.982229 4.05233 1.01684 3.75935 1.11019 3.48273C1.20353 3.20612 1.35356 2.95194 1.55072 2.73637C1.74788 2.5208 1.98785 2.34856 2.25535 2.23063C2.52286 2.11269 2.81204 2.05165 3.10448 2.05137H6.26417C6.77531 2.04635 7.27084 2.22701 7.65839 2.55967C8.04595 2.89233 8.29909 3.3543 8.37063 3.85947C8.50399 4.8687 8.75132 5.85964 9.10789 6.81339C9.2496 7.18964 9.28026 7.59856 9.19626 7.99167C9.11226 8.38479 8.91711 8.74564 8.63394 9.03145L7.29633 10.3665C8.79567 12.9983 10.9789 15.1773 13.6157 16.6738L14.9533 15.3388C15.2397 15.0561 15.6012 14.8613 15.9951 14.7775C16.389 14.6937 16.7987 14.7243 17.1756 14.8657C18.1312 15.2216 19.124 15.4685 20.1352 15.6016C20.6468 15.6736 21.1141 15.9308 21.4481 16.3243C21.7821 16.7177 21.9596 17.22 21.9468 17.7355Z"
+               stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+               <path
+               d="M14.6267 5.20487C15.6554 5.40519 16.6009 5.90735 17.342 6.64707C18.0831 7.38679 18.5863 8.33042 18.787 9.35718M14.6267 1C16.764 1.23698 18.757 2.19226 20.2786 3.70899C21.8001 5.22573 22.7598 7.21376 22.9999 9.34667"
+               stroke="#F04E30" stroke-linecap="round" stroke-linejoin="round" />
+             </svg>
+           </div>
+           CallBack
+         </a>
+       </li>
+          </ul>
+  </div>
+
+  <!-- footer-special -->
+  <div wire:ignore.self class="modal" id="deleteMemberModal">
+    <div class="close close-model-layer" data-close="modal"></div>
+    <div class="modal__dialog">
+      <a class="close close-modal" data-close="modal" id="closeModal"></a>
+      <div class="modal__content">
+        <div class="modal-body">
+          <div class="action-button dflex centered-items">
+            <img src="https://www.medanta.org/assets/images/new_disclaimer.jpg" alt="Back to top" width="600" height="600">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="backtotop">
+    <span id="backtotop-value"><img src="https://www.medanta.org/assets/images/icons/upwards-arrow.png" alt="Back to top" width="50" height="50"></span>
+  </div>
+
+  <script src="/wp-content/uploads/assets/js/jquery.min.js"></script>
+  <script src="/wp-content/uploads/assets/js/jquery-ui.js"></script>
+  <script src="/wp-content/uploads/assets/js/slick.min.js"></script>
+  <script src="/wp-content/uploads/assets/js/wow.min.js"></script>
+  <script src="/wp-content/uploads/assets/js/jquery.magnific-popup.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script> -->
+  <script src="/wp-content/uploads/assets/js/custom.js?v=2.2"></script>
+ 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let url = window.location.href;
+
+        // Pages that should allow "/hi/"
+        let allowedHiPages = [
+            "https://medanta-uat.lyxelandflamingotech.in/hi/patient-education"
+        ];
+
+        // If current URL starts with "/hi/" but is not in allowed list → remove it
+        if (url.includes("/hi/") && !allowedHiPages.includes(url)) {
+            let newUrl = url.replace("/hi/", "/");
+            window.location.href = newUrl;
+        }
+
+        // If current URL is allowed hi page → do nothing
+    });
+  </script>
+
+  <!-- cookies js -->
+  <script>
+
+    $(document).ready(function() {
+      $('.cookies').hide();
+
+      function checkCookieConsent() {
+        return document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
+      }
+
+      // Show the popup if no consent cookie is found
+      if (!checkCookieConsent()) {
+        $('.cookies').show();
+      }
+    });
+    // Handle Accept button click
+    $('#acceptCookies').on('click', function() {
+        document.cookie = "cookieConsent=accepted; path=/; max-age=" + (60 * 60 * 24); // 1 day
+        $.ajax({
+          url: '/api/cookie-consent',
+          method: 'POST',
+          data: {
+            consent: 1,
+            _token: "5dYINsZpZ05CtXhtepG45r4WKhvKsckzD9JRpeXl" // Include CSRF token
+          },
+          success: function(response) {
+            $('.cookies').hide();
+          },
+          error: function(xhr) {
+            console.error('Failed to save consent:', xhr.responseText);
+          }
+        });
+      });
+      // Handle Reject button click
+    $('#rejectCookies').on('click', function() {
+        document.cookie = "cookieConsent=rejected; path=/; max-age=" + (60 * 60 * 24); // 1 day
+        $.ajax({
+          url: '/api/cookie-consent',
+          method: 'POST',
+          data: {
+            consent: 0,
+            _token: "5dYINsZpZ05CtXhtepG45r4WKhvKsckzD9JRpeXl" // Include CSRF token
+          },
+          success: function(response) {
+            $('.cookies').hide();
+          },
+          error: function(xhr) {
+            console.error('Failed to save consent:', xhr.responseText);
+          }
+        });
+      });
+
+  </script>
+  <!-- Sitelink search box schema-->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Dr Saurav",
+      "url": "https://www.medanta.org/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.medanta.org/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!--- Medical Organisation -->
+
+  <script type="application/ld+json" class="schemantra.com">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "@id": "Dr Saurav Hospital"
+    }
+  </script>
+
+      <script>
+        $(document).ready(function () {
+            $('#videos-slider').slick({
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            $('.checkup-tabs-btn .theme-button').click(function () {
+                var id = $(this).attr('id');
+                $('.checkup-tabs-btn .theme-button').addClass('button-outline');
+                $(this).removeClass('button-outline');
+                $('.checkup-tabs-content.active').removeClass('active');
+                $('.checkup-tabs-content#' + id).addClass('active');
+                $('#videos-slider, #sub-specialisations-slider').slick('refresh');
+            });
+            $('.download-slider').slick({
+                speed: 300,
+                slidesToShow: 4,
+                arrows: true,
+                slidesToScroll: 1,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows:false
+                        }
+                    }
+                ]
+            });
+        });
+
+    </script>
+  
+  <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = '5dYINsZpZ05CtXhtepG45r4WKhvKsckzD9JRpeXl';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+</body>
+
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- Add contact page specific JavaScript here -->
+{% endblock %}
