@@ -6,7 +6,26 @@ def home(request):
     """
     Main homepage view
     """
-    return render(request, 'base/index.html')
+    from .models import Service
+    
+    # Fetch services that should be displayed in the specialities section
+    services = Service.objects.filter(
+        is_active=True,
+        show_in_specialities=True
+    ).order_by('specialities_order')
+    
+    # Fetch services for Model of Care section
+    model_of_care_services = Service.objects.filter(
+        is_active=True,
+        show_in_model_of_care=True
+    ).order_by('model_of_care_order')
+    
+    context = {
+        'services': services,
+        'model_of_care_services': model_of_care_services,
+    }
+    
+    return render(request, 'base/index.html', context)
 
 # Add more views here as needed
 def about(request):
@@ -44,8 +63,26 @@ def our_pharmacy(request):
     return render(request, 'base/our-pharmacy.html')
 
 
-def service_detail(request):
-    return render(request, 'base/service-detail.html')
+def service_detail(request, slug):
+    from django.shortcuts import get_object_or_404
+    from .models import Service
+
+    service = get_object_or_404(Service, slug=slug, is_active=True)
+
+    context = {
+        'service': service,
+        'features': service.features.all(),
+        'doctors': service.doctors.all(),
+        'teams': service.teams.all(),
+        'treatments': service.treatments.all(),
+        'ailments': service.ailments.all(),
+        'technologies': service.technologies.all(),
+        'accordions': service.accordions.all(),
+        'success_stories': service.success_stories.all(),
+        'subspecializations': service.accordions.filter(section_type='subspecialization'),
+    }
+
+    return render(request, 'base/service-detail.html', context)
 
 def services(request):
     return render(request, 'base/services.html')

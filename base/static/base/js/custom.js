@@ -34,8 +34,8 @@ $(document).ready(function() {
         slidesToShow: 3,
         infinite: !1,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -63,8 +63,8 @@ $(document).ready(function() {
         slidesToShow: 1,
         arrows: !0,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
     });
     $(".home-banner-slider").slick({
         speed: 300,
@@ -80,8 +80,8 @@ $(document).ready(function() {
         slidesToScroll: 1,
         centerMode: !0,
         centerPadding: "20px",
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -103,8 +103,8 @@ $(document).ready(function() {
         slidesToShow: 4,
         infinite: !1,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -130,8 +130,8 @@ $(document).ready(function() {
         mobileFirst: !0,
         slidesToShow: 2,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 768,
             settings: "unslick"
@@ -140,8 +140,8 @@ $(document).ready(function() {
     $(".recent-blogs-slider").slick({
         speed: 300,
         mobileFirst: !0,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 992,
             settings: "unslick"
@@ -170,8 +170,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -190,8 +190,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -210,8 +210,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -251,8 +251,8 @@ $(document).ready(function() {
         slidesToScroll: 1,
         autoplay: !0,
         autospeed: 3000,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -271,8 +271,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -291,8 +291,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 2,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -317,8 +317,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
     });
     if (window.matchMedia("(max-width: 1280px)").matches) {
         $(".md-bannerfloat").slick({
@@ -327,8 +327,8 @@ $(document).ready(function() {
             autoplay: !1,
             arrows: !0,
             dots: !1,
-            prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-            nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+            prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+            nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
             responsive: [{
                 breakpoint: 991,
                 settings: {
@@ -350,8 +350,8 @@ $(document).ready(function() {
             autoplay: !1,
             arrows: !0,
             dots: !1,
-            prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-            nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+            prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+            nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
             responsive: [{
                 breakpoint: 991,
                 settings: {
@@ -373,8 +373,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
     });
     $(".location-filter-slider").slick({
         speed: 300,
@@ -393,8 +393,8 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 2,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 600,
             settings: {
@@ -410,8 +410,8 @@ $(document).ready(function() {
         autoplay: !1,
         arrows: !0,
         dots: !1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 767,
             settings: {
@@ -429,8 +429,8 @@ $(document).ready(function() {
             autoplay: !1,
             arrows: !0,
             dots: !1,
-            prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-            nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+            prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+            nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         });
         $(".sliderrefress").click(function() {
             $("#tabs-content").hide();
@@ -446,8 +446,8 @@ $(document).ready(function() {
         slidesToShow: 3,
         arrows: !0,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1024,
             settings: {
@@ -473,8 +473,8 @@ $(document).ready(function() {
         slidesToShow: 3,
         arrows: !0,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1024,
             settings: {
@@ -501,8 +501,8 @@ $(document).ready(function() {
         slidesToShow: 3,
         arrows: !0,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {
@@ -522,8 +522,8 @@ $(document).ready(function() {
         slidesToShow: 3,
         infinite: !1,
         slidesToScroll: 1,
-        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/wp-content/uploads/2025/11/vector-left-1.png' alt='Previous' width='6' height='10' /></button>",
-        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/wp-content/uploads/2025/11/vector-right-1.png' alt='Next' width='6' height='10' /></button>",
+        prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/static/base/images/icons/vector-left.png' alt='Previous' width='6' height='10' /></button>",
+        nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/static/base/images/icons/vector-right.png' alt='Next' width='6' height='10' /></button>",
         responsive: [{
             breakpoint: 1199,
             settings: {

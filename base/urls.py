@@ -28,7 +28,7 @@ urlpatterns = [
 
     path('our-pharmacy/', views.our_pharmacy, name='our-pharmacy'),
 
-    path('service-detail/', views.service_detail, name='service-detail'),
+    path('service/<slug:slug>/', views.service_detail, name='service-detail'),
 
     path('services/', views.services, name='services'),
 

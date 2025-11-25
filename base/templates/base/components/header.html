@@ -59,7 +59,16 @@
                 </svg>
             </button>
             <ul>
-                {{services_list}}
+                {% for service in all_services %}
+                <li>
+                    <a href="{% url 'base:service-detail' service.slug %}">
+                        {% if service.icon %}
+                        <img class="icon" width="26" height="26" loading="lazy" src="{{ service.icon.url }}" alt="{{ service.name }}">
+                        {% endif %}
+                        {{ service.name }}
+                    </a>
+                </li>
+                {% endfor %}
             </ul>
         </li>
         <li class="has-submenu">
