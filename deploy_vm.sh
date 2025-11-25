@@ -5,8 +5,9 @@
 
 set -e
 
-VM_NAME="medantaclone-vm"
-ZONE="us-central1-a"
+VM_NAME="instance-general-server"
+ZONE="us-central1-f"
+PROJECT="horlio-saas"
 REMOTE_DIR="/var/www/medantaclone"
 LOCAL_DIR="/Users/apple/Code/medantaclone"
 
@@ -16,7 +17,7 @@ echo ""
 
 # Check if VM exists
 echo "🔍 Checking VM status..."
-if ! gcloud compute instances describe $VM_NAME --zone=$ZONE &> /dev/null; then
+if ! gcloud compute instances describe $VM_NAME --zone=$ZONE --project=$PROJECT &> /dev/null; then
     echo "❌ VM '$VM_NAME' not found in zone '$ZONE'"
     echo "Please create the VM first or update the VM_NAME and ZONE variables"
     exit 1
@@ -34,13 +35,13 @@ gcloud compute scp --recurse \
     --exclude="__pycache__/*" \
     --exclude="*.pyc" \
     --exclude=".DS_Store" \
-    . $VM_NAME:$REMOTE_DIR/ --zone=$ZONE
+    . $VM_NAME:$REMOTE_DIR/ --zone=$ZONE --project=$PROJECT
 
 echo ""
 echo "🔧 Installing dependencies and restarting services..."
 
 # Run commands on VM
-gcloud compute ssh $VM_NAME --zone=$ZONE --command="
+gcloud compute ssh $VM_NAME --zone=$ZONE --project=$PROJECT --command="
     set -e
     cd $REMOTE_DIR
     

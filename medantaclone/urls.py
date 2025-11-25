@@ -27,3 +27,7 @@ urlpatterns = [
 # Serve media files in development (static files are handled automatically by Django)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Custom error handlers
+handler404 = 'base.views.custom_404'
+handler500 = 'base.views.custom_500'

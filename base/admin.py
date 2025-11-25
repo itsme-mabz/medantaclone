@@ -145,3 +145,9 @@ class SuccessStoryAdmin(admin.ModelAdmin):
     list_filter = ('service', 'is_featured')
     search_fields = ('title', 'story', 'patient_name')
     fields = ('service', 'title', 'patient_name', 'story', 'image', 'video_url', 'is_featured', 'order')
+
+
+# Customize Django Admin Branding
+admin.site.site_header = "Dr Saurav's Admin Panel"
+admin.site.site_title = "Dr Saurav Admin"
+admin.site.index_title = "Welcome to Dr Saurav's Healthcare Management System"

@@ -1,0 +1,86 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | Dr Saurav Admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <span style="color: #2c5f8d; font-weight: bold; font-size: 24px;">Dr Saurav's</span>
+        <span style="color: #4a90e2; font-weight: normal; font-size: 20px;">Healthcare</span>
+    </a>
+</h1>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    /* Custom color scheme for Dr Saurav's branding */
+    #header {
+        background: linear-gradient(135deg, #2c5f8d 0%, #4a90e2 100%);
+        color: #fff;
+    }
+    
+    #branding h1, #branding h1 a:link, #branding h1 a:visited {
+        color: #fff;
+    }
+    
+    div.breadcrumbs {
+        background: #4a90e2;
+        color: #fff;
+    }
+    
+    div.breadcrumbs a {
+        color: #fff;
+    }
+    
+    .module h2, .module caption, .inline-group h2 {
+        background: #2c5f8d;
+    }
+    
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: #4a90e2;
+        color: #fff;
+    }
+    
+    .button:hover, input[type=submit]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover {
+        background: #2c5f8d;
+    }
+    
+    .button.default, input[type=submit].default, .submit-row input.default {
+        background: #2c5f8d;
+    }
+    
+    .button.default:hover, input[type=submit].default:hover, .submit-row input.default:hover {
+        background: #1a3a5c;
+    }
+    
+    a:link, a:visited {
+        color: #4a90e2;
+    }
+    
+    a:hover, a:active {
+        color: #2c5f8d;
+    }
+    
+    .selector-chosen h2 {
+        background: #4a90e2;
+    }
+    
+    /* Custom footer */
+    #footer {
+        background: #f8f9fa;
+        border-top: 2px solid #4a90e2;
+        padding: 15px;
+        text-align: center;
+        color: #666;
+    }
+</style>
+{% endblock %}
+
+{% block footer %}
+<div id="footer">
+    <p style="margin: 0; color: #2c5f8d; font-weight: 500;">
+        © {% now "Y" %} Dr Saurav's Healthcare | Admin Management System
+    </p>
+</div>
+{% endblock %}
