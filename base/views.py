@@ -34,6 +34,8 @@ def about(request):
 def blog(request):
     return render(request, 'base/blog.html')
 
+def help_desk(request):
+    return render(request, 'base/helpdesk.html')
 
 def blogdtl(request):
     return render(request, 'base/blog-detail.html')
@@ -112,8 +114,6 @@ def treatments(request):
 def terms_conditions(request):
     return render(request, 'base/terms-conditions.html')
 
-def help_desk(request):
-    return render(request, 'base/help-desk.html')
 
 def oncology(request):
     return render(request, 'base/oncology.html')

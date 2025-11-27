@@ -1,4 +1,4 @@
-#!/Users/apple/Code/medantaclone/.env/bin/python3.12
+#!/home/pc/Code/medantaclone/.env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

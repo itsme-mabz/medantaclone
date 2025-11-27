@@ -1,9 +1,9 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block title %}About Us - Medanta Clone{% endblock %}
+{% block title %}About Us - Clone{% endblock %}
 
-{% block meta_description %}Learn more about Medanta Clone and our commitment to healthcare excellence{% endblock %}
+{% block meta_description %}Learn more about Clone and our commitment to healthcare excellence{% endblock %}
 
 {% block extra_css %}
 <!-- Add about page specific CSS here -->
@@ -11,18 +11,3223 @@
 {% endblock %}
 
 {% block content %}
-<!-- About Page Content -->
-<section class="about-hero">
-    <h1>About Medanta Clone</h1>
-    <p>Committed to Healthcare Excellence</p>
-</section>
 
-<section class="about-content">
-    <!-- Add your about content here -->
-    <p>Replace this with your actual about page content.</p>
-</section>
-{% endblock %}
 
-{% block extra_js %}
-<!-- Add about page specific JavaScript here -->
-{% endblock %}
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://www.medanta.org/assets/css/topbar-sticky-links.css" />
+    <style>
+        .justify-content {
+            justify-content: center;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .celebration-section-slider-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0 20px;
+        }
+
+        .swiper-container {
+            font-size: 14px;
+            max-width: 600px;
+
+        }
+
+
+        .swiper-slide {
+            background-color: #fff;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .picture {
+            width: 100%;
+            height: auto;
+            padding-bottom: 27%;
+            background-position: center;
+
+        }
+
+        .picture img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            padding: 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 50%;
+            border: 1px solid #D7D7D7;
+        }
+
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+            font-size: 12px;
+            color: #58595B;
+            font-weight: 700;
+        }
+
+        .swiper-button-prev {
+            left: -250px;
+        }
+
+        .swiper-button-next {
+            right: -250px;
+        }
+
+        .philosophy-container .mobile-post {
+            display: none;
+        }
+
+        .feature-philosophy .thumb-ratio.thumb-ratio1 {
+            padding-bottom: 68%;
+        }
+
+        .feature-philosophy .video-wrap .video .video-thumb .play-video {
+            width: 150px;
+            height: 150px;
+        }
+
+        .philosophy-container .desktop-post {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .philosophy-container .philosophy-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .our-left {
+            width: 35%;
+        }
+
+        .our-right {
+            width: 50%;
+        }
+
+        .vision-box .vision-left {
+            width: 50%;
+        }
+
+        .vision-box .vision-right {
+            width: 45%;
+            gap: 40px 40px;
+            flex-wrap: wrap;
+        }
+
+        .vision-box .vision-right .vision-item {
+            width: 45%;
+            text-align: center;
+        }
+
+        .vision-item .vision-top {
+            width: 75px;
+            margin: 0 auto 15px;
+        }
+
+        .our-left .heading-sm {
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .our-right img,
+        .vision-left img {
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.14);
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .about {
+            padding-top: 30px;
+        }
+
+        .medanta-treeoflife {
+            line-height: 0
+        }
+
+        .about-list {
+            display: flex;
+            margin: 0 -10px;
+        }
+
+        .about-list .item {
+            width: 33.33%;
+            padding: 0 10px;
+        }
+
+        .about-item {
+            background: #fff;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.14);
+            line-height: 0;
+        }
+
+        /* .about-item img{border-radius: 50%;} */
+        .video-card {
+            width: 100%;
+        }
+
+        .video-card .video-thumb {
+            line-height: 0;
+        }
+
+        .medanta-has .video-card .video-thumb img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .our-growth {
+            padding-bottom: 90px;
+        }
+
+        .growth-slider.slider-tb-shadow .slick-list {
+            padding-bottom: 60px;
+        }
+
+        .growth-item {
+            padding: 0 40px;
+        }
+
+        .growth-item-left {
+            width: 50%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .growth-item-left img {
+            border-radius: 20px 0px 0px 20px;
+        }
+
+        .growth-item-right {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            padding: 90px 65px;
+            background: #fff;
+            border-radius: 0px 20px 20px 0px;
+            box-shadow: 0 0px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .growth-item-right .location {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .growth-item-right .location svg {
+            width: 17px;
+            margin-right: 10px;
+        }
+
+        .growth-item-right .heading,
+        .growth-item-right .para-wrap p {
+            color: var(--text);
+        }
+
+        .growth-item-right .para-wrap {
+            font-size: 20px;
+        }
+
+        .growth-nav-slider .item .growth-dot {
+            display: inline-block;
+            margin: 0px 4px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .growth-nav-slider.slick-arrow-style-1 .slick-arrow {
+            top: 35%;
+            cursor: pointer;
+            z-index: 123;
+        }
+
+        .growth-nav-slider .item {
+            padding-bottom: 30px;
+            position: relative;
+            text-align: center;
+            margin: 0px 60px;
+            overflow: initial;
+        }
+
+        .growth-nav-slider .item:after {
+            content: '';
+            position: absolute;
+            right: -62px;
+            top: 15px;
+            height: 1px;
+            background: var(--text);
+            width: 82px;
+
+        }
+
+        .growth-nav-slider .item:before {
+            content: '';
+            position: absolute;
+            left: -62px;
+            top: 15px;
+            height: 1px;
+            background: var(--text);
+            width: 82px;
+        }
+
+        .growth-nav-slider .item.active:after {
+            background: var(--brand-bg);
+        }
+
+        .growth-nav-slider .item.active.slick-active:after {
+            background: #989898;
+        }
+
+
+        .growth-nav-slider .item .growth-text {
+            background: none;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            /* width: 90px; */
+            text-align: center;
+            position: relative;
+            /* left: -30px; */
+            top: 20px;
+            line-height: 0px;
+            border: none;
+            opacity: 1;
+            transition: 0.3s;
+            font-weight: 700;
+            display: block;
+            outline: 0;
+        }
+
+        .growth-nav-slider .item:hover .growth-text {
+            opacity: 1;
+        }
+
+        .growth-nav-slider .item.slick-current .growth-dot {
+            background: var(--primary);
+        }
+
+        .growth-nav-slider .item .active {
+            background: var(--brand-bg);
+            border-color: var(--brand-bg);
+        }
+
+        #philosophy-section .video-wrap .video .video-thumb.ratio1 {
+            padding-bottom: 56%;
+        }
+
+        @media screen and (max-width: 1599px) {
+            .growth-item-right .para-wrap {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 1499px) {
+            .our-left {
+                width: 45%;
+            }
+
+            .celebration-section-slider-box {
+                margin: 0 auto;
+            }
+
+            .growth-item-right {
+                padding: 60px;
+            }
+
+            .growth-slider.slick-arrow-style-1 .slick-arrow {
+                top: 93%;
+            }
+        }
+
+        @media screen and (max-width: 1199px) {
+            .swiper-button-prev {
+                left: -145px;
+            }
+
+            .swiper-button-next {
+                right: -145px;
+            }
+
+            .growth-item-right {
+                padding: 45px;
+            }
+
+            .growth-slider .slick-dots li {
+                margin: 0 50px;
+            }
+
+            .growth-slider.slick-arrow-style-1 .slick-arrow {
+                top: 92%;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .vision-box .vision-right {
+                gap: 20px 15px;
+            }
+
+            .philosophy-container .desktop-post {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .about {
+                padding-bottom: 30px;
+            }
+
+            .about-item {
+                padding: 20px;
+            }
+
+            .our-growth {
+                padding-bottom: 80px;
+            }
+
+            .swiper-container {
+                max-width: 420px;
+            }
+
+            /* .picture{height: 350px;} */
+            .growth-item-right {
+                padding: 15px 25px;
+            }
+
+            .growth-slider .slick-dots li {
+                margin: 0 30px;
+            }
+
+            .growth-slider.slick-arrow-style-1 .slick-arrow {
+                top: 90%;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .medanta-treeoflife {
+                margin-bottom: 20px;
+            }
+
+            .about {
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            .our-box,
+            .vision-box {
+                flex-wrap: wrap;
+            }
+
+            .our-left {
+                width: 100%;
+                order: 2;
+                padding-top: 20px;
+            }
+
+            .our-right {
+                width: 100%;
+                order: 1;
+            }
+
+            .vision-box .vision-left {
+                width: 100%;
+            }
+
+            .vision-box .vision-right {
+                width: 100%;
+                padding-top: 30px;
+            }
+
+            .vision-box .vision-right .vision-item {
+                width: 100%;
+            }
+
+            .philosophy-container .mobile-post {
+                display: block;
+            }
+
+            .philosophy-container .desktop-post {
+                display: none;
+            }
+
+            .about-item {
+                padding: 20px;
+            }
+
+            .swiper-container {
+                max-width: 320px;
+            }
+
+            /* .picture{height: 200px;} */
+            .video-card .video-caption .video-heading {
+                font-size: 13px;
+            }
+
+            .swiper-button-prev {
+                left: -50px;
+            }
+
+            .swiper-button-next {
+                right: -50px;
+            }
+
+            .our-growth {
+                padding-bottom: 40px;
+            }
+
+            .growth-slider.slider-tb-shadow .slick-list {
+                padding: 0 0 40px;
+            }
+
+            .growth-item {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+
+            .growth-item-left,
+            .growth-item-right {
+                width: 100%;
+            }
+
+            .growth-item-left img {
+                border-radius: 20px 20px 0 0;
+            }
+
+            .growth-item-right {
+                padding: 20px;
+                border-radius: 0 0 20px 20px;
+            }
+
+            .growth-item-right .para-wrap p {
+                margin-bottom: 0;
+            }
+
+            .growth-item-right .para-wrap {
+                font-size: 12px;
+            }
+
+            .growth-item-right .location {
+                font-size: 12px;
+            }
+
+            .growth-item-right .location svg {
+                width: 12px;
+            }
+
+            .growth-nav-slider .item {
+                margin: 0px 40px;
+            }
+
+            .vision-item .vision-top {
+                width: 48px;
+            }
+
+            .growth-nav-slider .item .growth-text {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .about-item {
+                padding: 15px;
+            }
+
+            .swiper-container {
+                max-width: 210px;
+            }
+
+            /* .picture{height: 200px;} */
+        }
+    </style>
+
+    <!----------CSS Start------------------------->
+    <style>
+        body {
+            padding-top: 82px;
+        }
+
+        .site-header {
+            height: 82px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: #fff;
+            padding: 15px 0;
+        }
+
+        .logo {
+            margin-bottom: -3px;
+            line-height: 0;
+        }
+
+        .logo svg {
+            max-width: 100%;
+        }
+
+        .site-header nav .close-menu {
+            width: 32px;
+            height: 32px;
+            border: 0;
+            outline: 0;
+            text-align: center;
+            background-color: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            position: absolute;
+            left: 300px;
+            top: 10px;
+            display: none;
+        }
+
+        .site-header nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .site-header nav .menu {
+            display: flex;
+        }
+
+        .site-header nav .menu>li {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 15px;
+        }
+
+        .site-header nav .menu>li a {
+            display: block;
+            white-space: nowrap;
+            color: inherit;
+            padding: 18px 0;
+        }
+
+        .site-header nav .menu li.has-submenu {
+            position: relative;
+            padding-right: 18px;
+        }
+
+        .site-header nav .menu>li.has-submenu ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.14);
+            background-color: #fff;
+            padding: 10px 20px;
+            z-index: 999;
+            width: 280px;
+        }
+
+        .site-header nav .menu>li.has-submenu .open-dropdown,
+        .site-header nav .menu>li.has-submenu .thirdopen-dropdown {
+            position: absolute;
+            right: 0;
+            background: transparent;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            top: 14px;
+            width: 12px;
+            height: 24px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .site-header nav .menu>li.has-submenu .open-dropdown svg,
+        .site-header nav .menu li.has-submenu .thirdopen-dropdown svg {
+            width: 10px;
+            height: auto;
+        }
+
+        .site-header nav .menu li.third-level .open-dropdown {
+            top: 14px;
+            pointer-events: none;
+        }
+
+        .site-header nav .menu li.third-level ul {
+            left: 260px;
+            top: 0;
+            display: none;
+            border-top-left-radius: 0;
+        }
+
+        .site-header nav .menu>li.has-submenu ul li a {
+            color: var(--text);
+            white-space: normal;
+            padding: 10px 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .site-header nav .menu>li.has-submenu ul li a:hover,
+            .site-header nav .menu>li:hover a {
+                color: var(--primary);
+            }
+
+            .site-header nav .menu>li.has-submenu:hover>ul,
+            .site-header nav .menu li.third-level:hover>ul {
+                display: block;
+            }
+
+            .site-header nav .menu li.third-level .open-dropdown,
+            .site-header nav .menu li.third-level .thirdopen-dropdown {
+                transform: rotate(-90deg);
+                top: 14px;
+            }
+
+            .site-header nav .menu li.third-level ul:before {
+                left: -40px;
+                top: 0;
+                width: 40px;
+                content: "";
+                position: absolute;
+                height: 100%;
+            }
+
+            .site-header nav .menu li.third-level ul li.third-level ul {
+                left: auto;
+                top: 0px;
+                border-top-left-radius: 15px;
+                right: 100%;
+            }
+        }
+
+        .site-header nav .menu>li.has-submenu ul li {
+            border-bottom: 1px solid rgba(88, 89, 91, 0.5);
+        }
+
+        .site-header nav .menu>li.has-submenu ul li:last-child {
+            border-bottom: 0;
+        }
+
+        .site-header nav .menu>li.has-submenu ul li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 50px;
+        }
+
+        .site-header nav .menu>li.has-submenu ul li a .icon {
+            width: 26px;
+            flex: 0 0 26px;
+        }
+
+        .header-contact-number {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-contact-number a.whatsapp-btn {
+            display: none;
+        }
+
+        .header-contact-number a {
+            font-weight: 700;
+            display: flex;
+            padding: 10px 18px;
+            background-color: var(--primary);
+            border-radius: 40px;
+            border: 1px solid var(--primary);
+            color: #58595b;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-contact-number a img {
+            width: 24px;
+            height: 24px;
+            margin: auto;
+        }
+
+        .header-contact-number a.whatsapp-btn img,
+        .header-contact-number a.feedback-btn img,
+        .header-contact-number a.emergency-btn img {
+            display: block;
+        }
+
+        .header-contact-number a .txt {
+            display: none;
+            font-size: 10px;
+        }
+
+        .header-contact-number .reqcallback-btn span {
+            font-size: 12px;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .header-contact-number a.feedback-btn,
+        .header-contact-number a.emergency-btn {
+            background-color: transparent;
+        }
+
+        .chatbot-waiting {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.85) url(../../../assets/images/icons/loading.svg) no-repeat center center;
+            background-size: 60px auto;
+        }
+
+        #sendResumModal .frm-holder .theme-button {
+            width: 100%;
+            display: block;
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .header-contact-number a.contact-btn,
+            .header-contact-number a.emergency-btn {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1820px) {
+            .header-contact-number a .txt {
+                display: block;
+                margin-left: 5px;
+                font-size: 12px;
+            }
+
+            .header-contact-number a.reqcallback-btn {
+                color: #fff;
+            }
+        }
+
+        @media screen and (max-width: 1699px) {
+            .site-header nav .menu>li {
+                margin: 0 10px;
+            }
+        }
+
+        @media screen and (max-width: 1599px) {
+            .site-header nav .menu>li {
+                font-size: 14px;
+            }
+
+            .site-header nav .menu li.third-level .open-dropdown,
+            .site-header nav .menu li.third-level .thirdopen-dropdown {
+                top: 14px;
+            }
+        }
+
+        @media screen and (max-width: 1399px) {
+            .logo {
+                width: 115px;
+            }
+
+            .site-header nav .menu>li {
+                font-size: 12px;
+                margin: 0 7px;
+            }
+
+            .site-header nav .menu li.third-level .open-dropdown,
+            .site-header nav .menu li.third-level .thirdopen-dropdown {
+                top: 12px;
+            }
+        }
+
+        @media screen and (max-width: 1199px) {
+            body {
+                padding-top: 62px;
+            }
+
+            .site-header {
+                border-bottom: 1px solid #d9d9d9;
+                padding: 7px 0;
+                height: 62px;
+            }
+
+            .site-header nav {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 62px;
+                right: 0;
+                bottom: 76px;
+                z-index: 999;
+                background-color: #fff;
+                overflow: auto;
+            }
+
+            .site-header nav.is-opened {
+                display: block;
+            }
+
+            .site-header nav .close-menu {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu ul li.active>a,
+            .site-header nav .menu>li.active>a {
+                color: var(--primary);
+            }
+
+            .site-header nav .menu>li.has-submenu.active>ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level ul li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul li.third-level.active ul li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul li.third-level.active ul li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu {
+                display: block;
+                padding: 5px 20px;
+                overflow: auto;
+            }
+
+            .site-header nav .menu>li {
+                margin: 0;
+                font-size: 13px;
+                border-bottom: 1px solid #dadada;
+            }
+
+            .site-header nav .menu li.has-submenu {
+                padding-right: 0;
+            }
+
+            .site-header nav .menu li.has-submenu a.open-submenu {
+                padding-right: 30px;
+            }
+
+            nav .menu>li a {
+                padding: 16px 0;
+            }
+
+            nav .menu>li.has-submenu .open-dropdown {
+                top: 12px;
+                pointer-events: none;
+            }
+
+            nav .menu>li.has-submenu.active>.open-dropdown svg path,
+            nav li.third-level.active>.open-dropdown svg path {
+                stroke: var(--primary);
+            }
+
+            .site-header nav .menu>li.has-submenu ul {
+                position: static;
+                width: auto;
+                box-shadow: none;
+                margin-bottom: 15px;
+                padding: 0;
+            }
+
+            .site-header nav .menu>li.has-submenu.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu ul li a .icon {
+                width: 32px;
+                flex: 0 0 32px;
+            }
+
+            .header-contact-number a {
+                padding: 10px 15px;
+            }
+
+            .header-contact-number a.reqcallback-btn {
+                display: none;
+            }
+        }
+
+
+        @media screen and (max-width: 767px) {
+            .header-contact-number {
+                gap: 0;
+            }
+
+            .header-contact-number a.whatsapp-btn {
+                display: block;
+            }
+
+            .header-contact-number a.feedback-btn {
+                display: none;
+            }
+
+            .site-header {
+                padding: 10px 0 7px 0;
+            }
+
+            .header-contact-number a {
+                background-color: transparent;
+                border: 0;
+                display: block;
+                padding: 0;
+                margin-left: 15px;
+                text-align: center;
+            }
+
+            .header-contact-number a .txt {
+                display: block;
+            }
+
+            .header-contact-number a img {
+                margin-bottom: 5px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .cookies {
+                flex-wrap: wrap;
+            }
+
+            .cookies p {
+                margin: 0 0 15px;
+                width: 100%;
+            }
+
+            .cookies .list-details {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .header-contact-number a {
+                width: auto;
+                margin: 0 auto;
+            }
+
+            .header-contact-number a.emergency-btn {
+                width: 70px;
+            }
+
+
+            .emergency-txt-grp {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .flip-box {
+                width: 100px;
+                height: 24px;
+                perspective: 1000px;
+            }
+
+            .flipper {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                animation: rotateText 4s infinite linear;
+            }
+
+            .flip-text {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #f04e30;
+                font-size: 10px;
+                margin-top: -5px;
+            }
+
+            .front {
+                transform: rotateY(0deg);
+            }
+
+            .back {
+                transform: rotateY(180deg);
+            }
+
+            @keyframes rotateText {
+                0% {
+                    transform: rotateY(0deg);
+                }
+
+                50% {
+                    transform: rotateY(180deg);
+                }
+
+                100% {
+                    transform: rotateY(360deg);
+                }
+            }
+
+
+        }
+
+        .emergency-btn-box-mb {
+            display: none !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0px;
+            text-decoration: none;
+            width: 70px;
+        }
+
+        @keyframes flipLoop {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            45% {
+                transform: rotateY(0deg);
+            }
+
+            50% {
+                transform: rotateY(180deg);
+            }
+
+            95% {
+                transform: rotateY(180deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .emergency-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            gap: 0px;
+            flex-direction: column;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .emergency-side.emergency-front {
+            background-color: #ffffff;
+            border: 1px solid #EE4F39;
+        }
+
+        .emergency-side.emergency-front .emergency-text {
+            color: #58595B;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .emergency-side.emergency-back {
+            background-color: #EE4F39;
+            font-size: 12px;
+            font-weight: 700;
+            transform: rotateY(180deg);
+        }
+
+        .emergency-side.emergency-back .emergency-text {
+            color: #FFFFFF;
+        }
+
+        .emergency-svg-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+        }
+
+        .emergency-svg-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background-color: #e9493093;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-scale 2s infinite;
+            z-index: 0;
+        }
+
+        .emergency-svg-wrapper svg {
+            /* animation: svg-vibrate 2s infinite; */
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse-scale {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes svg-vibrate {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(1px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .emergency-info-box span {
+            font-size: 10px;
+            color: #58595B;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .emergency-info-box {
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .emergency-info-box .emergency-number {
+            animation: blink1 5s infinite;
+        }
+
+        .emergency-info-box .emergency-back {
+            transform: rotateY(180deg);
+        }
+
+        .emergency-info-box .emergency-text {
+            animation: blink2 5s infinite;
+            transform: translateX(-50%) rotateY(180deg);
+        }
+
+        @keyframes blink1 {
+            0% {
+                transform: translateX(-50%) rotateY(0deg);
+                opacity: 1;
+            }
+
+            40% {
+                transform: translateX(-50%) rotateY(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(-50%) rotateY(90deg);
+                opacity: 0;
+            }
+
+            51% {
+                transform: translateX(-50%) rotateY(270deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(-50%) rotateY(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes blink2 {
+            0% {
+                transform: translateX(-50%) rotateY(180deg);
+                opacity: 0;
+            }
+
+            49% {
+                transform: translateX(-50%) rotateY(180deg);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(-50%) rotateY(270deg);
+                opacity: 0;
+            }
+
+            51% {
+                transform: translateX(-50%) rotateY(360deg);
+                opacity: 1;
+            }
+
+            90% {
+                transform: translateX(-50%) rotateY(360deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-50%) rotateY(540deg);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .header-contact-number a.emergency-btn-box-mb {
+                display: flex !important;
+                width: 80px;
+            }
+        }
+    </style>
+    <!----------CSS End------------------------->
+
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
+
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="modal" id="Marmosetloadmodal">
+        <div class="close close-model-layer" data-close="modal"></div>
+        <div class="modal__dialog">
+            <div wire:id="kAXfbunAJpwgRSPQFndz"
+                wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;kAXfbunAJpwgRSPQFndz&quot;,&quot;name&quot;:&quot;request-callbacks&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;about&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;dc0a79dd&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;type&quot;:&quot;home-navbar&quot;,&quot;token&quot;:&quot;&quot;,&quot;captcha&quot;:0,&quot;recaptcha&quot;:null,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/about&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;getSubSource&quot;:&quot;Website - about&quot;,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;f1bc3383fc4fc5c44637bb4e3420589be4965489e16772583260276c682fdadc&quot;}}">
+                <a class="close close-modal" data-close="modal" id="closeModal"></a>
+                <div class="modal__content">
+                    <div class="modal-body">
+                        <h2 class="reacllHeading">Request Call Back</h2>
+                        <div class="btn-modal text-right">
+                            <form wire:submit.prevent="submit">
+                                <div>
+                                </div>
+                                <label for="fname">Name *</label>
+                                <input type="text" id="fname" name="fname" value="" wire:model.lazy="name"
+                                    placeholder="Enter Your Name">
+
+                                <label for="lname">Mobile Number *</label>
+                                <input type="number" id="lname" name="lname" value="" wire:model.lazy="mobile"
+                                    placeholder="Enter Your Mobile Number">
+
+                                <label for="lname">Email</label>
+                                <input type="text" id="lname" name="lname" value="" wire:model.lazy="email"
+                                    placeholder="Enter Your Email">
+
+                                <input type="hidden" name="type" wire:model="type" value="home-navbar">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <br> <br>
+                                <button type="submit" class="submitpopupbt" wire:click="loading">Submit</button>
+                                <div class="form-loader loading" wire:loading wire:target="loading">
+                                    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                                        style="margin: auto; background: none; display: block; shape-rendering: auto;"
+                                        width="200px" height="200px" viewBox="0 0 100 100"
+                                        preserveAspectRatio="xMidYMid">
+                                        <g transform="rotate(0 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(30 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(60 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.75s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(90 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(120 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(150 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(180 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(210 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(240 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.25s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(270 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(300 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(330 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="0s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    window.addEventListener('close-modal', function (event) {
+                        const delay = event.detail.delay;
+                        setTimeout(function () {
+                            var $closeModal = document.querySelector('#closeModal');
+                            $closeModal.click();
+                        }, 5000);
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    window.addEventListener('postUpdated', event => {
+                        var $closeModal = document.querySelector('#closeModal');
+                        $closeModal.click();
+                    })
+                    var onCallback = function () {
+                        // alert('ue');
+                        console.log('gcaptch')
+                        console.log(grecaptcha.getResponse());
+                        window.livewire.find('kAXfbunAJpwgRSPQFndz').set('recaptcha', grecaptcha.getResponse());
+                    }
+                    window.addEventListener('reset-recaptcha', event => {
+                        grecaptcha.reset();
+                    })
+                </script>
+
+            </div>
+
+            <!-- Livewire Component wire-end:kAXfbunAJpwgRSPQFndz -->
+        </div>
+    </div>
+
+    <!-- Upload Resume Model -->
+    <div class="modal" id="sendResumModal">
+        <div class="close close-model-layer" data-close="modal"></div>
+        <div class="modal__dialog">
+            <a class="close close-modal" data-close="modal"></a>
+            <div class="modal__content">
+                <div class="modal-body">
+                    <div class="frm-holder">
+                        <div wire:id="Z0n95u8084MJaIfc46Bc"
+                            wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;Z0n95u8084MJaIfc46Bc&quot;,&quot;name&quot;:&quot;jop-application-list&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;about&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;62240f24&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;resume&quot;:null,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/about&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;14a56f204e7faf33aba87e4aad83d4c6dc0f469f27d461ed861d097c8b3b48f2&quot;}}">
+                            <form wire:submit.prevent="save()">
+
+                                <div class="field">
+                                    <label>Name *</label>
+                                    <input type="text" class="inputbox" wire:model.defer="name"
+                                        placeholder="Enter Your Name" onkeydown="return /[a-zA-Z ]/i.test(event.key)">
+                                    <br>
+                                </div>
+                                <div class="field">
+                                    <label>Mobile Number *</label>
+                                    <input type="number" class="inputbox" wire:model.defer="mobile"
+                                        placeholder="Enter Your Number"
+                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+                                    <br>
+                                </div>
+                                <div class="field">
+                                    <label>Email *</label>
+                                    <input type="email" class="inputbox" wire:model.defer="email"
+                                        placeholder="Enter Your Email">
+                                    <br>
+                                </div>
+
+                                <div class="field mb-20">
+                                    <label>Resume (accepted only pdf, docx) *</label>
+                                    <div class="upload-file" wire:ignore>
+                                        <input type="file" class="inputbox" id="resume" name="resume"
+                                            wire:model.defer="resume" />
+                                    </div>
+                                    <br>
+                                </div>
+                                <button type="submit" class="theme-button">Submit</button>
+                                <div class="form-loader loading" wire:loading wire:target="save">
+                                    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                                        style="margin: auto; background: none; display: block; shape-rendering: auto;"
+                                        width="200px" height="200px" viewBox="0 0 100 100"
+                                        preserveAspectRatio="xMidYMid">
+                                        <g transform="rotate(0 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(30 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(60 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.75s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(90 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(120 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(150 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(180 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(210 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(240 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.25s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(270 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(300 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(330 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="0s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </form>
+                            <script>
+                                window.addEventListener('resetFileInput', event => {
+                                    document.getElementById('resume').value = null;
+                                });
+                            </script>
+                        </div>
+
+                        <!-- Livewire Component wire-end:Z0n95u8084MJaIfc46Bc -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-links">
+        <div class="container">
+            <ul>
+                <li><a href="#aboutmedanta-section">About us</a></li>
+                <li><a href="#philosophy-section">Philosophy</a></li>
+                <li><a href="#beacon-section">Become A Beacon</a></li>
+                <li><a href="#growth-section">Growth</a></li>
+                <li><a href="#mission-section">Our Mission</a></li>
+                <li><a href="#vision-section">Our Core Values</a></li>
+                <!-- <li><a href="#accreditations-section">Accreditations</a></li> -->
+                <li><a href="#awards-section">Awards</a></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <section class="innerpage-banner">
+            <picture class="img-wrap">
+                <source media="(min-width: 768px)"
+                    srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/November2023/BJ8iQytA2cAA0aXgaw1lUsaNbyN2aU-metaYmFubmVyLmpwZw==-.jpg"
+                    width="1920" height="500" alt="About Us" />
+                <source media="(min-width: 320px)"
+                    srcset="https://medanta.s3.ap-south-1.amazonaws.com/banners/November2023/effZYoR4tGeY3d4nd6MCDYdZ2pZaRf-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0xMC0zMSBhdCAxNi4wNi4zMl8wZWY1NWQ4MC5qcGc=-.jpg"
+                    width="480" height="320" alt="About Us" />
+                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/November2023/BJ8iQytA2cAA0aXgaw1lUsaNbyN2aU-metaYmFubmVyLmpwZw==-.jpg"
+                    width="1920" height="500" alt="About Us" />
+                <!-- <source media="(min-width: 768px)" srcset="assets/images/banner_placeholder.jpg" width="1920"
+                height="500" />
+            <source media="(min-width: 320px)" srcset="assets/images/banner_placeholder.jpg" width="480"
+                height="320" />
+            <img src="assets/images/banner_placeholder.jpg" width="1920" height="500" /> -->
+            </picture>
+            <!-- <div class="banner-caption text-center">
+            <h1 class="banner-title clr-white">Labs - <br />Become A Partner</h1>
+        </div> -->
+        </section>
+        <section class="aboutmedanta" id="aboutmedanta-section">
+            <div class="container">
+                <div class="col-wrap space-lg flexwrap dflex centered-items">
+                    <div class="col col6">
+                        <div class="medanta-treeoflife">
+                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/December2023/V7QekztpM8deVeTTwuhMUOoLvxPHus-metaMS5qcGc=-.jpg"
+                                width="637" height="623" alt="img1">
+                        </div>
+                    </div>
+                    <div class="col col6">
+                        <div class="heading mb-20">About us</div>
+                        <div class="para-wrap mb-40">
+                            <p>
+                                one of the country’s largest multi-speciality tertiary care provider is founded
+                                by Dr. Naresh Trehan, a world-renowned cardiovascular and cardiothoracic surgeon, with
+                                the mission to deliver advanced but affordable medical services to patients. For four
+                                years in a row, Gurugram ranked the best private hospital in India in 2020,
+                                2021, 2022 and 2023. It also featured in the list of top 250 global hospitals in 2023 by
+                                Newsweek.
+                            </p>
+                        </div>
+                        <div class="about-list">
+                            <div class="item">
+                                <div class="about-item">
+                                    <img src="https://medanta.s3.ap-south-1.amazonaws.com/cms/June2023/CphIm3pqWYX3OI5jvEIg0QZUalyPI9-metaYWNjcmVkaXRhdGlvbnMyLnBuZw==-.png"
+                                        width="120" height="120" alt="accreditations">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="about-item">
+                                    <img src="https://medanta.s3.ap-south-1.amazonaws.com/cms/December2023/DgtHQwsh4E5YCEWbTlz0gskOIjhaWb-metaSkNJLnBuZw==-.png"
+                                        width="120" height="120" alt="accreditations">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="about-item">
+                                    <img src="https://medanta.s3.ap-south-1.amazonaws.com/cms/November2023/hQzspxsTaG6qlEJhpdMrYV8WwezHBV-metaYWNjcmVkaXRhdGlvbnMxLnBuZw==-.png"
+                                        width="120" height="120" alt="accreditations">
+                                </div>
+                            </div>
+                            <!-- <div class="item">
+                            <div class="about-item">
+                                <img src="assets/images/accreditations1.png" width="120" height="120" alt="Cardiac science">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="about-item">
+                                <img src="assets/images/accreditations1.png" width="120" height="120" alt="Cardiac science">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="about-item">
+                                <img src="assets/images/accreditations1.png" width="120" height="120" alt="Cardiac science">
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-50 section-lightbg" id="philosophy-section">
+            <div class="container">
+                <div class="section-head mb-20 text-center wow fadeInUp">
+                    <div class="heading mb-10">A Glimpse Into Our Philosophy</div>
+                    <div class="para-wrap">
+
+                    </div>
+                </div>
+                <div class="philosophy-container">
+                    <div class="desktop-post">
+                        <div class="feature-philosophy">
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/https:/img.youtube.com/vi/gcCqUKiHi2M/hqdefault.jpg" alt=""> -->
+                                        <img src="https:/img.youtube.com/vi/gcCqUKiHi2M/hqdefault.jpg" alt="about-us">
+                                        <a href="https://www.youtube.com/watch?v=gcCqUKiHi2M" class="play-video">
+                                            <svg width="150" height="148" viewBox="0 0 150 148" fill="none"
+                                                xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                    <path
+                                                        d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z"
+                                                        stroke="white" stroke-width="2" shape-rendering="crispEdges" />
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z"
+                                                    fill="white" />
+                                                <defs>
+                                                    <filter id="filter0_d_15972_79365" x="0" y="0" width="150"
+                                                        height="147.877" filterUnits="userSpaceOnUse"
+                                                        color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                            result="hardAlpha" />
+                                                        <feOffset dy="4" />
+                                                        <feGaussianBlur stdDeviation="15" />
+                                                        <feComposite in2="hardAlpha" operator="out" />
+                                                        <feColorMatrix type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_15972_79365" />
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                            in2="effect1_dropShadow_15972_79365" result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="philosophy-list">
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/YUpnaUQtWgLHK9j100M8KkS2IxT4RO-metaTlRfcGljX2kucG5n-.png" alt=""> -->
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/YUpnaUQtWgLHK9j100M8KkS2IxT4RO-metaTlRfcGljX2kucG5n-.png"
+                                            alt="about-us">
+                                        <a href="https://www.youtube.com/watch?v=0dt9EV907M8" class="play-video">
+                                            <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                alt="about-us">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/sscbgqwk47Kvuh22sWnbIc6Ak1fg5P-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0wOC0yNCBhdCAxLjA5LjMzIFBNLnBuZw==-.png" alt=""> -->
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/sscbgqwk47Kvuh22sWnbIc6Ak1fg5P-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0wOC0yNCBhdCAxLjA5LjMzIFBNLnBuZw==-.png"
+                                            alt="about-us">
+                                        <a href="https://www.youtube.com/watch?v=kaFyLPBGvEs" class="play-video">
+                                            <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                alt="about-us">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/https:/img.youtube.com/vi/p1jHaC3dCdk/hqdefault.jpg" alt=""> -->
+                                        <img src="https:/img.youtube.com/vi/p1jHaC3dCdk/hqdefault.jpg" alt="about-us">
+                                        <a href="https://www.youtube.com/watch?v=p1jHaC3dCdk" class="play-video">
+                                            <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                alt="about-us">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/https:/img.youtube.com/vi/PJTCxybal_I/hqdefault.jpg" alt=""> -->
+                                        <img src="https:/img.youtube.com/vi/PJTCxybal_I/hqdefault.jpg" alt="about-us">
+                                        <a href="https://www.youtube.com/watch?v=PJTCxybal_I" class="play-video">
+                                            <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                alt="about-us">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="mobile-post">
+                        <div class="philosophy-slider space-row slick-arrow-style-1 slider-tb-shadow">
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/https:/img.youtube.com/vi/gcCqUKiHi2M/hqdefault.jpg" alt=""> -->
+                                            <img src="https:/img.youtube.com/vi/gcCqUKiHi2M/hqdefault.jpg"
+                                                alt="about-us">
+                                            <a href="https://www.youtube.com/watch?v=gcCqUKiHi2M" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="about-us">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/YUpnaUQtWgLHK9j100M8KkS2IxT4RO-metaTlRfcGljX2kucG5n-.png" alt=""> -->
+                                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/YUpnaUQtWgLHK9j100M8KkS2IxT4RO-metaTlRfcGljX2kucG5n-.png"
+                                                alt="about-us">
+                                            <a href="https://www.youtube.com/watch?v=0dt9EV907M8" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="about-us">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/sscbgqwk47Kvuh22sWnbIc6Ak1fg5P-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0wOC0yNCBhdCAxLjA5LjMzIFBNLnBuZw==-.png" alt=""> -->
+                                            <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/January2024/sscbgqwk47Kvuh22sWnbIc6Ak1fg5P-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0wOC0yNCBhdCAxLjA5LjMzIFBNLnBuZw==-.png"
+                                                alt="about-us">
+                                            <a href="https://www.youtube.com/watch?v=kaFyLPBGvEs" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="about-us">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/https:/img.youtube.com/vi/p1jHaC3dCdk/hqdefault.jpg" alt=""> -->
+                                            <img src="https:/img.youtube.com/vi/p1jHaC3dCdk/hqdefault.jpg"
+                                                alt="about-us">
+                                            <a href="https://www.youtube.com/watch?v=p1jHaC3dCdk" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="about-us">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <!-- <img src="https://medanta.s3.ap-south-1.amazonaws.com/https:/img.youtube.com/vi/PJTCxybal_I/hqdefault.jpg" alt=""> -->
+                                            <img src="https:/img.youtube.com/vi/PJTCxybal_I/hqdefault.jpg"
+                                                alt="about-us">
+                                            <a href="https://www.youtube.com/watch?v=PJTCxybal_I" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="about-us">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="philosophy-container">
+                    <div class="desktop-post">
+                        <div class="feature-philosophy">
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <img src="assets/images/video-thumb-1.jpg" alt="">
+                                        <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                            <svg width="150" height="148" viewBox="0 0 150 148" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                <path d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z" stroke="white" stroke-width="2" shape-rendering="crispEdges"/>
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z" fill="white"/>
+                                                <defs>
+                                                <filter id="filter0_d_15972_79365" x="0" y="0" width="150" height="147.877" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                                <feOffset dy="4"/>
+                                                <feGaussianBlur stdDeviation="15"/>
+                                                <feComposite in2="hardAlpha" operator="out"/>
+                                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15972_79365"/>
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15972_79365" result="shape"/>
+                                                </filter>
+                                                </defs>
+                                                </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="philosophy-list">
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <img src="assets/images/video-thumb-1.jpg" alt="">
+                                        <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                            <img src="assets/images/icons/play-icon.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <img src="assets/images/video-thumb-1.jpg" alt="">
+                                        <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                            <img src="assets/images/icons/play-icon.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <img src="assets/images/video-thumb-1.jpg" alt="">
+                                        <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                            <img src="assets/images/icons/play-icon.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-wrap">
+                                <div class="video">
+                                    <div class="video-thumb ratio1">
+                                        <img src="assets/images/video-thumb-1.jpg" alt="">
+                                        <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                            <img src="assets/images/icons/play-icon.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-post">
+                        <div class="philosophy-slider space-row slick-arrow-style-1 slider-tb-shadow">
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <img src="assets/images/video-thumb-1.jpg" alt="">
+                                            <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                                <img src="assets/images/icons/play-icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <img src="assets/images/video-thumb-1.jpg" alt="">
+                                            <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                                <img src="assets/images/icons/play-icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <img src="assets/images/video-thumb-1.jpg" alt="">
+                                            <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                                <img src="assets/images/icons/play-icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <img src="assets/images/video-thumb-1.jpg" alt="">
+                                            <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                                <img src="assets/images/icons/play-icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-item">
+                                <div class="video-wrap">
+                                    <div class="video">
+                                        <div class="video-thumb ratio1">
+                                            <img src="assets/images/video-thumb-1.jpg" alt="">
+                                            <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+                                                <img src="assets/images/icons/play-icon.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <section class="py-50 medanta-has" id="beacon-section">
+            <div class="container">
+                <div class="section-head text-center mb-30 wow fadeInUp">
+                    <div class="heading text-center mb-20">Has Become A Beacon<br> Of Clinical Brilliance</div>
+                    <div class="para-wrap">
+                        <p>Renowned as the first-movers and the last-stop in Indian healthcare</p>
+                    </div>
+                </div>
+                <div class="celebration-container wow fadeInUp" data-wow-delay=".3s">
+                    <div class="celebration-section-slider-box">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumb picture">
+                                            <img src="https:/img.youtube.com/vi/VNRIZ2Ao00E/hqdefault.jpg" width="600"
+                                                height="474"
+                                                alt="Deep Brain Stimulation or Brain Pacemaker Surgery | Dr. Anirban Deep Banerjee | Gurugram">
+                                            <svg width="180" height="178" viewBox="0 0 150 148" fill="none"
+                                                xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                    <path
+                                                        d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z"
+                                                        stroke="white" stroke-width="2" shape-rendering="crispEdges" />
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z"
+                                                    fill="white" />
+                                                <defs>
+                                                    <filter id="filter0_d_15972_79365" x="0" y="0" width="150"
+                                                        height="147.877" filterUnits="userSpaceOnUse"
+                                                        color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                            result="hardAlpha" />
+                                                        <feOffset dy="4" />
+                                                        <feGaussianBlur stdDeviation="15" />
+                                                        <feComposite in2="hardAlpha" operator="out" />
+                                                        <feColorMatrix type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_15972_79365" />
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                            in2="effect1_dropShadow_15972_79365" result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+
+                                            <a href="https://www.youtube.com/watch?v=VNRIZ2Ao00E" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="video">
+                                            </a>
+                                        </div>
+                                        <div class="video-caption">
+                                            <div class="video-heading heading-sm text-center font700">
+                                                Deep Brain Stimulation or Brain Pacemaker Surgery | Dr. Anirban Deep
+                                                Banerjee | Gurugram
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumb picture">
+                                            <img src="https:/img.youtube.com/vi/LrSyJz4aPPo/hqdefault.jpg" width="600"
+                                                height="474" alt="img">
+                                            <svg width="180" height="178" viewBox="0 0 150 148" fill="none"
+                                                xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                    <path
+                                                        d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z"
+                                                        stroke="white" stroke-width="2" shape-rendering="crispEdges" />
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z"
+                                                    fill="white" />
+                                                <defs>
+                                                    <filter id="filter0_d_15972_79365" x="0" y="0" width="150"
+                                                        height="147.877" filterUnits="userSpaceOnUse"
+                                                        color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                            result="hardAlpha" />
+                                                        <feOffset dy="4" />
+                                                        <feGaussianBlur stdDeviation="15" />
+                                                        <feComposite in2="hardAlpha" operator="out" />
+                                                        <feColorMatrix type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_15972_79365" />
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                            in2="effect1_dropShadow_15972_79365" result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+
+                                            <a href="https://www.youtube.com/watch?v=LrSyJz4aPPo" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="video">
+                                            </a>
+                                        </div>
+                                        <div class="video-caption">
+                                            <div class="video-heading heading-sm text-center font700">
+                                                At the heart of transplant: Conditions leading to heart failure | Dr.
+                                                Sanjay Mittal | Medanta
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumb picture">
+                                            <img src="https:/img.youtube.com/vi/L6dHtvbN5rA/hqdefault.jpg" width="600"
+                                                height="474" alt="img">
+                                            <svg width="180" height="178" viewBox="0 0 150 148" fill="none"
+                                                xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                    <path
+                                                        d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z"
+                                                        stroke="white" stroke-width="2" shape-rendering="crispEdges" />
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z"
+                                                    fill="white" />
+                                                <defs>
+                                                    <filter id="filter0_d_15972_79365" x="0" y="0" width="150"
+                                                        height="147.877" filterUnits="userSpaceOnUse"
+                                                        color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                            result="hardAlpha" />
+                                                        <feOffset dy="4" />
+                                                        <feGaussianBlur stdDeviation="15" />
+                                                        <feComposite in2="hardAlpha" operator="out" />
+                                                        <feColorMatrix type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_15972_79365" />
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                            in2="effect1_dropShadow_15972_79365" result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+
+                                            <a href="https://www.youtube.com/watch?v=L6dHtvbN5rA" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="video">
+                                            </a>
+                                        </div>
+                                        <div class="video-caption">
+                                            <div class="video-heading heading-sm text-center font700">
+                                                Patient Success Story of India's First Uncemented Titanium Nitride
+                                                (TiNi) Implant | Medanta
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumb picture">
+                                            <img src="https:/img.youtube.com/vi/VqHEEF3G3SI/hqdefault.jpg" width="600"
+                                                height="474" alt="img">
+                                            <svg width="180" height="178" viewBox="0 0 150 148" fill="none"
+                                                xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                    <path
+                                                        d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z"
+                                                        stroke="white" stroke-width="2" shape-rendering="crispEdges" />
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z"
+                                                    fill="white" />
+                                                <defs>
+                                                    <filter id="filter0_d_15972_79365" x="0" y="0" width="150"
+                                                        height="147.877" filterUnits="userSpaceOnUse"
+                                                        color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                            result="hardAlpha" />
+                                                        <feOffset dy="4" />
+                                                        <feGaussianBlur stdDeviation="15" />
+                                                        <feComposite in2="hardAlpha" operator="out" />
+                                                        <feColorMatrix type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_15972_79365" />
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                            in2="effect1_dropShadow_15972_79365" result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+
+                                            <a href="https://www.youtube.com/watch?v=VqHEEF3G3SI" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="video">
+                                            </a>
+                                        </div>
+                                        <div class="video-caption">
+                                            <div class="video-heading heading-sm text-center font700">
+                                                Behind Closed Doors | Surgical Success Story | Hospitals
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumb picture">
+                                            <img src="https:/img.youtube.com/vi/8j-jaxQWSbE/hqdefault.jpg" width="600"
+                                                height="474" alt="img">
+                                            <svg width="180" height="178" viewBox="0 0 150 148" fill="none"
+                                                xmlns="https://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d_15972_79365)">
+                                                    <path
+                                                        d="M31 69.9383C31 93.6301 50.6768 112.877 75 112.877C99.3232 112.877 119 93.6301 119 69.9383C119 46.2465 99.3232 27 75 27C50.6768 27 31 46.2465 31 69.9383Z"
+                                                        stroke="white" stroke-width="2" shape-rendering="crispEdges" />
+                                                </g>
+                                                <path d="M71.1328 61.1504L86.5614 70.5657L71.1328 79.9811V61.1504Z"
+                                                    fill="white" />
+                                                <defs>
+                                                    <filter id="filter0_d_15972_79365" x="0" y="0" width="150"
+                                                        height="147.877" filterUnits="userSpaceOnUse"
+                                                        color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                            result="hardAlpha" />
+                                                        <feOffset dy="4" />
+                                                        <feGaussianBlur stdDeviation="15" />
+                                                        <feComposite in2="hardAlpha" operator="out" />
+                                                        <feColorMatrix type="matrix"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_15972_79365" />
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                            in2="effect1_dropShadow_15972_79365" result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+
+                                            <a href="https://www.youtube.com/watch?v=8j-jaxQWSbE" class="play-video">
+                                                <img src="https://www.medanta.org/assets/images/icons/play-icon.png"
+                                                    alt="video">
+                                            </a>
+                                        </div>
+                                        <div class="video-caption">
+                                            <div class="video-heading heading-sm text-center font700">
+                                                Experience a minute-by-minute account of a surgical miracle
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-lightbg py-50 our-growth" id="growth-section">
+            <div class="container">
+                <div class="heading text-center mb-20">Our Growth Story</div>
+                <div class="growth-slider space-row slider-tb-shadow slick-arrow-style-1 wow fadeInUp"
+                    data-wow-delay=".3s">
+
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/TsSHxVlmu0CtJx6sRqeKDm9Ut1VJCz-metaR3VydWdyYW0uanBn-.jpg"
+                                    width="745" height="436" alt="Our Growth Story">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Gurugram
+                                </div>
+                                <div class="heading w-full mb-20"> The Medicity </div>
+                                <div class="para-wrap w-full">
+                                    <p>1391 Beds & 271 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/kOxn7grZJVy1DJ1yzyI3adHbQ6hbmH-metaaW5kb3JlIGhvc3BpdGFsIGltYWdlLmpwZw==-.jpg"
+                                    width="745" height="436" alt="Our Growth Story">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Indore
+                                </div>
+                                <div class="heading w-full mb-20">Super Speciality Hospital Indore</div>
+                                <div class="para-wrap w-full">
+                                    <p>175 Beds & 53 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/rjhmBfSKDMhthdCVaOXtdB3SEPer4d-metaUmFuY2hpIGhvc3BpdGFsLmpwZw==-.jpg"
+                                    width="745" height="436" alt="Our Growth Story">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Ranchi
+                                </div>
+                                <div class="heading w-full mb-20">Abdur Razzaque Ansari Memorial Weavers&#039; Hospital
+                                    Ranchi </div>
+                                <div class="para-wrap w-full">
+                                    <p>200 Beds & 54 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/iHEVRsmN1CdkoKAsUUbunMj6OHLIfU-metabHVja25vdy5qcGc=-.jpg"
+                                    width="745" height="436" alt="Our Growth Story">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Lucknow
+                                </div>
+                                <div class="heading w-full mb-20">Hospital Lucknow</div>
+                                <div class="para-wrap w-full">
+                                    <p>950 Beds & 475<br>Including 130 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/RP0QQaIih79qLkLv7SRao270gAg0oH-metacGF0bmEuanBn-.jpg"
+                                    width="745" height="436" alt="Our Growth Story">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20"> Jai Prabha Super Speciality Hospital Patna
+                                </div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330<br> Currently Operational<br> Including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/0HHQ3u5UygpI31qpRpcaaytP7VaLJh-metaR3VydWdyYW0uanBn-.jpg"
+                                    width="745" height="436" alt="Our Growth Story">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                        xmlns="https://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z"
+                                            stroke="#F04E30" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Noida
+                                </div>
+                                <div class="heading w-full mb-20">Hospital Noida</div>
+                                <div class="para-wrap w-full">
+                                    <p>Plan for 550 beds <br> Expected to began phase-1 operations <br> with-300 beds in
+                                        FY25</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-item dflex">
+                            <div class="growth-item-left">
+                                <img src="https://picsum.photos/745/436" width="745" height="436" alt="Cardiac science">
+                            </div>
+                            <div class="growth-item-right">
+                                <div class="location w-full">
+                                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M18 10.1113C18 16.7224 9.5 22.3891 9.5 22.3891C9.5 22.3891 1 16.7224 1 10.1113C1 7.85699 1.89553 5.69498 3.48959 4.10092C5.08365 2.50686 7.24566 1.61133 9.5 1.61133C11.7543 1.61133 13.9163 2.50686 15.5104 4.10092C17.1045 5.69498 18 7.85699 18 10.1113Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.4974 12.945C11.0622 12.945 12.3307 11.6765 12.3307 10.1117C12.3307 8.54685 11.0622 7.27832 9.4974 7.27832C7.93259 7.27832 6.66406 8.54685 6.66406 10.1117C6.66406 11.6765 7.93259 12.945 9.4974 12.945Z" stroke="#F04E30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Patna
+                                </div>
+                                <div class="heading w-full mb-20">Why learn CPR?</div>
+                                <div class="para-wrap w-full">
+                                    <p>650 Beds & 330 currently<br> operational including 57 ICU Beds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="growth-nav-slider space-row slider-tb-shadow slick-arrow-style-1">
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2009</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2014</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2015</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2019</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2020</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2025</div>
+                    </div>
+                    <!-- <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2009</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2013</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2014</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2015</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2016</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2019</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2021</div>
+                    </div>
+                    <div class="item">
+                        <div class="growth-dot"></div>
+                        <div class="growth-text">2022</div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="py-50 pattern-bg-white" id="mission-section">
+            <div class="container">
+                <div class="heading text-center mb-30">Our Mission</div>
+
+                <div class="our-box dflex space-between centered-items">
+                    <div class="our-left">
+                        <div class="heading-sm text-center font600">
+                            Our mission is to deliver world class, patient centric, integrated and affordable healthcare
+                            through a dynamic institution that focuses on the development of people and knowledge
+                        </div>
+                    </div>
+                    <div class="our-right">
+                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/zUHTZUW8A1l4Te5Dkh9glzD2O2gHyZ-metabWlzc2lvbi5qcGc=-.jpg"
+                            width="825" height="515" alt="img2">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-50 section-lightbg" id="vision-section">
+            <div class="container">
+                <div class="section-head text-center mb-30">
+                    <div class="heading text-center mb-20">Our Core Values</div>
+                    <div class="para-wrap">
+                        <p>is established with the sole mission to deliver world-class, holistic and affordable
+                            healthcare and to build a dynamic institution that focuses on the development of people and
+                            new
+                            Knowledge. Over the years has evolved but the values it&#039;s built on remain the
+                            same.</p>
+                    </div>
+                </div>
+
+                <div class="vision-box dflex space-between">
+                    <div class="vision-left">
+                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/U9Rm5rNrmDqNXbhKe5ToOyARqaXKOX-metadmFsdWVzLmpwZw==-.jpg"
+                            width="825" height="550" alt="img3">
+                    </div>
+                    <div class="vision-right dflex space-between">
+                        <div class="vision-item">
+                            <div class="vision-top">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/fc5JJWOcJKaaWoVGkoxNS7XvC9YHE9-metacGF0aWVudCBzZXJ2aWNlLnBuZw==-.png"
+                                    alt="Patient Centric Care" width="100" height="100">
+                            </div>
+                            <div class="heading-sm font700 mb-10">
+                                Patient Centric Care
+                            </div>
+                            <div class="para-wrap">
+                                <p>Foster a culture where every one of us is committed to care for patients and their
+                                    caregivers</p>
+                            </div>
+                        </div>
+                        <div class="vision-item">
+                            <div class="vision-top">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/btTjbjECY0ZTZ4n8NkCkMTsP4QBxGx-metaTGVhZGVyc2hpcCAmIEV4Y2VsbGVuY2UucG5n-.png"
+                                    alt="Leadership &amp; Quality" width="100" height="100">
+                            </div>
+                            <div class="heading-sm font700 mb-10">
+                                Leadership &amp; Quality
+                            </div>
+                            <div class="para-wrap">
+                                <p>Commit to delivering excellence in everything we do through exemplary action and
+                                    behaviour</p>
+                            </div>
+                        </div>
+                        <div class="vision-item">
+                            <div class="vision-top">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/eIEqB2ml2nFpScFKNpfSGA7ezFlrYe-metaSW50aWdyaXR5IGFuZCBjb3VyYWdlLnBuZw==-.png"
+                                    alt="Integrity &amp; Courage" width="100" height="100">
+                            </div>
+                            <div class="heading-sm font700 mb-10">
+                                Integrity &amp; Courage
+                            </div>
+                            <div class="para-wrap">
+                                <p>Maintain the highest ethical standards by putting the patient first and demonstrating
+                                    the courage to do what is right</p>
+                            </div>
+                        </div>
+                        <div class="vision-item">
+                            <div class="vision-top">
+                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/about/November2023/zMyMUSHXA01osVGZZfKTWHcXCQDFeG-metaQ29sbGFib3JhdGlvbiBhbmQgaW5ub3ZhdGlvbi5wbmc=-.png"
+                                    alt="Collaboration, Learning &amp; Innovation" width="100" height="100">
+                            </div>
+                            <div class="heading-sm font700 mb-10">
+                                Collaboration, Learning &amp; Innovation
+                            </div>
+                            <div class="para-wrap">
+                                <p>Promote teamwork and collaboration, welcome change and creativity, encourage
+                                    innovation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <div class="mobile-sticky-links">
+        <ul>
+            <li>
+                <a class="toggle-menu" href="#">
+                    <div class="icon open-icon">
+                        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="https://www.w3.org/2000/svg">
+                            <path d="M1 7H19" stroke="#F04E30" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1 1H19" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1 13H19" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="icon close-icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M20.9615 2.86865L20.9614 2.86858L20.9531 2.87687L13.2675 10.5892L12.8105 11.0479L13.2674 11.5067L20.9416 19.2127C21.1616 19.4534 21.2816 19.7701 21.2758 20.0977C21.27 20.4286 21.1363 20.7439 20.9036 20.9773C20.671 21.2107 20.3576 21.344 20.0295 21.3498C19.7049 21.3555 19.3902 21.236 19.1505 21.0156L11.4713 13.3097L11.0111 12.8479L10.5507 13.3095L2.86624 21.0129C2.62651 21.2334 2.31181 21.353 1.98711 21.3472C1.65903 21.3414 1.3456 21.2081 1.11297 20.9748C0.880274 20.7413 0.74663 20.426 0.74081 20.0951C0.73505 19.7676 0.854928 19.4509 1.07487 19.2103L8.75412 11.5069L9.21135 11.0482L8.75435 10.5893L1.07129 2.87446L1.06309 2.86622L1.05459 2.85828C0.929846 2.74168 0.829673 2.60095 0.760152 2.44443C0.690629 2.28791 0.653214 2.11886 0.650198 1.9474C0.647182 1.77593 0.678629 1.60566 0.742613 1.44675C0.806593 1.28785 0.901769 1.14365 1.02236 1.02268C1.14294 0.901719 1.28646 0.806474 1.4443 0.742521C1.60213 0.678569 1.77112 0.647188 1.94119 0.650198C2.11127 0.653208 2.27906 0.69055 2.43457 0.760057C2.59008 0.829565 2.73018 0.929844 2.84645 1.05502L2.85426 1.06342L2.86235 1.07154L10.5505 8.78386L11.0108 9.24557L11.4711 8.78394L19.1619 1.07162L19.1619 1.07169L19.1696 1.0637C19.2868 0.94208 19.4269 0.845209 19.5816 0.778636C19.7363 0.712065 19.9026 0.677094 20.0708 0.675708C20.2389 0.674322 20.4058 0.706548 20.5615 0.770556C20.7173 0.834568 20.8589 0.929111 20.9781 1.04877C21.0972 1.16843 21.1916 1.31082 21.2555 1.46768C21.3194 1.62454 21.3515 1.79267 21.3499 1.96223C21.3484 2.13179 21.3132 2.29929 21.2465 2.45494C21.1797 2.61059 21.0828 2.75121 20.9615 2.86865Z"
+                                fill="#F04E30" stroke="white" stroke-width="1.3" />
+                        </svg>
+                    </div>
+                    Menu
+                </a>
+            </li>
+            <li>
+                <a href="https://www.medanta.org/doctor-listing">
+                    <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M3.83862 11.6841C6.07056 13.8948 8.80637 15.307 8.80637 15.307C8.80637 15.307 16.6128 11.2796 16.6128 6.17702C16.6128 3.72154 14.7322 1.70605 12.408 1.70605"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M5.20484 1.70972C2.88065 1.70972 1 3.7252 1 6.18068C1 7.50068 1.52161 8.74617 2.29516 9.87101"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M6.32257 3.12903C6.91049 3.12903 7.38709 2.65243 7.38709 2.06452C7.38709 1.4766 6.91049 1 6.32257 1C5.73466 1 5.25806 1.4766 5.25806 2.06452C5.25806 2.65243 5.73466 3.12903 6.32257 3.12903Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M11.2903 3.12903C11.8783 3.12903 12.3549 2.65243 12.3549 2.06452C12.3549 1.4766 11.8783 1 11.2903 1C10.7024 1 10.2258 1.4766 10.2258 2.06452C10.2258 2.65243 10.7024 3.12903 11.2903 3.12903Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M19.8064 16.9677V17.5C19.8064 20.5232 17.3296 23 14.3064 23C11.2832 23 8.8064 20.5232 8.8064 17.5V15.5483"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M18.387 18.05C17.3367 17.5284 16.6128 16.4461 16.6128 15.1935C16.6128 13.43 18.0428 12 19.8063 12C21.5699 12 22.9999 13.43 22.9999 15.1935C22.9999 16.4461 22.276 17.5284 21.2257 18.05"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M19.8066 16.613C20.5904 16.613 21.2259 15.9775 21.2259 15.1936C21.2259 14.4098 20.5904 13.7743 19.8066 13.7743C19.0227 13.7743 18.3872 14.4098 18.3872 15.1936C18.3872 15.9775 19.0227 16.613 19.8066 16.613Z"
+                                fill="#F04E30" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M1 9.87098H4.19355L5.25806 8.09679L7.03226 11.6452L9.16129 5.61292L10.9355 9.87098H12.7097"
+                                stroke="#58595B" stroke-linecap="square" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    Doctors
+                </a>
+            </li>
+            <li>
+                <a href="https://www.medantaeclinic.org/">
+                    <div class="icon"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M17.7283 12.0005C16.3305 12.0005 14.9898 12.58 14.0013 13.6114C13.0129 14.6429 12.4575 16.0419 12.4575 17.5005C12.4575 18.9591 13.0129 20.358 14.0013 21.3895C14.9898 22.4209 16.3305 23.0004 17.7283 23.0004C19.1262 23.0004 20.4669 22.4209 21.4554 21.3895C22.4438 20.358 22.9992 18.9591 22.9992 17.5005C22.9992 16.0419 22.4438 14.6429 21.4554 13.6114C20.4669 12.58 19.1262 12.0005 17.7283 12.0005ZM17.7283 22.0004C16.5845 22.0004 15.4877 21.5264 14.6789 20.6825C13.8701 19.8386 13.4159 18.694 13.4159 17.5005C13.4159 16.3069 13.8701 15.1624 14.6789 14.3184C15.4876 13.4745 16.5845 13.0005 17.7283 13.0005C18.8722 13.0005 19.969 13.4745 20.7778 14.3184C21.5866 15.1623 22.0408 16.3069 22.0408 17.5005C22.0408 18.694 21.5866 19.8385 20.7778 20.6825C19.9691 21.5264 18.8722 22.0004 17.7283 22.0004Z"
+                                fill="#58595B" />
+                            <path
+                                d="M19.2531 15.7596L16.9292 18.1795L16.2055 17.4244V17.4246C16.1157 17.3299 15.9931 17.2767 15.8654 17.2767C15.7376 17.2767 15.6152 17.3299 15.5251 17.4246C15.3393 17.6195 15.3393 17.9345 15.5251 18.1297L16.5937 19.2396C16.7805 19.4334 17.0824 19.4334 17.2693 19.2396L19.9335 16.4646C20.1201 16.2685 20.119 15.9517 19.9311 15.757C19.7432 15.5625 19.4397 15.5635 19.2532 15.7596L19.2531 15.7596Z"
+                                fill="#58595B" />
+                            <path
+                                d="M11.1789 20H1.91665C1.66246 20 1.41874 19.8948 1.23906 19.7071C1.05918 19.5196 0.958295 19.2653 0.958295 19V8.00007H14.8541C15.1188 8.00007 15.3333 7.77624 15.3333 7.50007C15.3333 7.2239 15.1188 7.00007 14.8541 7.00007H0.958295V4.00009C0.958295 3.73486 1.05918 3.48054 1.23906 3.29304C1.41874 3.10535 1.66244 3.00007 1.91665 3.00007H4.0729V3.50007C4.0729 3.89792 4.22432 4.27937 4.49385 4.56082C4.76357 4.84206 5.12913 5.00007 5.5104 5.00007H5.98957C6.37084 5.00007 6.7364 4.84206 7.00612 4.56082C7.27565 4.27937 7.42708 3.89792 7.42708 3.50007V3.00007H13.6562V3.50007C13.6562 3.89792 13.8077 4.27937 14.0772 4.56082C14.3469 4.84206 14.7125 5.00007 15.0938 5.00007H15.5729C15.9542 5.00007 16.3197 4.84206 16.5895 4.56082C16.859 4.27937 17.0104 3.89792 17.0104 3.50007V3.00007H19.1667C19.4209 3.00007 19.6646 3.10535 19.8443 3.29304C20.0241 3.48054 20.125 3.73484 20.125 4.00009V7.00007H17.9783C17.7136 7.00007 17.4991 7.2239 17.4991 7.50007C17.4991 7.77624 17.7136 8.00007 17.9783 8.00007H20.125V10.97C20.125 11.2461 20.3395 11.4699 20.6042 11.4699C20.8689 11.4699 21.0834 11.2461 21.0834 10.97V3.99999C21.0834 3.46954 20.8814 2.96094 20.522 2.58575C20.1625 2.21075 19.675 2 19.1667 2H17.0104V1.5C17.0104 1.10215 16.859 0.720706 16.5895 0.439258C16.3198 0.158009 15.9542 0 15.5729 0H15.0938C14.7125 0 14.3469 0.158009 14.0772 0.439258C13.8077 0.720701 13.6563 1.10215 13.6563 1.5V2H7.4271V1.5C7.4271 1.10215 7.27567 0.720706 7.00614 0.439258C6.73642 0.158009 6.37086 0 5.98959 0H5.51042C5.12915 0 4.76359 0.158009 4.49387 0.439258C4.22434 0.720701 4.07291 1.10215 4.07291 1.5V2H1.91667C1.40832 2 0.92091 2.21074 0.561344 2.58575C0.201969 2.96094 0 3.46954 0 3.99999V18.9999C0 19.5304 0.201959 20.039 0.561344 20.4142C0.920905 20.7892 1.40832 20.9999 1.91667 20.9999H11.179C11.4436 20.9999 11.6581 20.7761 11.6581 20.4999C11.6581 20.2237 11.4436 20 11.1789 20ZM14.6145 1.50012C14.6145 1.22395 14.829 1.00012 15.0937 1.00012H15.5728C15.6999 1.00012 15.8218 1.05286 15.9116 1.14661C16.0015 1.24036 16.052 1.36751 16.052 1.50012V3.50011C16.052 3.63273 16.0015 3.75988 15.9116 3.85362C15.8218 3.94737 15.6999 4.00011 15.5728 4.00011H15.0937C14.829 4.00011 14.6145 3.77628 14.6145 3.50011V1.50012ZM5.03118 1.50012C5.03118 1.22395 5.24568 1.00012 5.51035 1.00012H5.98951C6.1166 1.00012 6.23845 1.05286 6.3283 1.14661C6.41814 1.24036 6.46868 1.36751 6.46868 1.50012V3.50011C6.46868 3.63273 6.41814 3.75988 6.3283 3.85362C6.23845 3.94737 6.1166 4.00011 5.98951 4.00011H5.51035C5.24568 4.00011 5.03118 3.77628 5.03118 3.50011V1.50012Z"
+                                fill="#58595B" />
+                            <path
+                                d="M11.4992 11.0007C11.4992 11.5531 11.0702 12.0007 10.5409 12.0007C10.0115 12.0007 9.58252 11.5531 9.58252 11.0007C9.58252 10.4484 10.0115 10.0007 10.5409 10.0007C11.0702 10.0007 11.4992 10.4484 11.4992 11.0007Z"
+                                fill="#F04E30" />
+                            <path
+                                d="M5.75187 11.0007C5.75187 11.5531 5.32287 12.0007 4.79354 12.0007C4.26421 12.0007 3.83521 11.5531 3.83521 11.0007C3.83521 10.4484 4.26421 10.0007 4.79354 10.0007C5.32287 10.0007 5.75187 10.4484 5.75187 11.0007Z"
+                                fill="#F04E30" />
+                            <path
+                                d="M5.75187 16.4995C5.75187 17.0519 5.32287 17.4995 4.79354 17.4995C4.26421 17.4995 3.83521 17.0518 3.83521 16.4995C3.83521 15.9472 4.26421 15.4995 4.79354 15.4995C5.32287 15.4995 5.75187 15.9472 5.75187 16.4995Z"
+                                fill="#F04E30" />
+                        </svg>
+
+                    </div>
+                    Book Apt.
+                </a>
+            </li>
+            <li class="chat isdisabled">
+                <a href="javascript:void(0)" onclick="chatHandler()">
+                    <div class="icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M18.8333 13.2222C18.8333 13.7625 18.6187 14.2806 18.2367 14.6626C17.8547 15.0446 17.3366 15.2593 16.7963 15.2593H4.57407L0.5 19.3333V3.03704C0.5 2.49678 0.714616 1.97865 1.09663 1.59663C1.47865 1.21462 1.99678 1 2.53704 1H16.7963C17.3366 1 17.8547 1.21462 18.2367 1.59663C18.6187 1.97865 18.8333 2.49678 18.8333 3.03704V13.2222Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> </div>
+                    Chat
+                </a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#Marmosetloadmodal" href="javascript:void(0);">
+                    <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M21.9468 17.7355V20.8892C21.948 21.182 21.8879 21.4717 21.7704 21.74C21.6529 22.0082 21.4805 22.249 21.2644 22.4469C21.0482 22.6449 20.793 22.7956 20.5152 22.8893C20.2373 22.9831 19.9429 23.018 19.6507 22.9916C16.4098 22.6401 13.2966 21.5348 10.5613 19.7644C8.01656 18.1504 5.85903 15.997 4.24197 13.4571C2.46198 10.7147 1.35426 7.59233 1.00855 4.34302C0.982229 4.05233 1.01684 3.75935 1.11019 3.48273C1.20353 3.20612 1.35356 2.95194 1.55072 2.73637C1.74788 2.5208 1.98785 2.34856 2.25535 2.23063C2.52286 2.11269 2.81204 2.05165 3.10448 2.05137H6.26417C6.77531 2.04635 7.27084 2.22701 7.65839 2.55967C8.04595 2.89233 8.29909 3.3543 8.37063 3.85947C8.50399 4.8687 8.75132 5.85964 9.10789 6.81339C9.2496 7.18964 9.28026 7.59856 9.19626 7.99167C9.11226 8.38479 8.91711 8.74564 8.63394 9.03145L7.29633 10.3665C8.79567 12.9983 10.9789 15.1773 13.6157 16.6738L14.9533 15.3388C15.2397 15.0561 15.6012 14.8613 15.9951 14.7775C16.389 14.6937 16.7987 14.7243 17.1756 14.8657C18.1312 15.2216 19.124 15.4685 20.1352 15.6016C20.6468 15.6736 21.1141 15.9308 21.4481 16.3243C21.7821 16.7177 21.9596 17.22 21.9468 17.7355Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M14.6267 5.20487C15.6554 5.40519 16.6009 5.90735 17.342 6.64707C18.0831 7.38679 18.5863 8.33042 18.787 9.35718M14.6267 1C16.764 1.23698 18.757 2.19226 20.2786 3.70899C21.8001 5.22573 22.7598 7.21376 22.9999 9.34667"
+                                stroke="#F04E30" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    CallBack
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- footer-special -->
+    <div wire:ignore.self class="modal" id="deleteMemberModal">
+        <div class="close close-model-layer" data-close="modal"></div>
+        <div class="modal__dialog">
+            <a class="close close-modal" data-close="modal" id="closeModal"></a>
+            <div class="modal__content">
+                <div class="modal-body">
+                    <div class="action-button dflex centered-items">
+                        <img src="https://www.medanta.org/assets/images/new_disclaimer.jpg" alt="Back to top"
+                            width="600" height="600">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="backtotop">
+        <span id="backtotop-value"><img src="https://www.medanta.org/assets/images/icons/upwards-arrow.png"
+                alt="Back to top" width="50" height="50"></span>
+    </div>
+
+    <script src="https://www.medanta.org/assets/js/jquery.min.js"></script>
+    <script src="https://www.medanta.org/assets/js/jquery-ui.js"></script>
+    <script src="https://www.medanta.org/assets/js/slick.min.js"></script>
+    <script src="https://www.medanta.org/assets/js/wow.min.js"></script>
+    <script src="https://www.medanta.org/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script> -->
+    <script src="https://www.medanta.org/assets/js/custom.js?v=2.2"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let url = window.location.href;
+
+            // Pages that should allow "/hi/"
+            let allowedHiPages = [
+                "https://medanta-uat.lyxelandflamingotech.in/hi/patient-education"
+            ];
+
+            // If current URL starts with "/hi/" but is not in allowed list → remove it
+            if (url.includes("/hi/") && !allowedHiPages.includes(url)) {
+                let newUrl = url.replace("/hi/", "/");
+                window.location.href = newUrl;
+            }
+
+            // If current URL is allowed hi page → do nothing
+        });
+    </script>
+
+    <!-- cookies js -->
+    <script>
+
+        $(document).ready(function () {
+            $('.cookies').hide();
+
+            function checkCookieConsent() {
+                return document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
+            }
+
+            // Show the popup if no consent cookie is found
+            if (!checkCookieConsent()) {
+                $('.cookies').show();
+            }
+        });
+        // Handle Accept button click
+        $('#acceptCookies').on('click', function () {
+            document.cookie = "cookieConsent=accepted; path=/; max-age=" + (60 * 60 * 24); // 1 day
+            $.ajax({
+                url: '/api/cookie-consent',
+                method: 'POST',
+                data: {
+                    consent: 1,
+                    _token: "wlAGvPxwc5CrikHNCvrdEuUDSDMAycunwKet6aia" // Include CSRF token
+                },
+                success: function (response) {
+                    $('.cookies').hide();
+                },
+                error: function (xhr) {
+                    console.error('Failed to save consent:', xhr.responseText);
+                }
+            });
+        });
+        // Handle Reject button click
+        $('#rejectCookies').on('click', function () {
+            document.cookie = "cookieConsent=rejected; path=/; max-age=" + (60 * 60 * 24); // 1 day
+            $.ajax({
+                url: '/api/cookie-consent',
+                method: 'POST',
+                data: {
+                    consent: 0,
+                    _token: "wlAGvPxwc5CrikHNCvrdEuUDSDMAycunwKet6aia" // Include CSRF token
+                },
+                success: function (response) {
+                    $('.cookies').hide();
+                },
+                error: function (xhr) {
+                    console.error('Failed to save consent:', xhr.responseText);
+                }
+            });
+        });
+
+    </script>
+    <!-- Sitelink search box schema-->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Medanta",
+      "url": "https://www.medanta.org/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.medanta.org/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+    <!--- Medical Organisation -->
+
+    <script type="application/ld+json" class="schemantra.com">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "@id": "Hospital"
+    }
+  </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.awards-slider').slick({
+                speed: 300,
+                slidesToShow: 3,
+                arrows: true,
+                slidesToScroll: 1,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/assets/images/icons/vector-left.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/assets/images/icons/vector-right.png' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            $('.philosophy-slider').slick({
+                speed: 300,
+                slidesToShow: 1,
+                arrows: true,
+                slidesToScroll: 1,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/assets/images/icons/vector-left.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/assets/images/icons/vector-right.png' /></button>",
+            });
+            $('.growth-slider').slick({
+                dots: false,
+                infinite: false,
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                asNavFor: '.growth-nav-slider',
+                // customPaging: function(slider, i) {
+                //         return '<button class="tab">' + $(slider.$slides[i]).attr('title') + '</button>';
+                //     },
+                // arrows:false,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/assets/images/icons/vector-left.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/assets/images/icons/vector-right.png' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 767,
+                        settings: {
+                        }
+                    }
+                ]
+            });
+            $('.growth-nav-slider').slick({
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                infinite: false,
+                swipeToSlide: false,
+                asNavFor: '.growth-slider',
+                dots: false,
+                arrows: true,
+                // infinite: false,
+                focusOnSelect: true,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='/assets/images/icons/vector-left.png' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='/assets/images/icons/vector-right.png' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 1023,
+                        settings: {
+                            slidesToShow: 5,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            swiper = new Swiper(".swiper-container", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                loop: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 30,
+                    depth: 800,
+                    modifier: 1.5,
+                    slideShadows: true,
+                },
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+        });
+    </script>
+
+    <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false"
+        data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'wlAGvPxwc5CrikHNCvrdEuUDSDMAycunwKet6aia'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
+
+
+
+    {% endblock %}
+
+    {% block extra_js %}
+    <!-- Add about page specific JavaScript here -->
+    {% endblock %}

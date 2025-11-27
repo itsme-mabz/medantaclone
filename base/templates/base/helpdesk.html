@@ -1,0 +1,3077 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}About Us - Medanta Clone{% endblock %}
+
+{% block meta_description %}Learn more about Medanta Clone and our commitment to healthcare excellence{% endblock %}
+
+{% block extra_css %}
+<!-- Add about page specific CSS here -->
+<!-- <link rel="stylesheet" href="{% static 'base/css/about.css' %}"> -->
+{% endblock %}
+
+{% block content %}
+
+<head>
+
+    <style>
+        .tabbed-content {
+            max-width: 100%;
+            height: 763px;
+            margin: 0;
+        }
+
+        .tabs ul {
+            margin: 0;
+            padding: 0 0 1em 0;
+            font-weight: bold;
+        }
+
+        .tabs ul li {
+            background-color: #fff;
+            color: #fff;
+        }
+
+        .tabs ul li a {
+            padding: 0.5em 1em;
+        }
+
+        .tabs ul li a:hover,
+        .tabs ul li a.active {
+            background: #f04e30;
+            color: #eee;
+        }
+
+        .item {
+            margin-bottom: 2px;
+        }
+
+        .item::before {
+            cursor: pointer;
+            font-weight: bold;
+            background: #eee;
+            padding: 0.5em;
+            display: block;
+        }
+
+        .item.active::before {
+            background: #444;
+            color: #eee;
+        }
+
+        .item.active .item-content {
+            padding: 1em;
+            -webkit-transition: opacity 0.3s ease-in-out;
+            -moz-transition: opacity 0.3s ease-in-out;
+            -o-transition: opacity 0.3s ease-in-out;
+            -ms-transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .help-tabbing .tabbed-content .tabs ul li a {
+            padding: 20px 30px;
+            box-shadow: 0px -1px 11px 6px rgba(0, 0, 0, 0.08);
+            border-radius: 13px;
+        }
+
+        .help-tabbing .tabs ul li a.active {
+            color: #fff;
+
+            background: #f04e30;
+        }
+
+        .help-tabbing .tabbed-content .tabs ul li a .icon-hover {
+            display: none;
+        }
+
+        .help-tabbing .tabbed-content .tabs ul li a.active .icon-hover {
+            display: block;
+        }
+
+        .help-tabbing .tabbed-content .tabs ul li a.active .icon-default {
+            display: none
+        }
+
+        .acc-help .icon-hover {
+            display: none;
+        }
+
+        .acc-help.active .icon-hover {
+            display: block;
+        }
+
+        .acc-help.active .icon-default {
+            display: none
+        }
+
+        /* .acc-help:hover .icon-default{display: none;}
+.acc-help:hover .icon-hover{display: block;} */
+
+        .help-tabbing .tabbed-content .tabs ul li a svg path {}
+
+        .tabbed-content.tabs-side .tabs {
+            max-height: 763px;
+            height: 100%;
+        }
+
+        .tabbed-content section.item.active .item-content {
+            width: 74%;
+            float: right;
+            height: 743px;
+            background: #f6f6f6;
+            padding: 30px 40px 20px;
+            border-radius: 12px;
+            overflow-y: scroll;
+        }
+
+        .help-tabbing .tabbed-content.tabs-side .item.acc-help {
+            margin: 0;
+        }
+
+        .help-tabbing {
+            border-top: 1px solid #d9d9d9;
+        }
+
+        /*Connection*/
+
+
+        @media all and (min-width: 800px) {
+            .item.active .item-content {
+                padding-top: 0;
+            }
+
+            .tabs-side .tabs li {
+                margin-bottom: 2px;
+            }
+        }
+
+        /*
+The project specific CSS starts here
+This is the minimum CSS that you will need in order for this to work
+*/
+        .tabbed-content .tabs {
+            display: none;
+        }
+
+        .tabbed-content .item {
+            min-height: 2em;
+        }
+
+        .tabbed-content .item::before {
+            content: attr(data-title);
+        }
+
+        .tabbed-content .item .item-content {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+        }
+
+        .tabbed-content .item.active .item-content {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+        }
+
+        .tabbed-content.tabs-side .tabs {
+            padding: 0 20px;
+        }
+
+        /*accordian*/
+        .product-accordion-list {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            background-color: transparent;
+        }
+
+        .product-accordion-list li {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            padding: 19px 30px;
+            cursor: pointer;
+            margin: 25px 0;
+            border-radius: 12px;
+        }
+
+        .product-accordion-list li:first-child {
+            margin-top: 10px;
+        }
+
+        .product-accordion-list li .product-accordion-title {
+            font-weight: 400;
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+            color: #58595B;
+            cursor: pointer;
+            font-weight: 600;
+            line-height: 1.4;
+            padding-right: 40px;
+        }
+
+        .product-accordion-list li .product-accordion-title:before {
+            content: "";
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            border-radius: 50px;
+            right: 0px;
+            border: 1px solid #ccc;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            background: url(../../assets/images/icons/selectarrow-grey.png) no-repeat center center;
+            background-size: 36px 36px;
+            transition: 0.3s;
+        }
+
+        .product-accordion-list li .product-answer {
+            position: relative;
+            display: none;
+            width: 100%;
+            height: auto;
+            margin: 10px 0 0;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .product-accordion-list li .product-answer p {
+            position: relative;
+            display: block;
+            font-weight: 280;
+            font-stretch: 70%;
+            letter-spacing: -.02em;
+            padding: 0;
+            cursor: pointer;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .contact-faq .product-accordion-list li .product-answer p {
+            color: #6d6d6d;
+        }
+
+        .product-accordion-list li .product-accordion-title.active:before {
+            transform: rotate(-180deg);
+        }
+
+        .item-content .heading-sm {
+            font-weight: 700;
+        }
+
+        /*-----*/
+
+        /*--FAQs---*/
+        .spc-help-head {
+            display: none;
+        }
+
+        .help-tabbing .tabbed-content .tabs ul li a.active svg path {
+            stroke: #fff;
+        }
+
+        /* #faq-section .faq-wrap:nth-child(1){border-top: 1px solid #ccc;} */
+
+
+        .help-tabbing .tabbed-content.tabs-side .tabs {
+            padding-top: 15px !important;
+            margin-top: -15px !important;
+        }
+
+        .help-tabbing .tabbed-content .tabs ul li a img {
+            height: auto;
+            border-radius: 0;
+            object-fit: inherit;
+        }
+
+        @media all and (max-width: 1599px) {
+            .help-tabbing .tabbed-content .tabs ul li a {
+                padding: 10px 20px;
+            }
+
+            .help-tabbing .tabbed-content .tabs ul li a {
+                font-size: 14px;
+            }
+
+            .product-accordion-list li .product-accordion-title {
+                font-size: 16px;
+            }
+
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                width: 26%;
+            }
+
+            .help-tabbing .tabbed-content section.item.active .item-content,
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                height: 693px;
+            }
+
+            .tabbed-content section.item.active .item-content {
+                width: 72%;
+            }
+
+            .help-tabbing .tabbed-content .tabs ul li a .icon-default {
+                width: 40px;
+            }
+
+            .help-tabbing .tabbed-content .tabs ul li a .icon-hover {
+                width: 40px
+            }
+        }
+
+        @media all and (max-width: 991px) {
+
+            .tabbed-content section.item.active .item-content {
+                width: 100%;
+            }
+
+            .tabbed-content section.item.active .spc-help-head {
+                padding: 15px 20px;
+                color: #fff;
+                background: #f04e30;
+                box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.08);
+                border-radius: 13px;
+                margin: 20px 0;
+            }
+
+            .tabbed-content section.item .spc-help-head {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: bold;
+                padding: 15px 20px;
+                color: #58595B;
+                ;
+                background: #fff;
+                box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.08);
+                border-radius: 13px;
+                margin: 20px 0;
+            }
+
+            .tabbed-content section.item.active .item-content {
+                height: auto;
+                padding: 10px 20px;
+                float: none;
+            }
+
+            .tabbed-content {
+                height: auto;
+            }
+
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                width: 32%;
+            }
+
+            .help-tabbing .tabbed-content.tabs-side .item.acc-help {
+                margin-left: 260px;
+            }
+
+            .tabbed-content .tabs {
+                display: block;
+            }
+
+            .item-content .heading-sm {
+                padding: 20px 10px;
+                padding-bottom: 0;
+            }
+
+            .product-accordion-list li {
+                padding-left: 15px;
+            }
+
+            .product-accordion-list li .product-accordion-title:before {
+                right: -11px
+            }
+
+            .product-accordion-list li .product-accordion-title {
+                padding-right: 25px;
+            }
+
+            .spc-help-head .icon {
+                width: 48px;
+                min-width: 48px;
+            }
+
+            /* .acc-help:hover .icon-default{display:block;} */
+            /* .acc-help:hover .icon-hover{display: none;} */
+
+        }
+
+        @media all and (max-width: 820px) {
+            .help-tabbing .tabbed-content.tabs-side .item.acc-help {
+                margin-left: 240px;
+            }
+
+        }
+
+        @media all and (max-width: 767px) {
+
+            .tabbed-content section.item.active .spc-help-head,
+            .tabbed-content section.item .spc-help-head {
+                padding: 10px 20px;
+            }
+
+            .product-accordion-list li {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .product-accordion-list li .product-accordion-title {
+                font-size: 13px;
+            }
+
+            .tabbed-content section.item.active .item-content p {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+
+            .download-slider .slick-list {
+                padding-right: 0;
+            }
+
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                display: none;
+            }
+
+            .help-tabbing .tabbed-content.tabs-side .item.acc-help {
+                margin-left: 0px;
+                position: relative;
+            }
+
+            .help-tabbing .tabbed-content section.item.active .item-content,
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                height: auto;
+            }
+
+            .spc-help-head {
+                display: block;
+            }
+
+            /* .spc-help-head{position: absolute; top: 50%; transform:translateY(-50%); left: 15px;} */
+            .tabbed-content section.item.active::before,
+            .tabbed-content section.item::before {
+                display: none;
+            }
+
+            .help-tabbing .item.acc-help.active .spc-help-head svg path {
+                stroke: #fff;
+            }
+
+            .product-accordion-list li .product-accordion-title:before {
+                right: -21px;
+                top: -5px;
+                border: 0;
+                box-shadow: none;
+            }
+
+        }
+
+        @media all and (max-width: 400px) {
+            .product-accordion-list li {
+                padding-left: 15px;
+                padding-right: 30px;
+            }
+
+        }
+
+        @media all and (min-width: 800px) {
+            .tabbed-content .tabs {
+                display: block;
+            }
+
+            .tabbed-content .tabs li {
+                display: inline-block;
+            }
+
+            .tabbed-content .tabs li a {
+                display: block;
+            }
+
+            .tabbed-content .item {
+                min-height: 0;
+            }
+
+            .tabbed-content .item::before {
+                display: none;
+            }
+
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                width: 30%;
+                float: left;
+                padding: 0 20px 20px;
+            }
+
+            .tabbed-content.tabs-side .tabs li {
+                display: block;
+                /* box-shadow: 0 3px 40px rgba(204, 204, 204, 0.5); */
+                border-radius: 13px;
+            }
+
+            .tabbed-content.tabs-side .item {
+                margin-left: 260px;
+            }
+
+            .tabbed-content section.item.active .item-content p {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+
+        }
+
+        @media all and (max-width: 767px) {
+            .tabbed-content section.item.active .item-content p {
+                font-size: 12px;
+            }
+        }
+
+        @media all and (min-width: 1024px) {
+            .help-tabbing .tabbed-content.tabs-side .tabs {
+                width: 26%;
+            }
+        }
+    </style>
+
+    <style>
+        body {
+            padding-top: 82px;
+        }
+
+        .site-header {
+            height: 82px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: #fff;
+            padding: 15px 0;
+        }
+
+        .logo {
+            margin-bottom: -3px;
+            line-height: 0;
+        }
+
+        .logo svg {
+            max-width: 100%;
+        }
+
+        .site-header nav .close-menu {
+            width: 32px;
+            height: 32px;
+            border: 0;
+            outline: 0;
+            text-align: center;
+            background-color: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            position: absolute;
+            left: 300px;
+            top: 10px;
+            display: none;
+        }
+
+        .site-header nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .site-header nav .menu {
+            display: flex;
+        }
+
+        .site-header nav .menu>li {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 15px;
+        }
+
+        .site-header nav .menu>li a {
+            display: block;
+            white-space: nowrap;
+            color: inherit;
+            padding: 18px 0;
+        }
+
+        .site-header nav .menu li.has-submenu {
+            position: relative;
+            padding-right: 18px;
+        }
+
+        .site-header nav .menu>li.has-submenu ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.14);
+            background-color: #fff;
+            padding: 10px 20px;
+            z-index: 999;
+            width: 280px;
+        }
+
+        .site-header nav .menu>li.has-submenu .open-dropdown,
+        .site-header nav .menu>li.has-submenu .thirdopen-dropdown {
+            position: absolute;
+            right: 0;
+            background: transparent;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            top: 14px;
+            width: 12px;
+            height: 24px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .site-header nav .menu>li.has-submenu .open-dropdown svg,
+        .site-header nav .menu li.has-submenu .thirdopen-dropdown svg {
+            width: 10px;
+            height: auto;
+        }
+
+        .site-header nav .menu li.third-level .open-dropdown {
+            top: 14px;
+            pointer-events: none;
+        }
+
+        .site-header nav .menu li.third-level ul {
+            left: 260px;
+            top: 0;
+            display: none;
+            border-top-left-radius: 0;
+        }
+
+        .site-header nav .menu>li.has-submenu ul li a {
+            color: var(--text);
+            white-space: normal;
+            padding: 10px 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .site-header nav .menu>li.has-submenu ul li a:hover,
+            .site-header nav .menu>li:hover a {
+                color: var(--primary);
+            }
+
+            .site-header nav .menu>li.has-submenu:hover>ul,
+            .site-header nav .menu li.third-level:hover>ul {
+                display: block;
+            }
+
+            .site-header nav .menu li.third-level .open-dropdown,
+            .site-header nav .menu li.third-level .thirdopen-dropdown {
+                transform: rotate(-90deg);
+                top: 14px;
+            }
+
+            .site-header nav .menu li.third-level ul:before {
+                left: -40px;
+                top: 0;
+                width: 40px;
+                content: "";
+                position: absolute;
+                height: 100%;
+            }
+
+            .site-header nav .menu li.third-level ul li.third-level ul {
+                left: auto;
+                top: 0px;
+                border-top-left-radius: 15px;
+                right: 100%;
+            }
+        }
+
+        .site-header nav .menu>li.has-submenu ul li {
+            border-bottom: 1px solid rgba(88, 89, 91, 0.5);
+        }
+
+        .site-header nav .menu>li.has-submenu ul li:last-child {
+            border-bottom: 0;
+        }
+
+        .site-header nav .menu>li.has-submenu ul li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 50px;
+        }
+
+        .site-header nav .menu>li.has-submenu ul li a .icon {
+            width: 26px;
+            flex: 0 0 26px;
+        }
+
+        .header-contact-number {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-contact-number a.whatsapp-btn {
+            display: none;
+        }
+
+        .header-contact-number a {
+            font-weight: 700;
+            display: flex;
+            padding: 10px 18px;
+            background-color: var(--primary);
+            border-radius: 40px;
+            border: 1px solid var(--primary);
+            color: #58595b;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-contact-number a img {
+            width: 24px;
+            height: 24px;
+            margin: auto;
+        }
+
+        .header-contact-number a.whatsapp-btn img,
+        .header-contact-number a.feedback-btn img,
+        .header-contact-number a.emergency-btn img {
+            display: block;
+        }
+
+        .header-contact-number a .txt {
+            display: none;
+            font-size: 10px;
+        }
+
+        .header-contact-number .reqcallback-btn span {
+            font-size: 12px;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .header-contact-number a.feedback-btn,
+        .header-contact-number a.emergency-btn {
+            background-color: transparent;
+        }
+
+        .chatbot-waiting {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.85) url(../../../assets/images/icons/loading.svg) no-repeat center center;
+            background-size: 60px auto;
+        }
+
+        #sendResumModal .frm-holder .theme-button {
+            width: 100%;
+            display: block;
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .header-contact-number a.contact-btn,
+            .header-contact-number a.emergency-btn {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1820px) {
+            .header-contact-number a .txt {
+                display: block;
+                margin-left: 5px;
+                font-size: 12px;
+            }
+
+            .header-contact-number a.reqcallback-btn {
+                color: #fff;
+            }
+        }
+
+        @media screen and (max-width: 1699px) {
+            .site-header nav .menu>li {
+                margin: 0 10px;
+            }
+        }
+
+        @media screen and (max-width: 1599px) {
+            .site-header nav .menu>li {
+                font-size: 14px;
+            }
+
+            .site-header nav .menu li.third-level .open-dropdown,
+            .site-header nav .menu li.third-level .thirdopen-dropdown {
+                top: 14px;
+            }
+        }
+
+        @media screen and (max-width: 1399px) {
+            .logo {
+                width: 115px;
+            }
+
+            .site-header nav .menu>li {
+                font-size: 12px;
+                margin: 0 7px;
+            }
+
+            .site-header nav .menu li.third-level .open-dropdown,
+            .site-header nav .menu li.third-level .thirdopen-dropdown {
+                top: 12px;
+            }
+        }
+
+        @media screen and (max-width: 1199px) {
+            body {
+                padding-top: 62px;
+            }
+
+            .site-header {
+                border-bottom: 1px solid #d9d9d9;
+                padding: 7px 0;
+                height: 62px;
+            }
+
+            .site-header nav {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 62px;
+                right: 0;
+                bottom: 76px;
+                z-index: 999;
+                background-color: #fff;
+                overflow: auto;
+            }
+
+            .site-header nav.is-opened {
+                display: block;
+            }
+
+            .site-header nav .close-menu {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu ul li.active>a,
+            .site-header nav .menu>li.active>a {
+                color: var(--primary);
+            }
+
+            .site-header nav .menu>li.has-submenu.active>ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level ul li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul li.third-level.active ul li.third-level ul {
+                display: none;
+            }
+
+            .site-header nav .menu>li.has-submenu.active li.third-level.active ul li.third-level.active ul li.third-level.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu {
+                display: block;
+                padding: 5px 20px;
+                overflow: auto;
+            }
+
+            .site-header nav .menu>li {
+                margin: 0;
+                font-size: 13px;
+                border-bottom: 1px solid #dadada;
+            }
+
+            .site-header nav .menu li.has-submenu {
+                padding-right: 0;
+            }
+
+            .site-header nav .menu li.has-submenu a.open-submenu {
+                padding-right: 30px;
+            }
+
+            nav .menu>li a {
+                padding: 16px 0;
+            }
+
+            nav .menu>li.has-submenu .open-dropdown {
+                top: 12px;
+                pointer-events: none;
+            }
+
+            nav .menu>li.has-submenu.active>.open-dropdown svg path,
+            nav li.third-level.active>.open-dropdown svg path {
+                stroke: var(--primary);
+            }
+
+            .site-header nav .menu>li.has-submenu ul {
+                position: static;
+                width: auto;
+                box-shadow: none;
+                margin-bottom: 15px;
+                padding: 0;
+            }
+
+            .site-header nav .menu>li.has-submenu.active ul {
+                display: block;
+            }
+
+            .site-header nav .menu>li.has-submenu ul li a .icon {
+                width: 32px;
+                flex: 0 0 32px;
+            }
+
+            .header-contact-number a {
+                padding: 10px 15px;
+            }
+
+            .header-contact-number a.reqcallback-btn {
+                display: none;
+            }
+        }
+
+
+        @media screen and (max-width: 767px) {
+            .header-contact-number {
+                gap: 0;
+            }
+
+            .header-contact-number a.whatsapp-btn {
+                display: block;
+            }
+
+            .header-contact-number a.feedback-btn {
+                display: none;
+            }
+
+            .site-header {
+                padding: 10px 0 7px 0;
+            }
+
+            .header-contact-number a {
+                background-color: transparent;
+                border: 0;
+                display: block;
+                padding: 0;
+                margin-left: 15px;
+                text-align: center;
+            }
+
+            .header-contact-number a .txt {
+                display: block;
+            }
+
+            .header-contact-number a img {
+                margin-bottom: 5px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .cookies {
+                flex-wrap: wrap;
+            }
+
+            .cookies p {
+                margin: 0 0 15px;
+                width: 100%;
+            }
+
+            .cookies .list-details {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .header-contact-number a {
+                width: auto;
+                margin: 0 auto;
+            }
+
+            .header-contact-number a.emergency-btn {
+                width: 70px;
+            }
+
+
+            .emergency-txt-grp {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .flip-box {
+                width: 100px;
+                height: 24px;
+                perspective: 1000px;
+            }
+
+            .flipper {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                animation: rotateText 4s infinite linear;
+            }
+
+            .flip-text {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #f04e30;
+                font-size: 10px;
+                margin-top: -5px;
+            }
+
+            .front {
+                transform: rotateY(0deg);
+            }
+
+            .back {
+                transform: rotateY(180deg);
+            }
+
+            @keyframes rotateText {
+                0% {
+                    transform: rotateY(0deg);
+                }
+
+                50% {
+                    transform: rotateY(180deg);
+                }
+
+                100% {
+                    transform: rotateY(360deg);
+                }
+            }
+
+
+        }
+
+        .emergency-btn-box-mb {
+            display: none !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0px;
+            text-decoration: none;
+            width: 70px;
+        }
+
+        @keyframes flipLoop {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            45% {
+                transform: rotateY(0deg);
+            }
+
+            50% {
+                transform: rotateY(180deg);
+            }
+
+            95% {
+                transform: rotateY(180deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .emergency-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            gap: 0px;
+            flex-direction: column;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .emergency-side.emergency-front {
+            background-color: #ffffff;
+            border: 1px solid #EE4F39;
+        }
+
+        .emergency-side.emergency-front .emergency-text {
+            color: #58595B;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .emergency-side.emergency-back {
+            background-color: #EE4F39;
+            font-size: 12px;
+            font-weight: 700;
+            transform: rotateY(180deg);
+        }
+
+        .emergency-side.emergency-back .emergency-text {
+            color: #FFFFFF;
+        }
+
+        .emergency-svg-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+        }
+
+        .emergency-svg-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background-color: #e9493093;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-scale 2s infinite;
+            z-index: 0;
+        }
+
+        .emergency-svg-wrapper svg {
+            /* animation: svg-vibrate 2s infinite; */
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse-scale {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes svg-vibrate {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(1px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .emergency-info-box span {
+            font-size: 10px;
+            color: #58595B;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .emergency-info-box {
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .emergency-info-box .emergency-number {
+            animation: blink1 5s infinite;
+        }
+
+        .emergency-info-box .emergency-back {
+            transform: rotateY(180deg);
+        }
+
+        .emergency-info-box .emergency-text {
+            animation: blink2 5s infinite;
+            transform: translateX(-50%) rotateY(180deg);
+        }
+
+        @keyframes blink1 {
+            0% {
+                transform: translateX(-50%) rotateY(0deg);
+                opacity: 1;
+            }
+
+            40% {
+                transform: translateX(-50%) rotateY(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(-50%) rotateY(90deg);
+                opacity: 0;
+            }
+
+            51% {
+                transform: translateX(-50%) rotateY(270deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(-50%) rotateY(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes blink2 {
+            0% {
+                transform: translateX(-50%) rotateY(180deg);
+                opacity: 0;
+            }
+
+            49% {
+                transform: translateX(-50%) rotateY(180deg);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(-50%) rotateY(270deg);
+                opacity: 0;
+            }
+
+            51% {
+                transform: translateX(-50%) rotateY(360deg);
+                opacity: 1;
+            }
+
+            90% {
+                transform: translateX(-50%) rotateY(360deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-50%) rotateY(540deg);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .header-contact-number a.emergency-btn-box-mb {
+                display: flex !important;
+                width: 80px;
+            }
+        }
+    </style>
+    <!----------CSS End------------------------->
+
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
+
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="modal" id="Marmosetloadmodal">
+        <div class="close close-model-layer" data-close="modal"></div>
+        <div class="modal__dialog">
+            <div wire:id="RJVs2dT3z2BE6b59ZSpQ"
+                wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;RJVs2dT3z2BE6b59ZSpQ&quot;,&quot;name&quot;:&quot;request-callbacks&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;help-desk&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;c9a9ba5d&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;type&quot;:&quot;home-navbar&quot;,&quot;token&quot;:&quot;&quot;,&quot;captcha&quot;:0,&quot;recaptcha&quot;:null,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/help-desk&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;getSubSource&quot;:&quot;Website - help-desk&quot;,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;7717b50ecd25813e0b2c11aa7ef67c26ff9f21ccf164b2199eb21fef76b2d1e1&quot;}}">
+                <a class="close close-modal" data-close="modal" id="closeModal"></a>
+                <div class="modal__content">
+                    <div class="modal-body">
+                        <h2 class="reacllHeading">Request Call Back</h2>
+                        <div class="btn-modal text-right">
+                            <form wire:submit.prevent="submit">
+                                <div>
+                                </div>
+                                <label for="fname">Name *</label>
+                                <input type="text" id="fname" name="fname" value="" wire:model.lazy="name"
+                                    placeholder="Enter Your Name">
+
+                                <label for="lname">Mobile Number *</label>
+                                <input type="number" id="lname" name="lname" value="" wire:model.lazy="mobile"
+                                    placeholder="Enter Your Mobile Number">
+
+                                <label for="lname">Email</label>
+                                <input type="text" id="lname" name="lname" value="" wire:model.lazy="email"
+                                    placeholder="Enter Your Email">
+
+                                <input type="hidden" name="type" wire:model="type" value="home-navbar">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <br> <br>
+                                <button type="submit" class="submitpopupbt" wire:click="loading">Submit</button>
+                                <div class="form-loader loading" wire:loading wire:target="loading">
+                                    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                                        style="margin: auto; background: none; display: block; shape-rendering: auto;"
+                                        width="200px" height="200px" viewBox="0 0 100 100"
+                                        preserveAspectRatio="xMidYMid">
+                                        <g transform="rotate(0 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(30 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(60 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.75s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(90 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(120 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(150 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(180 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(210 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(240 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.25s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(270 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(300 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(330 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="0s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    window.addEventListener('close-modal', function (event) {
+                        const delay = event.detail.delay;
+                        setTimeout(function () {
+                            var $closeModal = document.querySelector('#closeModal');
+                            $closeModal.click();
+                        }, 5000);
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    window.addEventListener('postUpdated', event => {
+                        var $closeModal = document.querySelector('#closeModal');
+                        $closeModal.click();
+                    })
+                    var onCallback = function () {
+                        // alert('ue');
+                        console.log('gcaptch')
+                        console.log(grecaptcha.getResponse());
+                        window.livewire.find('RJVs2dT3z2BE6b59ZSpQ').set('recaptcha', grecaptcha.getResponse());
+                    }
+                    window.addEventListener('reset-recaptcha', event => {
+                        grecaptcha.reset();
+                    })
+                </script>
+
+            </div>
+
+            <!-- Livewire Component wire-end:RJVs2dT3z2BE6b59ZSpQ -->
+        </div>
+    </div>
+
+    <!-- Upload Resume Model -->
+    <div class="modal" id="sendResumModal">
+        <div class="close close-model-layer" data-close="modal"></div>
+        <div class="modal__dialog">
+            <a class="close close-modal" data-close="modal"></a>
+            <div class="modal__content">
+                <div class="modal-body">
+                    <div class="frm-holder">
+                        <div wire:id="GEcDqECZmxUkJDpjpkVK"
+                            wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;GEcDqECZmxUkJDpjpkVK&quot;,&quot;name&quot;:&quot;jop-application-list&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;help-desk&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;62240f24&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;resume&quot;:null,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/help-desk&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;7b75948c8f5e326824f5b6d267e869368d4b4295f0366a3e49303ca2c575ffc0&quot;}}">
+                            <form wire:submit.prevent="save()">
+
+                                <div class="field">
+                                    <label>Name *</label>
+                                    <input type="text" class="inputbox" wire:model.defer="name"
+                                        placeholder="Enter Your Name" onkeydown="return /[a-zA-Z ]/i.test(event.key)">
+                                    <br>
+                                </div>
+                                <div class="field">
+                                    <label>Mobile Number *</label>
+                                    <input type="number" class="inputbox" wire:model.defer="mobile"
+                                        placeholder="Enter Your Number"
+                                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+                                    <br>
+                                </div>
+                                <div class="field">
+                                    <label>Email *</label>
+                                    <input type="email" class="inputbox" wire:model.defer="email"
+                                        placeholder="Enter Your Email">
+                                    <br>
+                                </div>
+
+                                <div class="field mb-20">
+                                    <label>Resume (accepted only pdf, docx) *</label>
+                                    <div class="upload-file" wire:ignore>
+                                        <input type="file" class="inputbox" id="resume" name="resume"
+                                            wire:model.defer="resume" />
+                                    </div>
+                                    <br>
+                                </div>
+                                <button type="submit" class="theme-button">Submit</button>
+                                <div class="form-loader loading" wire:loading wire:target="save">
+                                    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                                        style="margin: auto; background: none; display: block; shape-rendering: auto;"
+                                        width="200px" height="200px" viewBox="0 0 100 100"
+                                        preserveAspectRatio="xMidYMid">
+                                        <g transform="rotate(0 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(30 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(60 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.75s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(90 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(120 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(150 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(180 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(210 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(240 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.25s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(270 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(300 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(330 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="0s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </form>
+                            <script>
+                                window.addEventListener('resetFileInput', event => {
+                                    document.getElementById('resume').value = null;
+                                });
+                            </script>
+                        </div>
+
+                        <!-- Livewire Component wire-end:GEcDqECZmxUkJDpjpkVK -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-links">
+        <div class="container">
+            <ul>
+                <li><a href="#tabbing">Help Desk</a></li>
+                <li><a href="#form-section">Enquiry Form</a></li>
+                <!--             <li><a href="#faq-section">FAQ’s</a></li>
+             -->
+                <li><a href="#contactus-section">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+
+        <!--help banner-->
+        <section id="tabbing" class="help-tabbing py-50">
+            <div class="container">
+                <div wire:id="cCJoR6LaOOGFsp1iXYxH"
+                    wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;cCJoR6LaOOGFsp1iXYxH&quot;,&quot;name&quot;:&quot;browse-help-desk&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;help-desk&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;b1a7332b&quot;,&quot;data&quot;:{&quot;helpDesks&quot;:[],&quot;type&quot;:&quot;main-help-desk&quot;,&quot;activeTab&quot;:&quot;side_tab1&quot;},&quot;dataMeta&quot;:{&quot;modelCollections&quot;:{&quot;helpDesks&quot;:{&quot;class&quot;:&quot;App\\Models\\HelpDesk&quot;,&quot;id&quot;:[1,2,3,4,5,6,7],&quot;relations&quot;:[&quot;helpDeskContents&quot;,&quot;helpDeskQuestionAnswers&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;03260a7cb8723f58a973834d432af2fc085fdf3aaa4f1e6095ffc1834d1cbf06&quot;}}">
+                    <article class="tabbed-content tabs-side">
+
+                        <nav class="tabs">
+                            <ul>
+                                <li>
+                                    <a href="#side_tab1" class="active">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/pQvzIm9bRGdoBL1qqqqViMJOI7yiWD-metaR2V0dGluZyB0byB0aGUgaG9zcGl0YWwucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/ph38IpGTSIhihkpm5pWdfa7pSIDBa6-metaR2V0dGluZyB0byB0aGUgaG9zcGl0YWwgd2hpdGUucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>Getting To The Hospital</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#side_tab2" class="">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/FzYBGANBYPWKjq0aWybxZaaVBoHX5w-metaTWVldGluZyBkb2N0b3JzIGdyZXkucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/tPvebkAiMKyBJlOfOcIeWy55zdJAJ6-metaTWVldGluZyBkb2N0b3JzLnBuZw==-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>Meeting Doctors</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#side_tab3" class="">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/kyjdFUz5TRrWfqTTrOvbK0na0IOEgl-metaR2V0dGluZyBBZG1pdHRlZC5wbmc=-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/r23UNjGNswkmfyd3v4JOWOeaeRRl3N-metaR2V0dGluZyBBZG1pdHRlZCB3aGl0ZS5wbmc=-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>Getting Admitted</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#side_tab4" class="">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/jtk92lFTbInO3M2QyA9ubiBNZSSnHS-metaYmlsbGluZyBncmV5LnBuZw==-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/fekoabvPlKPeh2bakatiOkkkqFTSYC-metaYmlsbGluZy5wbmc=-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>Billing &amp; Financial Support</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#side_tab5" class="">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/gPaESVMMtL2BXuPHtXpKRgPld0Reoe-metaRGlhZ25vc3RpYyBTZXJ2aWNlcy5wbmc=-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/hanx5xdbT1qFoVqXW1nKEQK9auxiV5-metaRGlhZ25vc3RpYyBTZXJ2aWNlcyB3aGl0ZS5wbmc=-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>Diagnostic Services</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#side_tab6" class="">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/8McmruYRV2dmWMjkh2nMWedn5qNxPY-metaVmlzaXRvcnMucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/1kRM563GIGa4qiq896jG1HshhC5XxA-metaVmlzaXRvcnMgd2hpdGUucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>Visitors</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#side_tab7" class="">
+                                        <div class="icon">
+                                            <div class="icon-default">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/QsGLvCyC81qHGW7HWyBoTH68fH9mOM-metaQWZ0ZXIgeW91ciB0cmVhdG1lbnQucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                            <div class="icon-hover">
+                                                <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/BZiVYhnzcdn65dgK7pOnIoS2kTueqQ-metaQWZ0ZXIgeW91ciB0cmVhdG1lbnQgd2hpdGUucG5n-.png"
+                                                    alt="getting-to-the-hospital" width="100" height="100">
+                                            </div>
+                                        </div>
+                                        <span>After Your Treatment</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <section id="side_tab1" class="item acc-help active" data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/pQvzIm9bRGdoBL1qqqqViMJOI7yiWD-metaR2V0dGluZyB0byB0aGUgaG9zcGl0YWwucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/ph38IpGTSIhihkpm5pWdfa7pSIDBa6-metaR2V0dGluZyB0byB0aGUgaG9zcGl0YWwgd2hpdGUucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">Getting to the hospital</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">Getting To The Hospital</div>
+
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title">How can I reach Medanta Hospital from
+                                                the nearest airport?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>The hospital is approximately 17 kilometers away from Indira Gandhi
+                                                    International Airport, and taxis and private cabs are readily
+                                                    available for your convenience.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Is there parking available at Medanta
+                                                Hospital?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, we provide ample parking space for patients and visitors within
+                                                    the hospital premises.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Are there public transportation options
+                                                to Medanta Hospital?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Absolutely, Medanta Hospital is well-connected to public
+                                                    transportation. Bus stops and taxi services are available in close
+                                                    proximity to the hospital for your convenience.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Can I use ride-sharing services to reach
+                                                Medanta Hospital?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, popular ride-sharing services like Uber and Ola are accessible
+                                                    and frequently used for commuting to and from Medanta
+                                                    Hospital.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Are there accommodation options near
+                                                Medanta Hospital for outstation patients and their families?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, there are several hotels and guesthouses in close proximity to
+                                                    Medanta, offering accommodation options for patients and their
+                                                    families.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What should I do in case of an emergency
+                                                and need to get to Medanta quickly?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>In case of a medical emergency, please call our emergency helpline or
+                                                    visit the nearest emergency services. We are equipped to handle
+                                                    emergencies efficiently and will guide you on the best course of
+                                                    action.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Are there shuttle services provided by
+                                                Medanta for patients?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta Hospital does offer shuttle services for certain patients,
+                                                    especially those requiring regular visits for treatments. Please
+                                                    inquire with our patient services for more information.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="side_tab2" class="item acc-help " data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/FzYBGANBYPWKjq0aWybxZaaVBoHX5w-metaTWVldGluZyBkb2N0b3JzIGdyZXkucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/tPvebkAiMKyBJlOfOcIeWy55zdJAJ6-metaTWVldGluZyBkb2N0b3JzLnBuZw==-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">Meeting Doctors</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">Meeting Doctors</div>
+
+                                <div wire:ignore
+                                    class="download-slider space-row slick-arrow-style-1 slider-tb-shadow eqslides-height wow fadeInUp"
+                                    data-wow-delay=".4s">
+                                    <div class="slide-item">
+                                        <div class="download-card">
+                                            <a href="#" wire:click="downloadPdf('9','download-facilities-pdf111')">
+                                                <svg width="32" height="35" viewBox="0 0 32 35" fill="none"
+                                                    xmlns="https://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.5 0C4.10761 0 2.77226 0.460936 1.78769 1.28141C0.803123 2.10188 0.25 3.21468 0.25 4.375V30.625C0.25 31.7853 0.803123 32.8981 1.78769 33.7186C2.77226 34.5391 4.10761 35 5.5 35H26.5C27.8924 35 29.2277 34.5391 30.2123 33.7186C31.1969 32.8981 31.75 31.7853 31.75 30.625V4.375C31.75 3.21468 31.1969 2.10188 30.2123 1.28141C29.2277 0.460936 27.8924 0 26.5 0L5.5 0ZM5.5 2.1875H26.5C27.1962 2.1875 27.8639 2.41797 28.3562 2.8282C28.8484 3.23844 29.125 3.79484 29.125 4.375V30.625C29.125 31.2052 28.8484 31.7616 28.3562 32.1718C27.8639 32.582 27.1962 32.8125 26.5 32.8125H5.5C4.80381 32.8125 4.13613 32.582 3.64384 32.1718C3.15156 31.7616 2.875 31.2052 2.875 30.625V4.375C2.875 3.79484 3.15156 3.23844 3.64384 2.8282C4.13613 2.41797 4.80381 2.1875 5.5 2.1875Z"
+                                                        fill="#F04E30" />
+                                                    <path
+                                                        d="M7.08099 26.4405C6.56936 26.27 6.15715 25.9406 5.93124 25.5217C5.41936 24.673 5.58999 23.8242 6.14124 23.1111C6.66099 22.4396 7.52199 21.8686 8.49586 21.3896C9.72945 20.8065 11.0334 20.3336 12.3861 19.9786C13.4366 18.4049 14.3677 16.7779 15.1739 15.1071C14.6919 14.1944 14.3139 13.2459 14.0451 12.2742C13.8194 11.3992 13.7327 10.533 13.9244 9.78924C14.1212 9.01487 14.6436 8.31924 15.6306 7.98893C16.1346 7.82049 16.6806 7.72643 17.2109 7.82049C17.4776 7.86781 17.7283 7.96401 17.9449 8.10211C18.1615 8.24021 18.3385 8.41675 18.463 8.61893C18.694 8.97768 18.778 9.39768 18.7964 9.79581C18.8147 10.2049 18.7649 10.6599 18.673 11.1389C18.4525 12.2546 17.9642 13.6196 17.308 15.0633C18.0322 16.354 18.8931 17.5882 19.8805 18.7514C21.0489 18.6745 22.224 18.7112 23.3822 18.8608C24.3377 19.003 25.309 19.2874 25.9022 19.878C26.2172 20.193 26.4089 20.578 26.4272 21.0111C26.4456 21.4311 26.3039 21.8467 26.065 22.2427C25.8581 22.6096 25.5373 22.9238 25.1357 23.1527C24.7388 23.3684 24.2703 23.4741 23.797 23.4546C22.9281 23.4239 22.0802 23.0258 21.3479 22.5424C20.4574 21.9287 19.6549 21.2314 18.9565 20.4642C17.1813 20.632 15.4272 20.9292 13.7144 21.3524C12.9291 22.5117 12.0328 23.6163 11.0342 24.6555C10.273 25.4211 9.43824 26.0883 8.60349 26.3771C8.12387 26.5579 7.57986 26.5805 7.08099 26.4405ZM10.7009 22.2821C10.2651 22.4483 9.86086 22.6233 9.49599 22.8027C8.63499 23.2271 8.07586 23.6405 7.79761 23.9992C7.55086 24.3164 7.54561 24.5461 7.69261 24.7889C7.71886 24.8371 7.74511 24.8677 7.76086 24.8852C7.79217 24.8782 7.82287 24.8694 7.85274 24.8589C8.21236 24.7364 8.78461 24.3449 9.51961 23.6077C9.93763 23.1812 10.3318 22.7388 10.7009 22.2821ZM15.0059 19.3727C15.8824 19.2021 16.7669 19.0612 17.6571 18.9505C17.1789 18.3411 16.7323 17.7149 16.3184 17.0736C15.9067 17.8493 15.469 18.6152 15.0059 19.3705V19.3727ZM21.4266 20.3571C21.8204 20.7114 22.2036 21.0133 22.5685 21.2539C23.1985 21.6696 23.6369 21.8074 23.8757 21.8139C23.9397 21.8209 24.0046 21.8093 24.0595 21.7811C24.1687 21.7093 24.2537 21.6151 24.3062 21.5077C24.3996 21.3744 24.4527 21.2243 24.4611 21.0702C24.4596 21.0188 24.4353 20.9697 24.3929 20.9324C24.2564 20.7967 23.8679 20.5999 23.0331 20.4752C22.5021 20.4012 21.9649 20.3625 21.4266 20.3592V20.3571ZM16.2029 12.6877C16.4238 12.0938 16.5991 11.4888 16.7279 10.8764C16.8092 10.4652 16.8407 10.1261 16.8276 9.85924C16.8283 9.712 16.8 9.56567 16.7436 9.42612C16.6123 9.43967 16.4841 9.46914 16.363 9.51362C16.1346 9.59018 15.9482 9.74549 15.8485 10.1327C15.7435 10.5527 15.7697 11.1586 15.9692 11.9308C16.0322 12.1736 16.111 12.4274 16.2055 12.6877H16.2029Z"
+                                                        fill="#F04E30" />
+                                                </svg> Download Facilities Pdf111</a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <div class="download-card">
+                                            <a href="https://www.youtube.com/watch?v=LkDHv8HVWS0" class="play-video">
+
+                                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                                    xmlns="https://www.w3.org/2000/svg">
+                                                    <circle cx="17.5" cy="17.5" r="16.5" stroke="#F04E30"
+                                                        stroke-width="2" />
+                                                    <path
+                                                        d="M23.525 17.1559L14.52 11.6472C14.3682 11.5542 14.1943 11.5035 14.0163 11.5002C13.8383 11.4969 13.6627 11.5412 13.5075 11.6284C13.3538 11.7144 13.2258 11.8397 13.1366 11.9915C13.0474 12.1433 13.0003 12.3161 13 12.4922V23.5084C13.0012 23.7726 13.1071 24.0254 13.2947 24.2114C13.4822 24.3974 13.7359 24.5013 14 24.5003C14.1843 24.5002 14.3651 24.4494 14.5225 24.3534L23.525 18.8447C23.6697 18.7565 23.7893 18.6326 23.8723 18.4848C23.9553 18.337 23.9989 18.1704 23.9989 18.0009C23.9989 17.8315 23.9553 17.6648 23.8723 17.5171C23.7893 17.3693 23.6697 17.2454 23.525 17.1572V17.1559ZM14 23.4966V12.5003L22.9894 18.0003L14 23.4966Z"
+                                                        fill="#F04E30" stroke="#F04E30" />
+                                                </svg> Facilities For Attendants
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <div class="download-card">
+                                            <a href="#" wire:click="downloadPdf('11','facilities-for-attendants')">
+                                                <svg width="32" height="35" viewBox="0 0 32 35" fill="none"
+                                                    xmlns="https://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.5 0C4.10761 0 2.77226 0.460936 1.78769 1.28141C0.803123 2.10188 0.25 3.21468 0.25 4.375V30.625C0.25 31.7853 0.803123 32.8981 1.78769 33.7186C2.77226 34.5391 4.10761 35 5.5 35H26.5C27.8924 35 29.2277 34.5391 30.2123 33.7186C31.1969 32.8981 31.75 31.7853 31.75 30.625V4.375C31.75 3.21468 31.1969 2.10188 30.2123 1.28141C29.2277 0.460936 27.8924 0 26.5 0L5.5 0ZM5.5 2.1875H26.5C27.1962 2.1875 27.8639 2.41797 28.3562 2.8282C28.8484 3.23844 29.125 3.79484 29.125 4.375V30.625C29.125 31.2052 28.8484 31.7616 28.3562 32.1718C27.8639 32.582 27.1962 32.8125 26.5 32.8125H5.5C4.80381 32.8125 4.13613 32.582 3.64384 32.1718C3.15156 31.7616 2.875 31.2052 2.875 30.625V4.375C2.875 3.79484 3.15156 3.23844 3.64384 2.8282C4.13613 2.41797 4.80381 2.1875 5.5 2.1875Z"
+                                                        fill="#F04E30" />
+                                                    <path
+                                                        d="M7.08099 26.4405C6.56936 26.27 6.15715 25.9406 5.93124 25.5217C5.41936 24.673 5.58999 23.8242 6.14124 23.1111C6.66099 22.4396 7.52199 21.8686 8.49586 21.3896C9.72945 20.8065 11.0334 20.3336 12.3861 19.9786C13.4366 18.4049 14.3677 16.7779 15.1739 15.1071C14.6919 14.1944 14.3139 13.2459 14.0451 12.2742C13.8194 11.3992 13.7327 10.533 13.9244 9.78924C14.1212 9.01487 14.6436 8.31924 15.6306 7.98893C16.1346 7.82049 16.6806 7.72643 17.2109 7.82049C17.4776 7.86781 17.7283 7.96401 17.9449 8.10211C18.1615 8.24021 18.3385 8.41675 18.463 8.61893C18.694 8.97768 18.778 9.39768 18.7964 9.79581C18.8147 10.2049 18.7649 10.6599 18.673 11.1389C18.4525 12.2546 17.9642 13.6196 17.308 15.0633C18.0322 16.354 18.8931 17.5882 19.8805 18.7514C21.0489 18.6745 22.224 18.7112 23.3822 18.8608C24.3377 19.003 25.309 19.2874 25.9022 19.878C26.2172 20.193 26.4089 20.578 26.4272 21.0111C26.4456 21.4311 26.3039 21.8467 26.065 22.2427C25.8581 22.6096 25.5373 22.9238 25.1357 23.1527C24.7388 23.3684 24.2703 23.4741 23.797 23.4546C22.9281 23.4239 22.0802 23.0258 21.3479 22.5424C20.4574 21.9287 19.6549 21.2314 18.9565 20.4642C17.1813 20.632 15.4272 20.9292 13.7144 21.3524C12.9291 22.5117 12.0328 23.6163 11.0342 24.6555C10.273 25.4211 9.43824 26.0883 8.60349 26.3771C8.12387 26.5579 7.57986 26.5805 7.08099 26.4405ZM10.7009 22.2821C10.2651 22.4483 9.86086 22.6233 9.49599 22.8027C8.63499 23.2271 8.07586 23.6405 7.79761 23.9992C7.55086 24.3164 7.54561 24.5461 7.69261 24.7889C7.71886 24.8371 7.74511 24.8677 7.76086 24.8852C7.79217 24.8782 7.82287 24.8694 7.85274 24.8589C8.21236 24.7364 8.78461 24.3449 9.51961 23.6077C9.93763 23.1812 10.3318 22.7388 10.7009 22.2821ZM15.0059 19.3727C15.8824 19.2021 16.7669 19.0612 17.6571 18.9505C17.1789 18.3411 16.7323 17.7149 16.3184 17.0736C15.9067 17.8493 15.469 18.6152 15.0059 19.3705V19.3727ZM21.4266 20.3571C21.8204 20.7114 22.2036 21.0133 22.5685 21.2539C23.1985 21.6696 23.6369 21.8074 23.8757 21.8139C23.9397 21.8209 24.0046 21.8093 24.0595 21.7811C24.1687 21.7093 24.2537 21.6151 24.3062 21.5077C24.3996 21.3744 24.4527 21.2243 24.4611 21.0702C24.4596 21.0188 24.4353 20.9697 24.3929 20.9324C24.2564 20.7967 23.8679 20.5999 23.0331 20.4752C22.5021 20.4012 21.9649 20.3625 21.4266 20.3592V20.3571ZM16.2029 12.6877C16.4238 12.0938 16.5991 11.4888 16.7279 10.8764C16.8092 10.4652 16.8407 10.1261 16.8276 9.85924C16.8283 9.712 16.8 9.56567 16.7436 9.42612C16.6123 9.43967 16.4841 9.46914 16.363 9.51362C16.1346 9.59018 15.9482 9.74549 15.8485 10.1327C15.7435 10.5527 15.7697 11.1586 15.9692 11.9308C16.0322 12.1736 16.111 12.4274 16.2055 12.6877H16.2029Z"
+                                                        fill="#F04E30" />
+                                                </svg> Facilities For Attendants</a>
+                                        </div>
+                                    </div>
+                                    <div class="slide-item">
+                                        <div class="download-card">
+                                            <a href="https://www.medanta.org" target="_blank">
+                                                <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
+                                                    xmlns="https://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M31.5715 30.1184C34.4191 26.9257 35.9951 22.7983 36 18.5202C36.0049 14.242 34.4384 10.111 31.5981 6.91178C31.5653 6.86541 31.5284 6.82211 31.4878 6.78243C29.8493 4.96239 27.8465 3.50709 25.6094 2.51093C23.3722 1.51477 20.9507 1 18.5018 1C16.0529 1 13.6313 1.51477 11.3942 2.51093C9.15705 3.50709 7.15428 4.96239 5.51579 6.78243C5.47296 6.82108 5.43467 6.86448 5.40166 6.91178C2.56606 10.1058 1 14.2287 1 18.4999C1 22.771 2.56606 26.8939 5.40166 30.088C5.43443 30.1344 5.47136 30.1777 5.51198 30.2173C7.15082 32.0375 9.15392 33.4928 11.3914 34.489C13.6288 35.4852 16.0507 36 18.4999 36C20.9491 36 23.3709 35.4852 25.6084 34.489C27.8459 33.4928 29.849 32.0375 31.4878 30.2173C31.5177 30.1861 31.5457 30.1531 31.5715 30.1184ZM2.54082 19.2608H9.36955C9.41164 21.91 9.79524 24.5428 10.5108 27.094C9.02485 27.4746 7.58374 28.0128 6.21198 28.6994C3.99138 26.0379 2.70213 22.7232 2.54082 19.2608ZM6.21198 8.30037C7.58374 8.98694 9.02485 9.52513 10.5108 9.90582C9.79524 12.457 9.41164 15.0897 9.36955 17.739H2.5218C2.68849 14.2743 3.98452 10.9594 6.21198 8.30037ZM34.478 17.739H27.6302C27.5881 15.0897 27.2045 12.457 26.4889 9.90582C27.9749 9.52513 29.416 8.98694 30.7878 8.30037C33.0153 10.9594 34.3113 14.2743 34.478 17.739ZM17.739 9.3694C15.9813 9.33727 14.2297 9.15142 12.5043 8.81396C13.7597 5.41666 15.639 3.06556 17.739 2.60523V9.3694ZM12.0326 10.2558C13.9117 10.6389 15.8216 10.8516 17.739 10.8911V17.739H10.8913C10.9433 15.2055 11.327 12.6897 12.0326 10.2558ZM17.739 19.2608V26.1086C15.822 26.1444 13.9121 26.3533 12.0326 26.7325C11.328 24.3024 10.9443 21.7905 10.8913 19.2608H17.739ZM17.739 27.6304V34.3945C15.639 33.9342 13.7597 31.5831 12.5043 28.1972C14.2293 27.8559 15.9809 27.6663 17.739 27.6304ZM19.2607 27.6304C21.0185 27.6625 22.7701 27.8483 24.4955 28.1858C23.2401 31.5717 21.3607 33.9228 19.2607 34.3831V27.6304ZM24.9672 26.7325C23.0877 26.3533 21.1778 26.1444 19.2607 26.1086V19.2608H26.1085C26.0565 21.7943 25.6728 24.3101 24.9672 26.7439V26.7325ZM19.2607 17.739V10.8911C21.1778 10.8553 23.0877 10.6465 24.9672 10.2672C25.6718 12.6974 26.0555 15.2093 26.1085 17.739H19.2607ZM19.2607 9.3694V2.60523C21.3607 3.06556 23.2401 5.41666 24.4955 8.80255C22.7704 9.14384 21.0189 9.33351 19.2607 9.3694ZM26.0172 8.46396C25.371 6.50369 24.3286 4.69724 22.9547 3.15687C25.5034 3.89986 27.8268 5.2662 29.715 7.13243C28.5272 7.68909 27.289 8.13114 26.0172 8.45255V8.46396ZM10.9826 8.46396C9.7108 8.14255 8.47259 7.70051 7.28479 7.14385C9.1717 5.27347 11.4952 3.90314 14.045 3.15687C12.6725 4.69388 11.6302 6.49632 10.9826 8.45255V8.46396ZM10.9826 28.5586C11.6302 30.5149 12.6725 32.3173 14.045 33.8543C11.4952 33.108 9.1717 31.7377 7.28479 29.8673C8.47259 29.3107 9.7108 28.8686 10.9826 28.5472V28.5586ZM26.0172 28.5586C27.289 28.88 28.5272 29.3221 29.715 29.8787C27.8256 31.7408 25.5023 33.1032 22.9547 33.8429C24.3272 32.3059 25.3696 30.5034 26.0172 28.5472V28.5586ZM26.4889 27.094C27.2045 24.5428 27.5881 21.91 27.6302 19.2608H34.478C34.3113 22.7255 33.0153 26.0404 30.7878 28.6994C29.416 28.0128 27.9749 27.4746 26.4889 27.094Z"
+                                                        fill="#F04E30" stroke="#F04E30" stroke-width="0.5" />
+                                                </svg> Mammography Specs</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title"> How can I schedule an appointment with
+                                                a doctor at Medanta?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta makes it convenient for you to schedule appointments through
+                                                    our online booking system, by calling our helpline, or by visiting
+                                                    the hospital in person.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title"> Can I choose a specific doctor for my
+                                                consultation?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Certainly! Medanta allows you to select a preferred doctor when
+                                                    scheduling your appointment, ensuring personalized care based on
+                                                    your preferences.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title"> What information should I bring for my
+                                                doctor&#039;s appointment?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Please bring any relevant medical records, identification, and a list
+                                                    of current medications to help our doctors better understand and
+                                                    address your health concerns.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title"> Are virtual consultations available
+                                                with Medanta doctors?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, Medanta offers virtual consultations, providing you with the
+                                                    flexibility to connect with our experienced doctors from the comfort
+                                                    of your home. Simply schedule a virtual appointment through our
+                                                    online platform.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title"> What if I need to reschedule or cancel
+                                                my appointment?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>If you need to reschedule or cancel your appointment, please contact
+                                                    our helpline at least 24 hours in advance to allow us to accommodate
+                                                    your request and serve other patients efficiently.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title"> Can I get a second opinion from another
+                                                Medanta doctor if needed?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Certainly, Medanta encourages seeking a second opinion. You can
+                                                    request a consultation with another expert within our network to
+                                                    ensure comprehensive and well-informed medical advice.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="side_tab3" class="item acc-help " data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/kyjdFUz5TRrWfqTTrOvbK0na0IOEgl-metaR2V0dGluZyBBZG1pdHRlZC5wbmc=-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/r23UNjGNswkmfyd3v4JOWOeaeRRl3N-metaR2V0dGluZyBBZG1pdHRlZCB3aGl0ZS5wbmc=-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">Getting Admitted</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">Getting Admitted</div>
+
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title"> What types of in-patient rooms are
+                                                available?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta offers a range of in-patient rooms, including private,
+                                                    semi-private, and deluxe suites to cater to diverse preferences and
+                                                    medical needs.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Does the hospital have accommodations
+                                                for the patient’s family and friends?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, Medanta provides comfortable accommodation options for the
+                                                    patient's family and friends within the hospital premises to ensure
+                                                    they can stay close during the patient's treatment.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What is the admission process?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>The admission process at Medanta involves a few simple steps,
+                                                    including registration, medical evaluation, and completion of
+                                                    necessary paperwork. Our staff is dedicated to guiding you through
+                                                    the process seamlessly.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What documents do I need to carry for
+                                                admission?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Please carry a valid photo ID, your insurance details, and any
+                                                    relevant medical records. Our admission team will assist you in
+                                                    completing the necessary paperwork for a smooth admission
+                                                    process.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How long does the admission process
+                                                take?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>The admission process duration may vary based on individual cases,
+                                                    but our team strives to expedite the process efficiently. Your
+                                                    comfort and timely admission are our priorities.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What facilities are available for
+                                                attendants?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta ensures that attendants have access to various amenities,
+                                                    including waiting areas, cafeterias, and comfortable accommodations,
+                                                    to support them during the patient's stay. We prioritize the
+                                                    well-being of both patients and their attendants.<br><br></p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="side_tab4" class="item acc-help " data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/jtk92lFTbInO3M2QyA9ubiBNZSSnHS-metaYmlsbGluZyBncmV5LnBuZw==-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/helpdesks/November2023/fekoabvPlKPeh2bakatiOkkkqFTSYC-metaYmlsbGluZy5wbmc=-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">Billing &amp; Financial Support</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">Billing &amp; Financial Support</div>
+
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title">What payment modes are accepted?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta Hospitals accept payments through various modes including
+                                                    cash, credit/debit cards, and online transfers for your convenience.
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What insurance is accepted?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>We accept a wide range of insurance plans. To confirm whether your
+                                                    insurance is accepted, please contact our Insurance Helpdesk or
+                                                    check with your insurance provider.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How do I get an estimate of my planned
+                                                medical treatment?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>You can request a treatment estimate by contacting our Billing
+                                                    Department. Provide details of your treatment plan, and our team
+                                                    will provide you with a detailed estimate.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">When do I need to pay my bill?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Your bill is typically settled upon discharge. However, in case of
+                                                    planned procedures, a pre-payment or deposit may be required. For
+                                                    specific details, please consult with our Billing Department.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What is the Medanta Health Card?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>The Medanta Health Card is like a prepaid card for your medical
+                                                    expenses. You can add money to it using cash or your credit/debit
+                                                    card at the hospital's billing counter. This card can be used to pay
+                                                    for doctor visits, tests, check-ups, and hospital stays without
+                                                    using cash. If there's any money left on the card, you can get it
+                                                    back whenever you want.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="side_tab5" class="item acc-help " data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/gPaESVMMtL2BXuPHtXpKRgPld0Reoe-metaRGlhZ25vc3RpYyBTZXJ2aWNlcy5wbmc=-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/hanx5xdbT1qFoVqXW1nKEQK9auxiV5-metaRGlhZ25vc3RpYyBTZXJ2aWNlcyB3aGl0ZS5wbmc=-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">Diagnostic Services</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">Diagnostic Services</div>
+
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title">What diagnostic services does Medanta
+                                                Hospitals offer?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta Hospitals provide a comprehensive range of diagnostic
+                                                    services, including laboratory tests, radiology, imaging, and
+                                                    specialized diagnostic procedures to address a wide spectrum of
+                                                    medical conditions.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How can I schedule a diagnostic test at
+                                                Medanta?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>To schedule a diagnostic test at Medanta, you can either contact our
+                                                    central appointment desk or consult with your healthcare provider,
+                                                    who will guide you through the process and assist in booking the
+                                                    necessary tests.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Which types of lab tests are available
+                                                at Medanta?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta offers a diverse array of laboratory tests, covering routine
+                                                    blood work, biochemistry, hematology, microbiology, and specialized
+                                                    tests tailored to meet individual health needs.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What imaging and radiology services are
+                                                provided at Medanta?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta provides state-of-the-art imaging and radiology services,
+                                                    including X-rays, MRIs, CT scans, ultrasound, and interventional
+                                                    radiology, to aid accurate diagnosis and treatment planning.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How experienced are the technicians and
+                                                radiologists at Medanta?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Our diagnostic team at Medanta comprises highly skilled and
+                                                    experienced technicians, radiologists, and healthcare professionals
+                                                    dedicated to ensuring accurate and reliable diagnostic results.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How can I access my lab and radiology
+                                                test results?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>You can conveniently access your lab and radiology test results
+                                                    through our secure online patient portal. Simply log in with your
+                                                    credentials to view and download your reports.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What is the typical turnaround time for
+                                                receiving test results at Medanta?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta is committed to providing timely results. While the
+                                                    turnaround time may vary depending on the specific tests, our goal
+                                                    is to deliver most routine test results within 24 to 48 hours,
+                                                    ensuring prompt and efficient healthcare delivery.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="side_tab6" class="item acc-help " data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/8McmruYRV2dmWMjkh2nMWedn5qNxPY-metaVmlzaXRvcnMucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/1kRM563GIGa4qiq896jG1HshhC5XxA-metaVmlzaXRvcnMgd2hpdGUucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">Visitors</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">Visitors</div>
+
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title">What are the visiting hours?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta's visiting hours are from 5:00 PM to 7:00 PM, seven days a
+                                                    week. However, special considerations may apply based on the
+                                                    patient's condition, so we recommend checking with the respective
+                                                    ward or department for specific details.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What are the policies and rules for
+                                                visitors?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>To ensure a secure and comfortable environment, Medanta strictly
+                                                    prohibits the following items within the hospital premises: eatables
+                                                    from outside, flowers, electrical appliances, combustible items,
+                                                    jewelry, and other valuable commodities. Smoking or the use of any
+                                                    intoxicants is strictly prohibited. Additionally, children below 12
+                                                    years of age are not allowed in in-patient areas. Please note that
+                                                    private arms or personal security, other than authorized police
+                                                    personnel, are not permitted.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How can I contact a patient?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>To contact a patient at Medanta, you can call the main hospital line
+                                                    and ask to be connected to the patient's room. Please note that due
+                                                    to privacy concerns, certain information may be restricted, and
+                                                    calls may be screened by the nursing staff.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Is there parking available for visitors?
+                                            </h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, Medanta provides convenient parking facilities for visitors. Our
+                                                    well-managed parking areas ensure easy access to the hospital
+                                                    premises. Please follow the signage and instructions for parking
+                                                    guidelines.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Are there accommodations for overnight
+                                                stay for visitors?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>While we do not provide accommodations for visitors within the
+                                                    hospital, there are several hotels and guesthouses nearby. Our staff
+                                                    can assist you with information on nearby lodging options to ensure
+                                                    a comfortable stay during your visit.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Are children allowed to visit patients?
+                                            </h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, children are allowed to visit patients at Medanta, but
+                                                    supervision is necessary. For the safety and well-being of both
+                                                    children and patients, we recommend limiting the duration of the
+                                                    visit and ensuring that children are accompanied by an adult at all
+                                                    times.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="side_tab7" class="item acc-help " data-title="" wire:ignore>
+
+                            <div class="spc-help-head">
+                                <div class="icon">
+                                    <div class="icon-default">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/QsGLvCyC81qHGW7HWyBoTH68fH9mOM-metaQWZ0ZXIgeW91ciB0cmVhdG1lbnQucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                    <div class="icon-hover">
+                                        <img src="https://medanta.s3.ap-south-1.amazonaws.com/banners/October2023/BZiVYhnzcdn65dgK7pOnIoS2kTueqQ-metaQWZ0ZXIgeW91ciB0cmVhdG1lbnQgd2hpdGUucG5n-.png"
+                                            alt="getting-to-the-hospital" width="100" height="100">
+                                    </div>
+                                </div>
+                                <div class="spc-tittle">After your treatment</div>
+                            </div>
+
+                            <div class="item-content">
+
+                                <div class="heading-sm">After Your Treatment</div>
+
+
+                                <div class="help-accordian" wire:ignore>
+                                    <ul class="product-accordion-list">
+                                        <li>
+                                            <h6 class="product-accordion-title">What should I do after being discharged?
+                                            </h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Upon discharge, follow the provided post-care instructions, attend
+                                                    follow-up appointments, and contact your doctor for any concerns.
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How do I follow up with my doctor?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Schedule a follow-up appointment through our patient portal or
+                                                    contact our hospital's outpatient department for assistance.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Are there any post-surgery restrictions
+                                                or guidelines?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Your doctor will provide specific post-surgery instructions,
+                                                    including restrictions, medication guidelines, and recommended
+                                                    activities during recovery.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What if I experience complications or
+                                                have questions after leaving the hospital?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Our dedicated helpline is available 24/7 for any post-treatment
+                                                    concerns. In case of emergencies, seek immediate medical attention.
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">Do you offer home care services?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Yes, Medanta provides comprehensive home care services, including
+                                                    nursing care, physiotherapy, and medical equipment support. Contact
+                                                    us to arrange personalized home care.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">What are the post discharge services you
+                                                offer?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Medanta offers post-discharge services like home care, remote
+                                                    monitoring, and rehabilitation programs tailored to enhance your
+                                                    recovery and well-being.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h6 class="product-accordion-title">How can I access my medical records and
+                                                reports after discharge?</h6>
+                                            <div class="product-answer">
+                                                <p>
+                                                <p>Your medical records and reports can be accessed through our secure
+                                                    online patient portal. Log in with your credentials to view and
+                                                    download your health information.</p>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </section>
+                    </article>
+                </div>
+
+                <!-- Livewire Component wire-end:cCJoR6LaOOGFsp1iXYxH -->
+            </div>
+        </section>
+        <section class="py-50 pattern-bg" id="form-section">
+            <!-- Include a Livewire component named 'main-help-desk-query-form' -->
+            <div wire:id="v2u0p5dWP9EZ1uC8ZQzx"
+                wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;v2u0p5dWP9EZ1uC8ZQzx&quot;,&quot;name&quot;:&quot;main-help-desk-query-form&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;help-desk&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;126d864f&quot;,&quot;data&quot;:{&quot;name&quot;:null,&quot;email&quot;:null,&quot;mobile&quot;:null,&quot;message&quot;:null,&quot;type&quot;:&quot;main-help-desk&quot;,&quot;form_type&quot;:&quot;main-help-desk-query-form&quot;,&quot;userIp&quot;:null,&quot;userAgent&quot;:null,&quot;currentPageUrl&quot;:&quot;https:\/\/www.medanta.org\/help-desk&quot;,&quot;utm_source&quot;:&quot;Website&quot;,&quot;utm_medium&quot;:null,&quot;utm_campaign&quot;:null,&quot;utm_term&quot;:null},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;e4c1e6b21b631831f4f91366ea7044a2de03deec3b9a25610c5ca46d21c63384&quot;}}">
+                <div class="container">
+                    <div class="request-callback-form-row wow fadeInUp">
+                        <div class="frm-holder">
+                            <div class="heading-md font600 mb-20">Enquiry Form</div>
+                            <form wire:submit.prevent="submit">
+                                <div class="field">
+                                    <label>Name *</label>
+                                    <input type="text" class="inputbox" name="name" value="" wire:model.lazy="name"
+                                        placeholder="Enter your Name">
+                                </div>
+                                <div class="field">
+                                    <label>Mobile Number *</label>
+                                    <input type="number" class="inputbox" name="mobile" value=""
+                                        wire:model.lazy="mobile" placeholder="Enter your Mobile number">
+                                </div>
+                                <div class="field">
+                                    <label>Email *</label>
+                                    <input type="email" class="inputbox" name="email" value="" wire:model.lazy="email"
+                                        placeholder="Enter your Email">
+                                </div>
+                                <div class="field mb-20">
+                                    <label>Message</label>
+                                    <textarea class="inputbox" wire:model.lazy="message"
+                                        placeholder="Enter Your Message"></textarea>
+                                    <br>
+                                </div>
+                                <button type="submit" class="theme-button">Submit</button>
+                                <div class="form-loader loading" wire:loading wire:target="submit">
+                                    <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+                                        style="margin: auto; background: none; display: block; shape-rendering: auto;"
+                                        width="200px" height="200px" viewBox="0 0 100 100"
+                                        preserveAspectRatio="xMidYMid">
+                                        <g transform="rotate(0 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(30 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(60 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.75s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(90 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(120 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(150 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.5s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(180 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(210 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(240 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.25s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(270 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(300 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                        <g transform="rotate(330 50 50)">
+                                            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d">
+                                                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s"
+                                                    begin="0s" repeatCount="indefinite"></animate>
+                                            </rect>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="frm-image-holder">
+                            <img src="https://www.medanta.org/assets/images/callback.jpg" width="664" height="390"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Livewire Component wire-end:v2u0p5dWP9EZ1uC8ZQzx -->
+        </section>
+        <!--FAQs-->
+
+
+        <section class="phone-contact-section layout1 wow fadeInUp" id="contactus-section">
+            <picture class="img-wrap">
+                <source media="(min-width: 768px)"
+                    srcset="https://www.medanta.org/assets/images/phone-contact-banner-lg.jpg" width="1920"
+                    height="500" />
+                <source media="(min-width: 320px)"
+                    srcset="https://www.medanta.org/assets/images/phone-contact-banner-xs.jpg" width="480"
+                    height="320" />
+                <img src="https://www.medanta.org/assets/images/phone-contact-banner-lg.jpg" width="1920"
+                    height="500" />
+            </picture>
+            <a href="tel:++91-126-778-231">
+                <a href="tel:++91-126-778-231">
+                    <div class="phone-number">
+                        <div class="heading-lg icon-heading">
+                            <div class="icon"><svg width="107" height="107" viewBox="0 0 107 107" fill="none"
+                                    xmlns="https://www.w3.org/2000/svg">
+                                    <g opacity="0.8" filter="url(#filter0_b_0_1)">
+                                        <circle cx="53.5" cy="53.5" r="53.5" fill="white" />
+                                    </g>
+                                    <path
+                                        d="M46.6126 68.2484C47.0026 68.5734 55.9741 76.2447 66.2459 77.805C66.5059 77.805 67.416 78 68.7163 78C71.4467 78 75.8024 77.2849 79.248 73.3192C79.7031 72.9942 80.8733 71.824 81.1333 69.9387C81.3284 68.3784 80.8083 66.8831 79.6381 65.3229C79.5731 65.2579 79.5731 65.2579 79.5081 65.1929L71.9018 57.7816C70.9916 56.8065 68.5212 55.4412 65.5307 57.3266C65.4657 57.3916 65.4007 57.4566 65.3357 57.5216L61.5651 61.2272C58.8996 59.6669 50.1882 54.141 46.0275 45.6246L48.823 42.8291C49.148 42.5691 50.7083 41.0088 50.7733 38.7985C50.8383 37.3032 50.1882 35.873 48.888 34.5078L41.3467 27.0965C41.2817 27.0315 41.2167 27.0315 41.2167 26.9665C39.9815 26.1214 36.991 25.0812 34.2605 27.4866C34.0005 27.7466 27.2394 33.5326 29.3847 43.2842C29.5147 44.5844 30.6849 54.3361 46.6126 68.2484ZM35.9508 29.4369C37.6411 28.0067 39.2664 28.7868 39.6564 29.0468L47.0677 36.3931C47.8478 37.1732 48.1728 37.9533 48.1728 38.7335C48.1078 40.0337 47.0677 41.0088 47.0677 41.0088L47.0026 41.0738L43.5571 44.5194C43.167 44.9095 43.037 45.4946 43.297 45.9497C48.3679 57.3266 60.6549 63.7626 61.175 64.0227C61.6951 64.2827 62.2802 64.2177 62.6703 63.8276L67.026 59.5369C68.7813 58.4967 69.8215 59.4069 70.0165 59.6019L70.0815 59.6669L77.6228 67.0132C78.3379 67.9233 78.6629 68.7685 78.5329 69.5486C78.4029 70.5888 77.5577 71.3039 77.5577 71.3039C77.4927 71.3689 77.4277 71.4339 77.3627 71.4989C73.137 76.5048 67.026 75.2695 66.7659 75.2045H66.7009C57.1443 73.8393 48.3679 66.3631 48.3029 66.298C40.0465 59.0168 36.0158 53.1008 34.1305 49.3952C32.1152 45.4296 31.9851 43.0892 31.9851 43.0242C31.9851 42.9592 31.9851 42.8291 31.9851 42.7641C30.0998 34.5077 35.6908 29.6319 35.9508 29.4369Z"
+                                        fill="#F04E30" />
+                                    <defs>
+                                        <filter id="filter0_b_0_1" x="-4" y="-4" width="115" height="115"
+                                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feGaussianBlur in="BackgroundImageFix" stdDeviation="2" />
+                                            <feComposite in2="SourceAlpha" operator="in"
+                                                result="effect1_backgroundBlur_0_1" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_0_1"
+                                                result="shape" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <small>Get In Touch With Us</small>
+                        </div>
+                        <div class="heading-lg">
+                            +91-956-039-8936 / +91-965-089-8570
+                            +91-956-039-8936 / +91-965-089-8570
+                            <small><a
+                                    href="mailto:internationalservices@medanta.org">internationalservices@medanta.org</a>
+                                / <a href="mailto:ips2@medanta.org">ips2@medanta.org</a></small>
+                        </div>
+                </a>
+        </section>
+
+    </main>
+
+
+
+
+    <div class="mobile-sticky-links">
+        <ul>
+            <li>
+                <a class="toggle-menu" href="#">
+                    <div class="icon open-icon">
+                        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="https://www.w3.org/2000/svg">
+                            <path d="M1 7H19" stroke="#F04E30" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1 1H19" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1 13H19" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="icon close-icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M20.9615 2.86865L20.9614 2.86858L20.9531 2.87687L13.2675 10.5892L12.8105 11.0479L13.2674 11.5067L20.9416 19.2127C21.1616 19.4534 21.2816 19.7701 21.2758 20.0977C21.27 20.4286 21.1363 20.7439 20.9036 20.9773C20.671 21.2107 20.3576 21.344 20.0295 21.3498C19.7049 21.3555 19.3902 21.236 19.1505 21.0156L11.4713 13.3097L11.0111 12.8479L10.5507 13.3095L2.86624 21.0129C2.62651 21.2334 2.31181 21.353 1.98711 21.3472C1.65903 21.3414 1.3456 21.2081 1.11297 20.9748C0.880274 20.7413 0.74663 20.426 0.74081 20.0951C0.73505 19.7676 0.854928 19.4509 1.07487 19.2103L8.75412 11.5069L9.21135 11.0482L8.75435 10.5893L1.07129 2.87446L1.06309 2.86622L1.05459 2.85828C0.929846 2.74168 0.829673 2.60095 0.760152 2.44443C0.690629 2.28791 0.653214 2.11886 0.650198 1.9474C0.647182 1.77593 0.678629 1.60566 0.742613 1.44675C0.806593 1.28785 0.901769 1.14365 1.02236 1.02268C1.14294 0.901719 1.28646 0.806474 1.4443 0.742521C1.60213 0.678569 1.77112 0.647188 1.94119 0.650198C2.11127 0.653208 2.27906 0.69055 2.43457 0.760057C2.59008 0.829565 2.73018 0.929844 2.84645 1.05502L2.85426 1.06342L2.86235 1.07154L10.5505 8.78386L11.0108 9.24557L11.4711 8.78394L19.1619 1.07162L19.1619 1.07169L19.1696 1.0637C19.2868 0.94208 19.4269 0.845209 19.5816 0.778636C19.7363 0.712065 19.9026 0.677094 20.0708 0.675708C20.2389 0.674322 20.4058 0.706548 20.5615 0.770556C20.7173 0.834568 20.8589 0.929111 20.9781 1.04877C21.0972 1.16843 21.1916 1.31082 21.2555 1.46768C21.3194 1.62454 21.3515 1.79267 21.3499 1.96223C21.3484 2.13179 21.3132 2.29929 21.2465 2.45494C21.1797 2.61059 21.0828 2.75121 20.9615 2.86865Z"
+                                fill="#F04E30" stroke="white" stroke-width="1.3" />
+                        </svg>
+                    </div>
+                    Menu
+                </a>
+            </li>
+            <li>
+                <a href="https://www.medanta.org/doctor-listing">
+                    <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M3.83862 11.6841C6.07056 13.8948 8.80637 15.307 8.80637 15.307C8.80637 15.307 16.6128 11.2796 16.6128 6.17702C16.6128 3.72154 14.7322 1.70605 12.408 1.70605"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M5.20484 1.70972C2.88065 1.70972 1 3.7252 1 6.18068C1 7.50068 1.52161 8.74617 2.29516 9.87101"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M6.32257 3.12903C6.91049 3.12903 7.38709 2.65243 7.38709 2.06452C7.38709 1.4766 6.91049 1 6.32257 1C5.73466 1 5.25806 1.4766 5.25806 2.06452C5.25806 2.65243 5.73466 3.12903 6.32257 3.12903Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M11.2903 3.12903C11.8783 3.12903 12.3549 2.65243 12.3549 2.06452C12.3549 1.4766 11.8783 1 11.2903 1C10.7024 1 10.2258 1.4766 10.2258 2.06452C10.2258 2.65243 10.7024 3.12903 11.2903 3.12903Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M19.8064 16.9677V17.5C19.8064 20.5232 17.3296 23 14.3064 23C11.2832 23 8.8064 20.5232 8.8064 17.5V15.5483"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M18.387 18.05C17.3367 17.5284 16.6128 16.4461 16.6128 15.1935C16.6128 13.43 18.0428 12 19.8063 12C21.5699 12 22.9999 13.43 22.9999 15.1935C22.9999 16.4461 22.276 17.5284 21.2257 18.05"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M19.8066 16.613C20.5904 16.613 21.2259 15.9775 21.2259 15.1936C21.2259 14.4098 20.5904 13.7743 19.8066 13.7743C19.0227 13.7743 18.3872 14.4098 18.3872 15.1936C18.3872 15.9775 19.0227 16.613 19.8066 16.613Z"
+                                fill="#F04E30" stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M1 9.87098H4.19355L5.25806 8.09679L7.03226 11.6452L9.16129 5.61292L10.9355 9.87098H12.7097"
+                                stroke="#58595B" stroke-linecap="square" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    Doctors
+                </a>
+            </li>
+            <li>
+                <a href="https://www.medantaeclinic.org/">
+                    <div class="icon"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M17.7283 12.0005C16.3305 12.0005 14.9898 12.58 14.0013 13.6114C13.0129 14.6429 12.4575 16.0419 12.4575 17.5005C12.4575 18.9591 13.0129 20.358 14.0013 21.3895C14.9898 22.4209 16.3305 23.0004 17.7283 23.0004C19.1262 23.0004 20.4669 22.4209 21.4554 21.3895C22.4438 20.358 22.9992 18.9591 22.9992 17.5005C22.9992 16.0419 22.4438 14.6429 21.4554 13.6114C20.4669 12.58 19.1262 12.0005 17.7283 12.0005ZM17.7283 22.0004C16.5845 22.0004 15.4877 21.5264 14.6789 20.6825C13.8701 19.8386 13.4159 18.694 13.4159 17.5005C13.4159 16.3069 13.8701 15.1624 14.6789 14.3184C15.4876 13.4745 16.5845 13.0005 17.7283 13.0005C18.8722 13.0005 19.969 13.4745 20.7778 14.3184C21.5866 15.1623 22.0408 16.3069 22.0408 17.5005C22.0408 18.694 21.5866 19.8385 20.7778 20.6825C19.9691 21.5264 18.8722 22.0004 17.7283 22.0004Z"
+                                fill="#58595B" />
+                            <path
+                                d="M19.2531 15.7596L16.9292 18.1795L16.2055 17.4244V17.4246C16.1157 17.3299 15.9931 17.2767 15.8654 17.2767C15.7376 17.2767 15.6152 17.3299 15.5251 17.4246C15.3393 17.6195 15.3393 17.9345 15.5251 18.1297L16.5937 19.2396C16.7805 19.4334 17.0824 19.4334 17.2693 19.2396L19.9335 16.4646C20.1201 16.2685 20.119 15.9517 19.9311 15.757C19.7432 15.5625 19.4397 15.5635 19.2532 15.7596L19.2531 15.7596Z"
+                                fill="#58595B" />
+                            <path
+                                d="M11.1789 20H1.91665C1.66246 20 1.41874 19.8948 1.23906 19.7071C1.05918 19.5196 0.958295 19.2653 0.958295 19V8.00007H14.8541C15.1188 8.00007 15.3333 7.77624 15.3333 7.50007C15.3333 7.2239 15.1188 7.00007 14.8541 7.00007H0.958295V4.00009C0.958295 3.73486 1.05918 3.48054 1.23906 3.29304C1.41874 3.10535 1.66244 3.00007 1.91665 3.00007H4.0729V3.50007C4.0729 3.89792 4.22432 4.27937 4.49385 4.56082C4.76357 4.84206 5.12913 5.00007 5.5104 5.00007H5.98957C6.37084 5.00007 6.7364 4.84206 7.00612 4.56082C7.27565 4.27937 7.42708 3.89792 7.42708 3.50007V3.00007H13.6562V3.50007C13.6562 3.89792 13.8077 4.27937 14.0772 4.56082C14.3469 4.84206 14.7125 5.00007 15.0938 5.00007H15.5729C15.9542 5.00007 16.3197 4.84206 16.5895 4.56082C16.859 4.27937 17.0104 3.89792 17.0104 3.50007V3.00007H19.1667C19.4209 3.00007 19.6646 3.10535 19.8443 3.29304C20.0241 3.48054 20.125 3.73484 20.125 4.00009V7.00007H17.9783C17.7136 7.00007 17.4991 7.2239 17.4991 7.50007C17.4991 7.77624 17.7136 8.00007 17.9783 8.00007H20.125V10.97C20.125 11.2461 20.3395 11.4699 20.6042 11.4699C20.8689 11.4699 21.0834 11.2461 21.0834 10.97V3.99999C21.0834 3.46954 20.8814 2.96094 20.522 2.58575C20.1625 2.21075 19.675 2 19.1667 2H17.0104V1.5C17.0104 1.10215 16.859 0.720706 16.5895 0.439258C16.3198 0.158009 15.9542 0 15.5729 0H15.0938C14.7125 0 14.3469 0.158009 14.0772 0.439258C13.8077 0.720701 13.6563 1.10215 13.6563 1.5V2H7.4271V1.5C7.4271 1.10215 7.27567 0.720706 7.00614 0.439258C6.73642 0.158009 6.37086 0 5.98959 0H5.51042C5.12915 0 4.76359 0.158009 4.49387 0.439258C4.22434 0.720701 4.07291 1.10215 4.07291 1.5V2H1.91667C1.40832 2 0.92091 2.21074 0.561344 2.58575C0.201969 2.96094 0 3.46954 0 3.99999V18.9999C0 19.5304 0.201959 20.039 0.561344 20.4142C0.920905 20.7892 1.40832 20.9999 1.91667 20.9999H11.179C11.4436 20.9999 11.6581 20.7761 11.6581 20.4999C11.6581 20.2237 11.4436 20 11.1789 20ZM14.6145 1.50012C14.6145 1.22395 14.829 1.00012 15.0937 1.00012H15.5728C15.6999 1.00012 15.8218 1.05286 15.9116 1.14661C16.0015 1.24036 16.052 1.36751 16.052 1.50012V3.50011C16.052 3.63273 16.0015 3.75988 15.9116 3.85362C15.8218 3.94737 15.6999 4.00011 15.5728 4.00011H15.0937C14.829 4.00011 14.6145 3.77628 14.6145 3.50011V1.50012ZM5.03118 1.50012C5.03118 1.22395 5.24568 1.00012 5.51035 1.00012H5.98951C6.1166 1.00012 6.23845 1.05286 6.3283 1.14661C6.41814 1.24036 6.46868 1.36751 6.46868 1.50012V3.50011C6.46868 3.63273 6.41814 3.75988 6.3283 3.85362C6.23845 3.94737 6.1166 4.00011 5.98951 4.00011H5.51035C5.24568 4.00011 5.03118 3.77628 5.03118 3.50011V1.50012Z"
+                                fill="#58595B" />
+                            <path
+                                d="M11.4992 11.0007C11.4992 11.5531 11.0702 12.0007 10.5409 12.0007C10.0115 12.0007 9.58252 11.5531 9.58252 11.0007C9.58252 10.4484 10.0115 10.0007 10.5409 10.0007C11.0702 10.0007 11.4992 10.4484 11.4992 11.0007Z"
+                                fill="#F04E30" />
+                            <path
+                                d="M5.75187 11.0007C5.75187 11.5531 5.32287 12.0007 4.79354 12.0007C4.26421 12.0007 3.83521 11.5531 3.83521 11.0007C3.83521 10.4484 4.26421 10.0007 4.79354 10.0007C5.32287 10.0007 5.75187 10.4484 5.75187 11.0007Z"
+                                fill="#F04E30" />
+                            <path
+                                d="M5.75187 16.4995C5.75187 17.0519 5.32287 17.4995 4.79354 17.4995C4.26421 17.4995 3.83521 17.0518 3.83521 16.4995C3.83521 15.9472 4.26421 15.4995 4.79354 15.4995C5.32287 15.4995 5.75187 15.9472 5.75187 16.4995Z"
+                                fill="#F04E30" />
+                        </svg>
+
+                    </div>
+                    Book Apt.
+                </a>
+            </li>
+            <li class="chat isdisabled">
+                <a href="javascript:void(0)" onclick="chatHandler()">
+                    <div class="icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M18.8333 13.2222C18.8333 13.7625 18.6187 14.2806 18.2367 14.6626C17.8547 15.0446 17.3366 15.2593 16.7963 15.2593H4.57407L0.5 19.3333V3.03704C0.5 2.49678 0.714616 1.97865 1.09663 1.59663C1.47865 1.21462 1.99678 1 2.53704 1H16.7963C17.3366 1 17.8547 1.21462 18.2367 1.59663C18.6187 1.97865 18.8333 2.49678 18.8333 3.03704V13.2222Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> </div>
+                    Chat
+                </a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#Marmosetloadmodal" href="javascript:void(0);">
+                    <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M21.9468 17.7355V20.8892C21.948 21.182 21.8879 21.4717 21.7704 21.74C21.6529 22.0082 21.4805 22.249 21.2644 22.4469C21.0482 22.6449 20.793 22.7956 20.5152 22.8893C20.2373 22.9831 19.9429 23.018 19.6507 22.9916C16.4098 22.6401 13.2966 21.5348 10.5613 19.7644C8.01656 18.1504 5.85903 15.997 4.24197 13.4571C2.46198 10.7147 1.35426 7.59233 1.00855 4.34302C0.982229 4.05233 1.01684 3.75935 1.11019 3.48273C1.20353 3.20612 1.35356 2.95194 1.55072 2.73637C1.74788 2.5208 1.98785 2.34856 2.25535 2.23063C2.52286 2.11269 2.81204 2.05165 3.10448 2.05137H6.26417C6.77531 2.04635 7.27084 2.22701 7.65839 2.55967C8.04595 2.89233 8.29909 3.3543 8.37063 3.85947C8.50399 4.8687 8.75132 5.85964 9.10789 6.81339C9.2496 7.18964 9.28026 7.59856 9.19626 7.99167C9.11226 8.38479 8.91711 8.74564 8.63394 9.03145L7.29633 10.3665C8.79567 12.9983 10.9789 15.1773 13.6157 16.6738L14.9533 15.3388C15.2397 15.0561 15.6012 14.8613 15.9951 14.7775C16.389 14.6937 16.7987 14.7243 17.1756 14.8657C18.1312 15.2216 19.124 15.4685 20.1352 15.6016C20.6468 15.6736 21.1141 15.9308 21.4481 16.3243C21.7821 16.7177 21.9596 17.22 21.9468 17.7355Z"
+                                stroke="#58595B" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M14.6267 5.20487C15.6554 5.40519 16.6009 5.90735 17.342 6.64707C18.0831 7.38679 18.5863 8.33042 18.787 9.35718M14.6267 1C16.764 1.23698 18.757 2.19226 20.2786 3.70899C21.8001 5.22573 22.7598 7.21376 22.9999 9.34667"
+                                stroke="#F04E30" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    CallBack
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- footer-special -->
+    <div wire:ignore.self class="modal" id="deleteMemberModal">
+        <div class="close close-model-layer" data-close="modal"></div>
+        <div class="modal__dialog">
+            <a class="close close-modal" data-close="modal" id="closeModal"></a>
+            <div class="modal__content">
+                <div class="modal-body">
+                    <div class="action-button dflex centered-items">
+                        <img src="https://www.medanta.org/assets/images/new_disclaimer.jpg" alt="Back to top"
+                            width="600" height="600">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="backtotop">
+        <span id="backtotop-value"><img src="https://www.medanta.org/assets/images/icons/upwards-arrow.png"
+                alt="Back to top" width="50" height="50"></span>
+    </div>
+
+    <script src="https://www.medanta.org/assets/js/jquery.min.js"></script>
+    <script src="https://www.medanta.org/assets/js/jquery-ui.js"></script>
+    <script src="https://www.medanta.org/assets/js/slick.min.js"></script>
+    <script src="https://www.medanta.org/assets/js/wow.min.js"></script>
+    <script src="https://www.medanta.org/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script> -->
+    <script src="https://www.medanta.org/assets/js/custom.js?v=2.2"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let url = window.location.href;
+
+            // Pages that should allow "/hi/"
+            let allowedHiPages = [
+                "https://medanta-uat.lyxelandflamingotech.in/hi/patient-education"
+            ];
+
+            // If current URL starts with "/hi/" but is not in allowed list → remove it
+            if (url.includes("/hi/") && !allowedHiPages.includes(url)) {
+                let newUrl = url.replace("/hi/", "/");
+                window.location.href = newUrl;
+            }
+
+            // If current URL is allowed hi page → do nothing
+        });
+    </script>
+
+    <!-- cookies js -->
+    <script>
+
+        $(document).ready(function () {
+            $('.cookies').hide();
+
+            function checkCookieConsent() {
+                return document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
+            }
+
+            // Show the popup if no consent cookie is found
+            if (!checkCookieConsent()) {
+                $('.cookies').show();
+            }
+        });
+        // Handle Accept button click
+        $('#acceptCookies').on('click', function () {
+            document.cookie = "cookieConsent=accepted; path=/; max-age=" + (60 * 60 * 24); // 1 day
+            $.ajax({
+                url: '/api/cookie-consent',
+                method: 'POST',
+                data: {
+                    consent: 1,
+                    _token: "wlAGvPxwc5CrikHNCvrdEuUDSDMAycunwKet6aia" // Include CSRF token
+                },
+                success: function (response) {
+                    $('.cookies').hide();
+                },
+                error: function (xhr) {
+                    console.error('Failed to save consent:', xhr.responseText);
+                }
+            });
+        });
+        // Handle Reject button click
+        $('#rejectCookies').on('click', function () {
+            document.cookie = "cookieConsent=rejected; path=/; max-age=" + (60 * 60 * 24); // 1 day
+            $.ajax({
+                url: '/api/cookie-consent',
+                method: 'POST',
+                data: {
+                    consent: 0,
+                    _token: "wlAGvPxwc5CrikHNCvrdEuUDSDMAycunwKet6aia" // Include CSRF token
+                },
+                success: function (response) {
+                    $('.cookies').hide();
+                },
+                error: function (xhr) {
+                    console.error('Failed to save consent:', xhr.responseText);
+                }
+            });
+        });
+
+    </script>
+    <!-- Sitelink search box schema-->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Medanta",
+      "url": "https://www.medanta.org/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.medanta.org/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+    <!--- Medical Organisation -->
+
+    <script type="application/ld+json" class="schemantra.com">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "@id": "Medanta Hospital"
+    }
+  </script>
+
+    <script>
+
+        tabControl();
+
+        var resizeTimer;
+        $(window).on('resize', function (e) {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                tabControl();
+            }, 250);
+        });
+
+        function tabControl() {
+            var tabs = $('.tabbed-content').find('.tabs');
+            if (tabs.is(':visible')) {
+                tabs.find('a').on('click', function (event) {
+                    $('.download-slider').slick('refresh')
+                    event.preventDefault();
+                    var target = $(this).attr('href'),
+                        tabs = $(this).parents('.tabs'),
+                        buttons = tabs.find('a'),
+                        item = tabs.parents('.tabbed-content').find('.item');
+                    buttons.removeClass('active');
+                    item.removeClass('active');
+                    $(this).addClass('active');
+                    $(target).addClass('active');
+                });
+            } else {
+                $('.item').on('click', function () {
+                    var container = $(this).parents('.tabbed-content'),
+                        currId = $(this).attr('id'),
+                        items = container.find('.item');
+                    container.find('.tabs a').removeClass('active');
+                    items.removeClass('active');
+                    $(this).addClass('active');
+                    container.find('.tabs a[href$="#' + currId + '"]').addClass('active');
+                });
+            }
+        }
+        $(document).ready(function () {
+
+            $('.download-slider').slick({
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: "<button type='button' class='slick-arrow slick-prev'><img src='{% static 'base/images/icons/vector-left.png' %}' /></button>",
+                nextArrow: "<button type='button' class='slick-arrow slick-next'><img src='{% static 'base/images/icons/vector-right.png' %}' /></button>",
+                responsive: [
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            slidesToShow: 2,
+                            autoplay: true,
+                            arrows: true,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            autoplay: true,
+                            arrows: true,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            //accordian
+            jQuery(".product-accordion-list > li > .product-accordion-title").on("click", function () {
+                if (jQuery(this).hasClass("active")) {
+                    jQuery(this).removeClass("active");
+                    jQuery(this)
+                        .siblings(".product-answer")
+                        .slideUp(200);
+                } else {
+
+                    jQuery(".product-accordion-list > li > .product-accordion-title").removeClass("active");
+                    jQuery(this).addClass("active");
+                    jQuery(".product-answer").slideUp(200);
+                    jQuery(this)
+                        .siblings(".product-answer")
+                        .slideDown(200);
+                }
+            });
+        });
+
+    </script>
+
+
+    <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false"
+        data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'wlAGvPxwc5CrikHNCvrdEuUDSDMAycunwKet6aia'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
+</body>
+
+</html>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- Add about page specific JavaScript here -->
+{% endblock %}

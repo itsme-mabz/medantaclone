@@ -9,7 +9,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
 
     path('blog/', views.blog, name='blog'),
-
+    path('help-desk/', views.help_desk, name='help-desk'),
     path('blog-detail/', views.blogdtl, name='blog-detail'),
 
     path('blog-detail-backup/', views.blogdtl_backup, name='blog-detail-backup'),
@@ -36,7 +36,7 @@ urlpatterns = [
 
 
 
-    path('healthcheckup/gurugram-hospital',views.health_checkup,name='health-checkup'),
+    path('healthcheckup/gurugram-hospital',views.hopitals_near_me,name='health-checkup'),
 
     path('second-opinion/',views.second_option,name='second-option'),
 
@@ -47,8 +47,6 @@ urlpatterns = [
     path('patient/terms-conditions/',views.terms_conditions,name='terms-conditions'),
 
     path('patient/terms-conditions/',views.terms_conditions,name='terms-conditions'),
-
-    path('help-desk/',views.help_desk,name='help-desk'),
 
     path('technology/',views.technology,name='technology'),
 
